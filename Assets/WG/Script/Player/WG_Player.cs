@@ -10,7 +10,7 @@ public class WG_Player : WG_Entity
     public WG_PlayerStateMachine stateMachine { get; private set; }
     public WG_PlayerIdleState idleState { get; private set; }
     public WG_PlayerMoveState moveState { get; private set; }
-    public WG_PlayerRunToIdleState run_to_idle { get; private set; }
+    public WG_PlayerRunToIdleState run_to_idleState { get; private set; }
 
     protected override void Awake()
     {
@@ -19,7 +19,7 @@ public class WG_Player : WG_Entity
 
         idleState = new WG_PlayerIdleState(this, stateMachine, "Idle");
         moveState = new WG_PlayerMoveState(this, stateMachine, "Move");
-        run_to_idle = new WG_PlayerRunToIdleState(this, stateMachine, "RunToIdle");
+        run_to_idleState = new WG_PlayerRunToIdleState(this, stateMachine, "RunToIdle");
 
     }
     #endregion
@@ -35,6 +35,9 @@ public class WG_Player : WG_Entity
     {
         base.Update();
         stateMachine.currentState.Update();
-    }
 
+        Debug.Log($"Current Velocity X : {rb.velocity.x}, Y : {rb.velocity.y}");
+        Debug.Log($"Player BasicSpeed : {basic_movespeed}");
+    }
+    public void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 }

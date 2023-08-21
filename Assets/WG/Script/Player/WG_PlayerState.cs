@@ -11,7 +11,7 @@ public class WG_PlayerState
     protected Rigidbody2D rb;
 
     public float StateTimer;
-    protected bool isTriggerCalled;
+    protected bool isAnimationFinishTriggerCalled;
 
     public float X_Input, Y_Input;
     public WG_PlayerState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
@@ -26,7 +26,7 @@ public class WG_PlayerState
         rb = player.rb;
         player.anim.SetBool(AnimationName, true);
 
-        isTriggerCalled = false;
+        isAnimationFinishTriggerCalled = false;
     }
 
     public virtual void Update()
@@ -47,5 +47,5 @@ public class WG_PlayerState
         player.anim.SetBool(AnimationName, false);
     }
 
-    public void AnimationFinishTrigger() => isTriggerCalled = true;
+    public void AnimationFinishTrigger() => isAnimationFinishTriggerCalled = true;
 }

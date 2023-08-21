@@ -17,19 +17,21 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     public override void Update()
     {
         base.Update();
-
-        if(rb.velocity.x >= player.basic_movespeed/0.8f) isRunning = true;
-        else isRunning = false;
-
         player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
+        if (Mathf.Abs(rb.velocity.x) >= 12f) isRunning = true;
 
-        if (X_Input == 0) player.stateMachine.ChangeState(player.idleState);
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
+            else player.stateMachine.ChangeState(player.idleState);
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+        isRunning = false;
     }
 
 }
