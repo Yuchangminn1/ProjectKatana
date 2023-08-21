@@ -313,14 +313,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basic_movespeed: 12
-  jumpforce: 10
+  jumpforce: 7
   isFacingRight: 0
-  FacingDir: 0
-  GroundCheck: {fileID: 0}
+  FacingDir: 1
+  GroundCheck: {fileID: 4556039489116081704}
   WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
-  ground_distance: 1
-  WallCheck: {fileID: 0}
-  wall_distance: 1
+    m_Bits: 8
+  ground_distance: 1.04
+  WallCheck: {fileID: 6229944858064762656}
+  wall_distance: 0.54
   isBusy: 0

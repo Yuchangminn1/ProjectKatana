@@ -11,7 +11,8 @@ public class WG_Player : WG_Entity
     public WG_PlayerIdleState idleState { get; private set; }
     public WG_PlayerMoveState moveState { get; private set; }
     public WG_PlayerRunToIdleState run_to_idleState { get; private set; }
-
+    public WG_PlayerJumpState jumpState { get; private set; }
+    public WG_PlayerFallingState fallingState { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -20,6 +21,8 @@ public class WG_Player : WG_Entity
         idleState = new WG_PlayerIdleState(this, stateMachine, "Idle");
         moveState = new WG_PlayerMoveState(this, stateMachine, "Move");
         run_to_idleState = new WG_PlayerRunToIdleState(this, stateMachine, "RunToIdle");
+        jumpState = new WG_PlayerJumpState(this, stateMachine, "Jump");
+        fallingState = new WG_PlayerFallingState(this,stateMachine, "Jump");
 
     }
     #endregion

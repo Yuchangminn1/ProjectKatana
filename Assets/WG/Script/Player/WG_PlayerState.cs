@@ -25,6 +25,7 @@ public class WG_PlayerState
         Debug.Log("State Enter : " + AnimationName);
         rb = player.rb;
         player.anim.SetBool(AnimationName, true);
+        player.anim.SetFloat("Velocity_Y", rb.velocity.y);
 
         isAnimationFinishTriggerCalled = false;
     }

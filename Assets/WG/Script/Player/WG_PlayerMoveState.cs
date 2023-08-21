@@ -19,7 +19,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         base.Update();
         player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
-        if (Mathf.Abs(rb.velocity.x) >= 12f) isRunning = true;
+        if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
 
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
