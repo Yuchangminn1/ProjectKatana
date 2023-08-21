@@ -38,6 +38,7 @@ public class CMTitleMMoveButton : MonoBehaviour
         else
         {
             buttons[currentNum].image.color = new Color(0,0,0,0.3f);
+            currentText.color = new Color(1, 1, 1, 0.4f);
             currentTr.localScale = Vector3.one;
             currentNum += num;
             buttons[currentNum].image.color = new Color(0.4f, 0.4f, 0.4f, 0.3f);
@@ -52,10 +53,10 @@ public class CMTitleMMoveButton : MonoBehaviour
         {
             
             currentTr.localScale = Vector3.one + Vector3.up * 0.05f;
-            currentText.color = new Color(1,1,1,0.7f);
-            yield return new WaitForSeconds(0.25f);
-            currentTr.localScale = Vector3.one;
             currentText.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.25f);
+            currentText.color = new Color(1, 1, 1, 0.4f);
+            currentTr.localScale = Vector3.one;
             yield return new WaitForSeconds(0.25f);
 
         }
