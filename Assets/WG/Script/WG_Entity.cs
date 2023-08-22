@@ -24,11 +24,13 @@ public class WG_Entity : MonoBehaviour
     //[SerializeField] LayerMask WhatIsGround;
     [SerializeField] float wall_distance = 1f;
 
+    [Header("Jump Info")]
+    public float smalljumpReverseForce;
     #endregion
 
     protected virtual void Awake()
     {
-        
+
     }
 
     protected virtual void Start()
@@ -39,9 +41,8 @@ public class WG_Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-        Debug.DrawLine(GroundCheck.position,new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance),Color.red);
+        Debug.DrawLine(GroundCheck.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance), Color.red);
     }
-
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)
     {
@@ -58,12 +59,12 @@ public class WG_Entity : MonoBehaviour
     public void FlipController()
     {
         if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight) Flip();
-        else if(Input.GetAxisRaw("Horizontal") < 0 && isFacingRight) Flip();
+        else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight) Flip();
     }
     public bool isGrounded() => Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance));
-        Gizmos.DrawLine(transform.position, new Vector2(WallCheck.position.x + wall_distance*FacingDir, WallCheck.position.y));
+        Gizmos.DrawLine(transform.position, new Vector2(WallCheck.position.x + wall_distance * FacingDir, WallCheck.position.y));
     }
 }

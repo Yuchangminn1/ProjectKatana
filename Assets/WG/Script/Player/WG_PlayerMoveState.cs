@@ -6,6 +6,7 @@ using UnityEngine;
 public class WG_PlayerMoveState : WG_PlayerGroundState
 {
     bool isRunning;
+    bool canEmit = true;
     public WG_PlayerMoveState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName) : base(player, stateMachine, AnimationName)
     {
     }
@@ -13,6 +14,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     public override void Enter()
     {
         base.Enter();
+        canEmit = true;
     }
     public override void Update()
     {
@@ -20,7 +22,11 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
         if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
-
+        if (Mathf.Abs(rb.velocity.x) >= 2f && canEmit)
+        {
+            canEmit = false;
+            FXManager.instance.playerStartRun.playerStartRunDustEmit();
+        }
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
@@ -32,6 +38,6 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     {
         base.Exit();
         isRunning = false;
+        canEmit = true;
     }
-
 }

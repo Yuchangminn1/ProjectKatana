@@ -12,6 +12,7 @@ public class WG_PlayerFallingState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+        rb.gravityScale *= 1.5f;
     }
     public override void Update()
     {
@@ -23,6 +24,7 @@ public class WG_PlayerFallingState : WG_PlayerState
     public override void Exit()
     {
         base.Exit();
+        rb.gravityScale = PlayerRBStartGravity;
     }
 
 }

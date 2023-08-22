@@ -9,4 +9,14 @@ public class WG_PlayerAnimationTriggers : MonoBehaviour
     {
         player.AnimationFinishTrigger();
     }
+
+    void playerStartRunDustEmit()
+    {
+        FXManager.instance.playerStartRun.playerStartRunDustEmit();
+    }
+
+    void playerStartRunDustStop()
+    {
+        FXManager.instance.playerStartRun.playerStartRunDustStop();
+    }
 }

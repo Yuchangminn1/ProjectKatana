@@ -12,6 +12,8 @@ public class WG_PlayerRunToIdleState : WG_PlayerGroundState
     public override void Enter()
     {
         base.Enter();
+
+        player.SetVelocity(rb.velocity.x*0.3f, rb.velocity.y);
     }
     public override void Update()
     {

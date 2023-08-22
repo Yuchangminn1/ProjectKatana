@@ -13,7 +13,9 @@ public class WG_PlayerState
     public float StateTimer;
     protected bool isAnimationFinishTriggerCalled;
 
-    public float X_Input, Y_Input;
+    public float X_Input;
+    protected float PlayerRBStartGravity;
+    protected bool isSmalljump;
     public WG_PlayerState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
     {
         this.player = player;
@@ -24,8 +26,8 @@ public class WG_PlayerState
     {
         Debug.Log("State Enter : " + AnimationName);
         rb = player.rb;
+        PlayerRBStartGravity = rb.gravityScale;
         player.anim.SetBool(AnimationName, true);
-        player.anim.SetFloat("Velocity_Y", rb.velocity.y);
 
         isAnimationFinishTriggerCalled = false;
     }
@@ -37,7 +39,9 @@ public class WG_PlayerState
         StateTimer -= Time.deltaTime;
 
         X_Input = Input.GetAxis("Horizontal");
-        Y_Input = Input.GetAxis("Vertical");
+
+        player.anim.SetFloat("Velocity_Y", rb.velocity.y);
+        player.anim.SetFloat("Velocity_X", rb.velocity.x);
 
         player.FlipController();
     }
