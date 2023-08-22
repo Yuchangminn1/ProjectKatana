@@ -7,20 +7,13 @@ public class PlayerStartRunDust : Effects
     [Header("Effects")]
     [SerializeField] protected ParticleSystem playerStartRunDust;
     [SerializeField] Transform Emitposition_playerStartRunDust;
-
+    public ParticleSystem go;
+    private void Start()
+    {
+    }
     public void playerStartRunDustEmit()
     {
-        playerStartRunDust.transform.position = Emitposition_playerStartRunDust.position;
-        playerStartRunDust.maxParticles = Random.Range(4, 8);
-        playerStartRunDust.gameObject.SetActive(true);
-        playerStartRunDust.Play();
-
-        Invoke("playerStartRunDustStop", 1f);
-    }
-
-    public void playerStartRunDustStop()
-    {
-        playerStartRunDust.Stop();
-        playerStartRunDust.gameObject.SetActive(false);
+        go = Instantiate(playerStartRunDust, Emitposition_playerStartRunDust.position, Quaternion.identity);
+        Destroy(go.gameObject, 0.5f);
     }
 }

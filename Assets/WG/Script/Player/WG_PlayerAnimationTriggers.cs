@@ -14,9 +14,4 @@ public class WG_PlayerAnimationTriggers : MonoBehaviour
     {
         FXManager.instance.playerStartRun.playerStartRunDustEmit();
     }
-
-    void playerStartRunDustStop()
-    {
-        FXManager.instance.playerStartRun.playerStartRunDustStop();
-    }
 }
