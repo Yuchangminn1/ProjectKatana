@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,7 +134,1624 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a146056597146b46a33217fedaed8dc
+      internalID: 1732093023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a607b805890df64db6fbd09768040a7
+      internalID: -1964119603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f814f77e4cc392141a509c433c1dff2b
+      internalID: 385275889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfb289e5806eca41a256047944ea7dc
+      internalID: -211374508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4447b95ee3499a4ba1a1bafef9a7556
+      internalID: -1439549483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963fce9e473d6c44c860452b3eea01c0
+      internalID: 64094926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e644b4dde09d2c47b74290ad412eb7f
+      internalID: 875166616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af497e15899b38d45ac5682c61b8a1a7
+      internalID: 2011781965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e203144b7e76f2341b4c207b20b081aa
+      internalID: 1518100830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0b6ac1b32e55b41b20a65a6daaf21e
+      internalID: -489229871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1b90f5d67820649b8508a10ccae4f0
+      internalID: 351380241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a39fb331e075d468a91505990781ee
+      internalID: 1949990318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_12
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac63bfc87579cc641b07e52fe8c54b70
+      internalID: 559922478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_13
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704ba878e887fb64ab3d7134046db46f
+      internalID: 967440815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_14
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7871df06fd906a84eab53dda177d0741
+      internalID: -1055096541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_15
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f17d5ee53875d9478fdb07a9f8173c0
+      internalID: -568698720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_16
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0215273bf22704f9a097470410519e
+      internalID: 1762108618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_17
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99840d619bd9ad49ba3ccac943b7c02
+      internalID: 12780174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_18
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf32720550b0c54f9dd1d5645291307
+      internalID: 2096109836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e411598894300d142bbca94a0bb98c52
+      internalID: 2123639485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_20
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd30214b194b64e42861d1428184d9ec
+      internalID: 1371079100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_21
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6e0dd3eda8ded418507c5312ccc073
+      internalID: 2013766670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d46a2a949c737488285e5266d82a63
+      internalID: 1021918030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_23
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcbc5b82275d204d9e3a6be02197125
+      internalID: 962618612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_24
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7110ad40be4383a45859e0f048767762
+      internalID: 669232133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_25
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c025e39502f3f45940c2920693e0f4
+      internalID: -2014606212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_26
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2212e025337ada14da5f524a01299cae
+      internalID: 1199008744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_27
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6df3a09a5b2efe49b04d53b75f6a9a4
+      internalID: -1036650378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_28
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32f00983ef4d9948bbc882d46c743e8
+      internalID: -1218158523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecc86bf4897b5344bb7beb2a1b5451d
+      internalID: -1608488356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_30
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c6a1d26587efd449dd3d3a2c0a847d
+      internalID: -1677791713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_31
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7165c71b757c23b4f9aa2aafde18f081
+      internalID: -1164073126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_32
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb2ee38a8b807c4a9f056fad9cd11cc
+      internalID: 52401016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_33
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35fad4dc16001745888247c44ee7a18
+      internalID: -1218325410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_34
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b69df96ff6cecb479df52dd07de182a
+      internalID: -218400756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_35
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5758f128cbfa68440af30b3918eeb6d0
+      internalID: 1915462836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_36
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9bd8516c779e24a936c0257c6ba3b0
+      internalID: 817610514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_37
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d23e97e3a47308479f9e0d80f7ef789
+      internalID: -761902644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_38
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad0fef4324cf2a408b097c20e0b8a8e
+      internalID: 420994296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_39
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875f4710c193e5d4b82dfa616f79078f
+      internalID: -175639099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_40
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d673f3116b56b8848a445e5580259adb
+      internalID: -1245122729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_41
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1672a08cfc69d484fbc4496cb0f53e82
+      internalID: 888307530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_42
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a842058949f649c4ea4a907e7be8b24a
+      internalID: 1493351879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_43
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f7ab5c713e50c4085b862a5cd70ba4
+      internalID: 685904865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_44
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fe916dbab6cdb4193e0eb47ddcefbb
+      internalID: -1779245330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_45
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef75a91b83f27b42b621d5e111a2b7a
+      internalID: 2081238977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_46
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5a79b0742d1cf43b7357a57a2b6fa8
+      internalID: 1481637376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_47
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a6012154c7b034e90abbe63025ad82
+      internalID: -2078313169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_48
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d673aab26b75846ad81a6963510b8a
+      internalID: 275688881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_49
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64b98e00ef057d4b92f2815193e995f
+      internalID: -92701668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_50
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e026ce9d18a314083213a81eb8241c
+      internalID: 732188807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_51
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2df5f5e39e92943abfb9f00ee87426
+      internalID: -665306651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_52
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd15fc13ee1a5d54e922534178466aa9
+      internalID: -1053975204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_53
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5a9a13fa31cb54ebf0bbe209674b97
+      internalID: 2026926642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_54
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a938579351e082b4a8fa26f9a7ecb32a
+      internalID: 508717095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_55
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4433b00131e1a44aa8f1e11f22120bf
+      internalID: 1130887439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_56
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293ae03b3f1451e449b18e24923b485e
+      internalID: 1437706548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_57
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e30cafcfca96a04bbe41cb962983733
+      internalID: 57066923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_58
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5854a782d765346bd1787c45261bdf
+      internalID: -1663937400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_59
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce1808a0d010fd48909add2c0af9334
+      internalID: -717601268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_60
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09f85245f31d404fa66a0972d4c731f
+      internalID: 288967136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_61
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4960b2b43db52945bf1b3c8ae69a5d7
+      internalID: 60964456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_62
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907161e1d2a376a4694f422ac4fe2235
+      internalID: -834995750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_63
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f170119dec6d34797bd932ce0456d2
+      internalID: -2019008311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_64
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c8c16c3a03a8b4cb3a1a08df61c479
+      internalID: -941332516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_65
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e181a174c0ad344b88c9772dfe4e70
+      internalID: -1119867484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_66
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98194cab8bc5afa40833597e1134ccca
+      internalID: -1991847740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_67
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15375e32eff39ed4a9ee97531ce81ce2
+      internalID: 764630072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_68
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719a7b24e83a37248b61bd2ec7284ecc
+      internalID: 478020857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_69
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9d8483d27d8d4468218987205fbc30
+      internalID: -95360252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_70
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6ca642c25af2643802272468cd354e
+      internalID: 1830777919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_71
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a54820b624bb2b4688df9fb964451f0
+      internalID: 1463762315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_72
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f767e121e132441a881d1e361f2a37
+      internalID: -1850440893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_73
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78090b1af6ce004287c3dff71c7f641
+      internalID: -2071475306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_74
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb9d1fa2984033459c8d958def0c016
+      internalID: -2087469618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_75
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe0b1fde6441a0468bcb5ceca1d0ad8
+      internalID: 726158644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_factory_foreground_0_76
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bbe649b251366418f24731ce26c5bb
+      internalID: -738383052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +1762,84 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bg_factory_foreground_0_0: 1732093023
+      bg_factory_foreground_0_1: -1964119603
+      bg_factory_foreground_0_10: 351380241
+      bg_factory_foreground_0_11: 1949990318
+      bg_factory_foreground_0_12: 559922478
+      bg_factory_foreground_0_13: 967440815
+      bg_factory_foreground_0_14: -1055096541
+      bg_factory_foreground_0_15: -568698720
+      bg_factory_foreground_0_16: 1762108618
+      bg_factory_foreground_0_17: 12780174
+      bg_factory_foreground_0_18: 2096109836
+      bg_factory_foreground_0_19: 2123639485
+      bg_factory_foreground_0_2: 385275889
+      bg_factory_foreground_0_20: 1371079100
+      bg_factory_foreground_0_21: 2013766670
+      bg_factory_foreground_0_22: 1021918030
+      bg_factory_foreground_0_23: 962618612
+      bg_factory_foreground_0_24: 669232133
+      bg_factory_foreground_0_25: -2014606212
+      bg_factory_foreground_0_26: 1199008744
+      bg_factory_foreground_0_27: -1036650378
+      bg_factory_foreground_0_28: -1218158523
+      bg_factory_foreground_0_29: -1608488356
+      bg_factory_foreground_0_3: -211374508
+      bg_factory_foreground_0_30: -1677791713
+      bg_factory_foreground_0_31: -1164073126
+      bg_factory_foreground_0_32: 52401016
+      bg_factory_foreground_0_33: -1218325410
+      bg_factory_foreground_0_34: -218400756
+      bg_factory_foreground_0_35: 1915462836
+      bg_factory_foreground_0_36: 817610514
+      bg_factory_foreground_0_37: -761902644
+      bg_factory_foreground_0_38: 420994296
+      bg_factory_foreground_0_39: -175639099
+      bg_factory_foreground_0_4: -1439549483
+      bg_factory_foreground_0_40: -1245122729
+      bg_factory_foreground_0_41: 888307530
+      bg_factory_foreground_0_42: 1493351879
+      bg_factory_foreground_0_43: 685904865
+      bg_factory_foreground_0_44: -1779245330
+      bg_factory_foreground_0_45: 2081238977
+      bg_factory_foreground_0_46: 1481637376
+      bg_factory_foreground_0_47: -2078313169
+      bg_factory_foreground_0_48: 275688881
+      bg_factory_foreground_0_49: -92701668
+      bg_factory_foreground_0_5: 64094926
+      bg_factory_foreground_0_50: 732188807
+      bg_factory_foreground_0_51: -665306651
+      bg_factory_foreground_0_52: -1053975204
+      bg_factory_foreground_0_53: 2026926642
+      bg_factory_foreground_0_54: 508717095
+      bg_factory_foreground_0_55: 1130887439
+      bg_factory_foreground_0_56: 1437706548
+      bg_factory_foreground_0_57: 57066923
+      bg_factory_foreground_0_58: -1663937400
+      bg_factory_foreground_0_59: -717601268
+      bg_factory_foreground_0_6: 875166616
+      bg_factory_foreground_0_60: 288967136
+      bg_factory_foreground_0_61: 60964456
+      bg_factory_foreground_0_62: -834995750
+      bg_factory_foreground_0_63: -2019008311
+      bg_factory_foreground_0_64: -941332516
+      bg_factory_foreground_0_65: -1119867484
+      bg_factory_foreground_0_66: -1991847740
+      bg_factory_foreground_0_67: 764630072
+      bg_factory_foreground_0_68: 478020857
+      bg_factory_foreground_0_69: -95360252
+      bg_factory_foreground_0_7: 2011781965
+      bg_factory_foreground_0_70: 1830777919
+      bg_factory_foreground_0_71: 1463762315
+      bg_factory_foreground_0_72: -1850440893
+      bg_factory_foreground_0_73: -2071475306
+      bg_factory_foreground_0_74: -2087469618
+      bg_factory_foreground_0_75: 726158644
+      bg_factory_foreground_0_76: -738383052
+      bg_factory_foreground_0_8: 1518100830
+      bg_factory_foreground_0_9: -489229871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
