@@ -15,7 +15,6 @@ public class WG_PlayerState
 
     public float X_Input, Y_Input;
     protected float PlayerRBStartGravity;
-    protected bool isSmalljump;
 
     public WG_PlayerState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
     {

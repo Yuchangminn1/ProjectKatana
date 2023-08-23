@@ -30,7 +30,9 @@ public class WG_Entity : MonoBehaviour
     [Header("Wall GrabInfo")]
     [SerializeField] public float IdleToGrabForce = 10f;
     public bool isWallGrabing = false;
-
+    [SerializeField] public float TumblingForce_X = 30f;
+    [SerializeField] public float TumblingForce_Y = 10f;
+    [SerializeField] public float TumblingForceDecayRate = 0.1f;
     #endregion
 
     protected virtual void Awake()
@@ -66,6 +68,7 @@ public class WG_Entity : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing) Flip();
         else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing) Flip();
     }
+
     public bool isGrounded() => Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);
     public bool isWallAhead() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDir, wall_distance, WhatIsGround);
     private void OnDrawGizmos()

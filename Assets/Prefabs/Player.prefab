@@ -249,7 +249,7 @@ Transform:
   - {fileID: 6229944858064762656}
   - {fileID: 5888024769090420257}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1616626927258171707
 Rigidbody2D:
@@ -352,9 +352,13 @@ MonoBehaviour:
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  ground_distance: 1.04
+  ground_distance: 1.1
   WallCheck: {fileID: 6229944858064762656}
   wall_distance: 0.54
   smalljumpReverseForce: 20
   IdleToGrabForce: 20
+  isWallGrabing: 0
+  TumblingForce_X: 40
+  TumblingForce_Y: 25
+  TumblingForceDecayRate: 0.9
   isBusy: 0

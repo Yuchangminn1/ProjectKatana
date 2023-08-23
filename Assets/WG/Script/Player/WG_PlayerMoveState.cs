@@ -26,7 +26,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         {
             canEmit = false;
             FXManager.instance.playerStartRun.playerStartRunDustEmit();
-            switch(player.FacingDir)
+            switch(player.FacingDir) //흙먼지 파티클 방출 방향 바꾸려고
             {
                 case 1:
                     FXManager.instance.playerStartRun.go.transform.Rotate(new Vector3(0, 180, 0));

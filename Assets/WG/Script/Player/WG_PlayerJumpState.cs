@@ -12,7 +12,6 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
     public override void Enter()
     {
         base.Enter();
-        isSmalljump = false;
         rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
     }
 
@@ -23,13 +22,20 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
 
         if (Input.GetKeyUp(KeyCode.W))
         {
-            isSmalljump = true;
-            if(rb.velocity.y >= 0)
+            if (rb.velocity.y >= 0)
             {
                 rb.AddForce(Vector2.down * player.jumpforce * player.smalljumpReverseForce);
             }
         }
         else if (rb.velocity.y <= 0) player.stateMachine.ChangeState(player.fallingState);
+
+        //카타나 제로는 공중에서 XINPUT값이 유지된 채 벽으로 가면 벽에 붙는듯
+        if (player.isWallAhead() && X_Input * player.FacingDir >= 0.1f)
+        {
+            player.SetVelocityToZero();
+            stateMachine.ChangeState(player.wallGrabState);
+        }
+
     }
 
     public override void Exit()

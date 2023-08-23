@@ -17,9 +17,10 @@ public class WG_PlayerIdleState : WG_PlayerGroundState
     {
         base.Update();
 
-        //GetAxis라서 따로 키입력까지 처리
-        if (X_Input != 0 && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !player.isWallAhead())
-            player.stateMachine.ChangeState(player.moveState);
+        //GetAxis라서 따로 키입력까지 처리 (잔존 값이 남아있어서 move - idle 반복전환하면서 버벅버벅거림)
+        if (X_Input != 0 && !player.isWallAhead())
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                player.stateMachine.ChangeState(player.moveState);
     }
 
     public override void Exit()
