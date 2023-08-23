@@ -360,5 +360,5 @@ MonoBehaviour:
   isWallGrabing: 0
   TumblingForce_X: 40
   TumblingForce_Y: 25
-  TumblingForceDecayRate: 0.9
+  TumblingForceDecayRate: 0.97
   isBusy: 0

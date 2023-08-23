@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class WG_PlayerMoveState : WG_PlayerGroundState
 {
+    //최대 속도 체크 변수
     bool isRunning;
+
+    //한번만 방출하게
     bool canEmit = true;
     public WG_PlayerMoveState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName) : base(player, stateMachine, AnimationName)
     {
@@ -24,6 +27,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
         if (Mathf.Abs(rb.velocity.x) >= 2f && canEmit)
         {
+           
             canEmit = false;
             FXManager.instance.playerStartRun.playerStartRunDustEmit();
             switch(player.FacingDir) //흙먼지 파티클 방출 방향 바꾸려고
@@ -35,7 +39,12 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
                     break;
             }
         }
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) || player.isWallAhead())
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
+            else player.stateMachine.ChangeState(player.idleState);
+        }
+        else if (player.isWallAhead())
         {
             if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
             else player.stateMachine.ChangeState(player.idleState);

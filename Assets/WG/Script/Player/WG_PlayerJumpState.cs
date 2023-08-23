@@ -18,6 +18,7 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
     public override void Update()
     {
         base.Update();
+
         player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
         if (Input.GetKeyUp(KeyCode.W))

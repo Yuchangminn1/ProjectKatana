@@ -45,8 +45,6 @@ public class WG_PlayerState
         player.anim.SetFloat("Velocity_X", rb.velocity.x);
         player.anim.SetFloat("Y_Input", Y_Input);
 
-        if (player.isWallAhead()) Debug.Log("º® Ã¼Å©µÊ");
-
         player.FlipController();
     }
     public virtual void Exit()

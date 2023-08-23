@@ -12,7 +12,8 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
     public override void Enter()
     {
         base.Enter();
-        //Idle 모션으로 살짝 찔끔 올라가는 버그 방지
+
+        //Idle 모션으로 살짝 찔끔 올라가고 바로 떨어지는 버그 방지
         StateTimer = 0.15f;
     }
     public override void Update()
