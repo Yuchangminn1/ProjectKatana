@@ -35,7 +35,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
                     break;
             }
         }
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) || player.isWallAhead())
         {
             if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
             else player.stateMachine.ChangeState(player.idleState);

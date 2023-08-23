@@ -356,4 +356,5 @@ MonoBehaviour:
   WallCheck: {fileID: 6229944858064762656}
   wall_distance: 0.54
   smalljumpReverseForce: 20
+  IdleToGrabForce: 20
   isBusy: 0

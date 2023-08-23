@@ -219,7 +219,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102147847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -244,7 +244,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.157301}
+  m_Offset: {x: 0, y: 1.1502678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -255,7 +255,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.39, y: 1.285398}
+  m_Size: {x: 6.39, y: 1.2994642}
   m_EdgeRadius: 0
 --- !u!61 &102147851
 BoxCollider2D:
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 1310073463}
   - component: {fileID: 1310073462}
   - component: {fileID: 1310073464}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,8 +1007,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310073461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.61, y: -0.78, z: 0}
-  m_LocalScale: {x: 1, y: 3.8177855, z: 2.906132}
+  m_LocalPosition: {x: 1.61, y: 1.8297, z: 0}
+  m_LocalScale: {x: 1, y: 9.03708, z: 2.906132}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 1799505888}
   - component: {fileID: 1799505887}
   - component: {fileID: 1799505889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,8 +1346,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799505886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.66, y: -0.78, z: 0}
-  m_LocalScale: {x: 1, y: 3.8177855, z: 2.906132}
+  m_LocalPosition: {x: 6.66, y: 1.8297, z: 0}
+  m_LocalScale: {x: 1, y: 9.03708, z: 2.906132}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1424,7 +1424,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 102147849}
   m_Father: {fileID: 0}

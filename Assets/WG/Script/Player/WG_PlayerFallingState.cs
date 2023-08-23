@@ -17,6 +17,7 @@ public class WG_PlayerFallingState : WG_PlayerState
     public override void Update()
     {
         base.Update();
+        player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
         if (player.isGrounded()) player.stateMachine.ChangeState(player.idleState);
     }

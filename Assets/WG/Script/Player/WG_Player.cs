@@ -13,6 +13,9 @@ public class WG_Player : WG_Entity
     public WG_PlayerRunToIdleState run_to_idleState { get; private set; }
     public WG_PlayerJumpState jumpState { get; private set; }
     public WG_PlayerFallingState fallingState { get; private set; }
+    public WG_PlayerWallGrabState wallGrabState { get; private set; }
+    public WG_PlayerWallSlideState wallSlideState { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -22,8 +25,9 @@ public class WG_Player : WG_Entity
         moveState = new WG_PlayerMoveState(this, stateMachine, "Move");
         run_to_idleState = new WG_PlayerRunToIdleState(this, stateMachine, "RunToIdle");
         jumpState = new WG_PlayerJumpState(this, stateMachine, "Jump");
-        fallingState = new WG_PlayerFallingState(this,stateMachine, "Jump");
-
+        fallingState = new WG_PlayerFallingState(this, stateMachine, "Jump");
+        wallGrabState = new WG_PlayerWallGrabState(this, stateMachine, "WallGrab");
+        wallSlideState = new WG_PlayerWallSlideState(this, stateMachine, "WallGrab");
     }
     #endregion
     protected override void Start()
@@ -39,8 +43,6 @@ public class WG_Player : WG_Entity
         base.Update();
         stateMachine.currentState.Update();
 
-        Debug.Log($"Current Velocity X : {rb.velocity.x}, Y : {rb.velocity.y}");
-        Debug.Log($"Player BasicSpeed : {basic_movespeed}");
     }
     public void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 }
