@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class WG_PlayerState
 {
@@ -49,10 +50,12 @@ public class WG_PlayerState
 
         player.FlipController();
 
+        Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
+
         if (rb.velocity.y <= 0 && player.isFalling)
             rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
-        Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
+        if (Input.GetKeyDown(KeyCode.Mouse0)) stateMachine.ChangeState(player.attackState);
     }
     public virtual void FixedUpdate()
     {

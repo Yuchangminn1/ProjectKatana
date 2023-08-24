@@ -48,6 +48,9 @@ public class WG_Entity : MonoBehaviour
     public bool isJumping = false;
     public bool isFalling = false;
 
+    [Header("Attack Info")]
+    [SerializeField] public GameObject AttackSlashEffect;
+
     #endregion
 
     protected virtual void Awake()

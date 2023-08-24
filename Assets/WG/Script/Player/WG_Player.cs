@@ -18,6 +18,7 @@ public class WG_Player : WG_Entity
     public WG_PlayerTumblingState tumblingState { get; private set; }
     public WG_PlayerCrouchState crouchState { get; private set; }
     public WG_PlayerDodgeRollState dodgeRollState { get; private set; }
+    public WG_PlayerAttackState attackState { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -33,6 +34,7 @@ public class WG_Player : WG_Entity
         tumblingState = new WG_PlayerTumblingState(this, stateMachine, "Tumbling");
         crouchState = new WG_PlayerCrouchState(this, stateMachine, "Crouch");
         dodgeRollState = new WG_PlayerDodgeRollState(this, stateMachine, "Dodge");
+        attackState = new WG_PlayerAttackState(this, stateMachine, "Attack");
     }
     #endregion
     protected override void Start()

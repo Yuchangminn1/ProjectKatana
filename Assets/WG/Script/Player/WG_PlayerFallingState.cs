@@ -13,6 +13,8 @@ public class WG_PlayerFallingState : WG_PlayerOnAirState
     {
         base.Enter();
         player.isFalling = true;
+
+
     }
     public override void Update()
     {

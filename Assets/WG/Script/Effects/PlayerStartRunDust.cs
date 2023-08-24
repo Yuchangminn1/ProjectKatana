@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerStartRunDust : Effects
 {
-    [Header("Effects")]
     [SerializeField] protected ParticleSystem playerStartRunDust;
-    [SerializeField] Transform Emitposition_playerStartRunDust;
+    [SerializeField] protected Transform Emitposition_playerStartRunDust;
+
     public ParticleSystem go;
     private void Start()
     {
