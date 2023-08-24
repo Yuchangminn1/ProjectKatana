@@ -29,6 +29,9 @@ public class WG_PlayerGround_IdleState : WG_PlayerGroundState
                 }
             }
         }
+
+        //Y_Input으로하면 일정시간동안 값이 남아있기때문에 그냥 KeyDown으로 처리
+        if (Input.GetKeyDown(KeyCode.S)) stateMachine.ChangeState(player.crouchState);
     }
     public override void Exit()
     {

@@ -348,6 +348,8 @@ MonoBehaviour:
   jumpforce: 17
   isFacingRight: 0
   FacingDir: 1
+  DodgeForce: 20
+  RecoverControl: 1
   GroundCheck: {fileID: 4556039489116081704}
   WhatIsGround:
     serializedVersion: 2

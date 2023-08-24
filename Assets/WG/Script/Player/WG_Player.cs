@@ -16,6 +16,8 @@ public class WG_Player : WG_Entity
     public WG_PlayerWallGrabState wallGrabState { get; private set; }
     public WG_PlayerWallSlideState wallSlideState { get; private set; }
     public WG_PlayerTumblingState tumblingState { get; private set; }
+    public WG_PlayerCrouchState crouchState { get; private set; }
+    public WG_PlayerDodgeRollState dodgeRollState { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -29,6 +31,8 @@ public class WG_Player : WG_Entity
         wallGrabState = new WG_PlayerWallGrabState(this, stateMachine, "WallGrab");
         wallSlideState = new WG_PlayerWallSlideState(this, stateMachine, "WallGrab");
         tumblingState = new WG_PlayerTumblingState(this, stateMachine, "Tumbling");
+        crouchState = new WG_PlayerCrouchState(this, stateMachine, "Crouch");
+        dodgeRollState = new WG_PlayerDodgeRollState(this, stateMachine, "Dodge");
     }
     #endregion
     protected override void Start()

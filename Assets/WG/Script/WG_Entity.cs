@@ -17,6 +17,10 @@ public class WG_Entity : MonoBehaviour
     public bool isFacingRight;
     public int FacingDir;
 
+    [Header("Dodge Info")]
+    [SerializeField] public float DodgeForce = 7f;
+    public bool RecoverControl = true;
+
     [Header("Collosion Info")]
     [SerializeField] Transform GroundCheck;
     [SerializeField] LayerMask WhatIsGround;
@@ -32,6 +36,8 @@ public class WG_Entity : MonoBehaviour
     [SerializeField] public float IdleToGrabForce = 10f;
     [SerializeField][Range(0f, 1f)] public float JumpToGrabForceCoefficient = 0.5f;
     public bool isWallGrabing = false;
+
+    [Header("Tumbling Info")]
     [SerializeField] public float TumblingForce_X = 30f;
     [SerializeField] public float TumblingForce_Y = 10f;
     [SerializeField] public float TumblingForceDecayRate = 0.1f;
