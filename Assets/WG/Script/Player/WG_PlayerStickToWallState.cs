@@ -36,6 +36,11 @@ public class WG_PlayerStickToWallState : WG_PlayerState
             stateMachine.ChangeState(player.tumblingState);
 
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();

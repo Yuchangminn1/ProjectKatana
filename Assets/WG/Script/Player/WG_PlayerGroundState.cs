@@ -27,6 +27,11 @@ public class WG_PlayerGroundState : WG_PlayerState
             player.stateMachine.ChangeState(player.jumpState);
         }
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();

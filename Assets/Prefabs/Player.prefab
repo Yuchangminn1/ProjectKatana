@@ -361,9 +361,9 @@ MonoBehaviour:
   IdleToGrabForce: 0.2
   JumpToGrabForceCoefficient: 0.223
   isWallGrabing: 0
-  TumblingForce_X: 40
-  TumblingForce_Y: 25
-  TumblingForceDecayRate: 0.97
+  TumblingForce_X: 60
+  TumblingForce_Y: 39
+  TumblingForceDecayRate: 0.81
   isNowTumbling: 0
   isJumping: 0
   isFalling: 0

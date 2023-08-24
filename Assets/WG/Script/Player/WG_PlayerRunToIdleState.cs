@@ -22,8 +22,12 @@ public class WG_PlayerRunToIdleState : WG_PlayerGround_IdleState
 
         if (isAnimationFinishTriggerCalled) player.stateMachine.ChangeState(player.idleState);
 
-
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
 
     public override void Exit()
     {

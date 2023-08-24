@@ -24,9 +24,14 @@ public class WG_PlayerCrouchState : WG_PlayerState
         if (X_Input != 0 && !player.isWallAhead()) stateMachine.ChangeState(player.dodgeRollState);
     }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
     public override void Exit()
     {
         base.Exit();
     }
+
 
 }

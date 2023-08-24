@@ -49,5 +49,11 @@ public class WG_Player : WG_Entity
         stateMachine.currentState.Update();
 
     }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        stateMachine.currentState.FixedUpdate();
+    }
     public void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 }

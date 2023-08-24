@@ -31,6 +31,11 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
 
         if (player.isGrounded() && StateTimer <= 0) stateMachine.ChangeState(player.idleState);
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();

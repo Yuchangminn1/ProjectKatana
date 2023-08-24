@@ -53,6 +53,10 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
 
         if (Input.GetKeyDown(KeyCode.S) && !player.isWallAhead()) stateMachine.ChangeState(player.dodgeRollState);
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
 
     public override void Exit()
     {

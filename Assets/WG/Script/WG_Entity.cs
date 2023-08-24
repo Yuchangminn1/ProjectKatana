@@ -66,6 +66,11 @@ public class WG_Entity : MonoBehaviour
         Debug.DrawLine(GroundCheck.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance), Color.red);
 
     }
+
+    protected virtual void FixedUpdate()
+    {
+        
+    }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)
     {

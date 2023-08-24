@@ -35,6 +35,11 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
         if (isAnimationFinishTriggerCalled) stateMachine.ChangeState(player.idleState);
 
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();

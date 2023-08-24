@@ -12,6 +12,7 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
     {
         base.Enter();
         player.SetVelocityToZero();
+
     }
     public override void Update()
     {
@@ -21,6 +22,11 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
         if (X_Input != 0 && !player.isWallAhead())
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
                 player.stateMachine.ChangeState(player.moveState);
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
     }
 
     public override void Exit()

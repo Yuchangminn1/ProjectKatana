@@ -13,7 +13,6 @@ public class WG_PlayerTumblingState : WG_PlayerOnAirState
     {
         base.Enter();
 
-
         //텀블링하면 텀블링 방향(플레이어 바라보던 방향의 반대)으로 돌아보기
         player.Flip();
 
@@ -26,6 +25,7 @@ public class WG_PlayerTumblingState : WG_PlayerOnAirState
 
         //왜 갑자기 방향이 반대가됐지???? Flip은 해도 변수 다 바뀌어서 결과물은 같을텐데
         //rb.AddForce(new Vector2(-player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
+
         rb.AddForce(new Vector2(player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
 
     }
@@ -33,12 +33,20 @@ public class WG_PlayerTumblingState : WG_PlayerOnAirState
     {
         base.Update();
 
-        //맛깔나는 액션게임들처럼 텀블링할때 처음에 강하게 톡 튀어나가고 급 가속 하게
-        rb.velocity *= player.TumblingForceDecayRate;
 
         if (player.isWallAhead() && !isAnimationFinishTriggerCalled && StateTimer <= 0f) stateMachine.ChangeState(player.wallGrabState);
         if (isAnimationFinishTriggerCalled) stateMachine.ChangeState(player.fallingState);
         if (player.isGrounded()) stateMachine.ChangeState(player.idleState);
+    }
+
+    //텀블링 거리가 화면 사이즈마다 달라지는 버그가 있었음
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        //맛깔나는 액션게임들처럼 텀블링할때 처음에 강하게 톡 튀어나가고 급 가속 하게
+        rb.velocity *= player.TumblingForceDecayRate;
+
     }
     public override void Exit()
     {

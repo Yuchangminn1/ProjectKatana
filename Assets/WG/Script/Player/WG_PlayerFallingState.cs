@@ -30,6 +30,11 @@ public class WG_PlayerFallingState : WG_PlayerOnAirState
         }
 
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
 
     public override void Exit()
     {

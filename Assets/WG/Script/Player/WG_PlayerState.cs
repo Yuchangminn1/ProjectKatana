@@ -54,6 +54,12 @@ public class WG_PlayerState
 
         Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
     }
+    public virtual void FixedUpdate()
+    {
+        Debug.Log("State FixedUpdate : " + AnimationName);
+
+    }
+
     public virtual void Exit()
     {
         Debug.Log("State Exit : " + AnimationName);

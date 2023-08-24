@@ -17,6 +17,11 @@ public class WG_PlayerOnAirState : WG_PlayerState
     {
         base.Update();
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();

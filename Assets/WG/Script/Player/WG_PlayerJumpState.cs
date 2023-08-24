@@ -41,6 +41,10 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         if (rb.velocity.y <= 0) player.stateMachine.ChangeState(player.fallingState);
 
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
 
     public override void Exit()
     {

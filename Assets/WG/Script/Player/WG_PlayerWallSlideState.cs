@@ -20,6 +20,11 @@ public class WG_PlayerWallSlideState : WG_PlayerStickToWallState
     {
         base.Update();
     }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Exit()
     {
         base.Exit();
