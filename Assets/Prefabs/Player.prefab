@@ -356,9 +356,13 @@ MonoBehaviour:
   WallCheck: {fileID: 6229944858064762656}
   wall_distance: 0.54
   smalljumpReverseForce: 20
-  IdleToGrabForce: 20
+  IdleToGrabForce: 0.2
+  JumpToGrabForceCoefficient: 0.223
   isWallGrabing: 0
   TumblingForce_X: 40
   TumblingForce_Y: 25
   TumblingForceDecayRate: 0.97
+  isNowTumbling: 0
+  isJumping: 0
+  isFalling: 0
   isBusy: 0

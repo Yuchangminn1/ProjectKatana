@@ -21,6 +21,13 @@ public class WG_PlayerTumblingState : WG_PlayerOnAirState
         StateTimer = 0.03f;
 
         player.isNowTumbling = true;
+
+        player.SetVelocityToZero();
+
+        //왜 갑자기 방향이 반대가됐지???? Flip은 해도 변수 다 바뀌어서 결과물은 같을텐데
+        //rb.AddForce(new Vector2(-player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
+
     }
     public override void Update()
     {

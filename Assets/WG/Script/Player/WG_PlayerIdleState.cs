@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WG_PlayerIdleState : WG_PlayerGroundState
+public class WG_PlayerIdleState : WG_PlayerGround_IdleState
 {
     public WG_PlayerIdleState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName) : base(player, stateMachine, AnimationName)
     {

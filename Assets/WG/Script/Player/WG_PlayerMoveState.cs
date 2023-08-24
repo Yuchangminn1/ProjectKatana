@@ -24,13 +24,12 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         base.Update();
         player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
-        if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
         if (Mathf.Abs(rb.velocity.x) >= 2f && canEmit)
         {
-           
+
             canEmit = false;
             FXManager.instance.playerStartRun.playerStartRunDustEmit();
-            switch(player.FacingDir) //흙먼지 파티클 방출 방향 바꾸려고
+            switch (player.FacingDir) //흙먼지 파티클 방출 방향 바꾸려고
             {
                 case 1:
                     FXManager.instance.playerStartRun.go.transform.Rotate(new Vector3(0, 180, 0));
@@ -39,15 +38,17 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
                     break;
             }
         }
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
+
+        //왼쪽이나 오른쪽으로 달리다가 정지시
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) || player.isWallAhead())
         {
-            if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
-            else player.stateMachine.ChangeState(player.idleState);
-        }
-        else if (player.isWallAhead())
-        {
-            if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
-            else player.stateMachine.ChangeState(player.idleState);
+            //벽에서 RunToIdle 모션으로 점프되는 버그가 있었음
+            if (!player.isJumping)
+            {
+                if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
+                else player.stateMachine.ChangeState(player.idleState);
+            }
         }
     }
 

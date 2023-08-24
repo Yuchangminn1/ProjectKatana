@@ -12,6 +12,8 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
     public override void Enter()
     {
         base.Enter();
+        player.isJumping = true;
+
         rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
     }
 
@@ -28,20 +30,21 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
                 rb.AddForce(Vector2.down * player.jumpforce * player.smalljumpReverseForce);
             }
         }
-        else if (rb.velocity.y <= 0) player.stateMachine.ChangeState(player.fallingState);
 
         //카타나 제로는 공중에서 XINPUT값이 유지된 채 벽으로 가면 벽에 붙는듯
-        if (player.isWallAhead() && X_Input * player.FacingDir >= 0.1f)
+        if (!player.isGrounded() && player.isWallAhead() && X_Input * player.FacingDir >= 0.1f && StateTimer <= 0f)
         {
-            player.SetVelocityToZero();
+            // player.SetVelocityToZero();
             stateMachine.ChangeState(player.wallGrabState);
         }
+
+        if (rb.velocity.y <= 0) player.stateMachine.ChangeState(player.fallingState);
 
     }
 
     public override void Exit()
     {
         base.Exit();
-        rb.gravityScale = PlayerRBStartGravity;
+        player.isJumping = false;
     }
 }

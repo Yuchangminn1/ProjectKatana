@@ -10,6 +10,7 @@ public class WG_Entity : MonoBehaviour
 
     #endregion
     #region Infos
+
     [Header("Move Info")]
     [SerializeField] public float basic_movespeed = 7f;
     [SerializeField] public float jumpforce = 10f;
@@ -29,11 +30,18 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Wall GrabInfo")]
     [SerializeField] public float IdleToGrabForce = 10f;
+    [SerializeField][Range(0f, 1f)] public float JumpToGrabForceCoefficient = 0.5f;
     public bool isWallGrabing = false;
     [SerializeField] public float TumblingForce_X = 30f;
     [SerializeField] public float TumblingForce_Y = 10f;
     [SerializeField] public float TumblingForceDecayRate = 0.1f;
     public bool isNowTumbling = false;
+
+    [Header("Fly Info")]
+    //벽에서 천천히 내려올때 중력 1로 유지되는 버그 방지용
+    public bool isJumping = false;
+    public bool isFalling = false;
+
     #endregion
 
     protected virtual void Awake()
@@ -50,6 +58,7 @@ public class WG_Entity : MonoBehaviour
     protected virtual void Update()
     {
         Debug.DrawLine(GroundCheck.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance), Color.red);
+
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)

@@ -14,7 +14,7 @@ public class WG_PlayerState
     protected bool isAnimationFinishTriggerCalled;
 
     public float X_Input, Y_Input;
-    protected float PlayerRBStartGravity;
+    protected float PlayerRBStartGravity = 3.5f;
 
     public WG_PlayerState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
     {
@@ -30,6 +30,8 @@ public class WG_PlayerState
         player.anim.SetBool(AnimationName, true);
 
         isAnimationFinishTriggerCalled = false;
+
+        rb.gravityScale = PlayerRBStartGravity;
     }
 
     public virtual void Update()
@@ -46,12 +48,19 @@ public class WG_PlayerState
         player.anim.SetFloat("Y_Input", Y_Input);
 
         player.FlipController();
+
+        if (rb.velocity.y <= 0 && player.isFalling)
+            rb.gravityScale = PlayerRBStartGravity * 1.5f;
+
+        Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
     }
     public virtual void Exit()
     {
         Debug.Log("State Exit : " + AnimationName);
 
         player.anim.SetBool(AnimationName, false);
+        rb.gravityScale = PlayerRBStartGravity;
+
     }
 
     public void AnimationFinishTrigger() => isAnimationFinishTriggerCalled = true;

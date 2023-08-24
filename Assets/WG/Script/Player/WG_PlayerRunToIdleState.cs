@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class WG_PlayerRunToIdleState : WG_PlayerGroundState
+public class WG_PlayerRunToIdleState : WG_PlayerGround_IdleState
 {
     public WG_PlayerRunToIdleState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
         : base(player, stateMachine, AnimationName)
