@@ -16,6 +16,8 @@ public class WG_PlayerGroundState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+        //땅 상태에서는 OnAir해제
+        player.isAttackAfterOnAir = false;
     }
     public override void Update()
     {
@@ -26,6 +28,11 @@ public class WG_PlayerGroundState : WG_PlayerState
             TempJumpForce = player.jumpforce * 0.6f;
             player.stateMachine.ChangeState(player.jumpState);
         }
+
+        //벽잡고 있을땐 안나와야 하니까 그라운드 쯤에 놓으면 좋을듯
+        if (rb.velocity.y <= 0 && !player.isGrounded())
+            player.stateMachine.ChangeState(player.fallingState);
+
     }
     public override void FixedUpdate()
     {

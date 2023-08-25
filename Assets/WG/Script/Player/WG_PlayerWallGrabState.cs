@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//이 상태 진입시 위로 확 올라감
 //벽 잡고있을땐 천천히 내려오게
 public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
 {
@@ -30,10 +31,19 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
             rb.gravityScale = 1f;
 
         if (player.isGrounded() && StateTimer <= 0) stateMachine.ChangeState(player.idleState);
+
     }
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        //올라가다가 벽 넘어가면 어느정도 올라가게해서 벽 위로 갈수있게
+        //벽에서 미끌어져서 떨어질때는 적용 X
+        if (!player.isGrounded() && !player.isWallAhead() && rb.velocity.y >= 0)
+        {
+            player.SetVelocity(0, player.GrabToWallOverAddSpeed);
+            stateMachine.ChangeState(player.fallingState);
+        }
     }
 
     public override void Exit()

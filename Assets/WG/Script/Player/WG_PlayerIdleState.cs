@@ -13,15 +13,18 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
         base.Enter();
         player.SetVelocityToZero();
 
+
     }
     public override void Update()
     {
         base.Update();
 
         //GetAxis라서 따로 키입력까지 처리 (잔존 값이 남아있어서 move - idle 반복전환하면서 버벅버벅거림)
-        if (X_Input != 0 && !player.isWallAhead())
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (X_Input != 0 && !player.isWallAhead() && !XY_InputAtOnce)
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !XY_InputAtOnce)
+            {
                 player.stateMachine.ChangeState(player.moveState);
+            }
     }
 
     public override void FixedUpdate()

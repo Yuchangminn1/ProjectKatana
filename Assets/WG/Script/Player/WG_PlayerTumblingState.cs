@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WG_PlayerTumblingState : WG_PlayerOnAirState
+public class WG_PlayerTumblingState : WG_PlayerState
 {
     public WG_PlayerTumblingState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
         : base(player, stateMachine, AnimationName)

@@ -21,8 +21,8 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
     {
         base.Update();
 
-        player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
+        //키 정교하게 체크해야해서 Update
         if (Input.GetKeyUp(KeyCode.W))
         {
             if (rb.velocity.y >= 0)
@@ -37,13 +37,15 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
             // player.SetVelocityToZero();
             stateMachine.ChangeState(player.wallGrabState);
         }
-
-        if (rb.velocity.y <= 0) player.stateMachine.ChangeState(player.fallingState);
-
     }
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        //자유롭게 움직일 수 있는 상태에서 칼질하면 대쉬가 안나오는 문제가 있었음
+        if (!player.isAttacking)
+            player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
+
     }
 
     public override void Exit()

@@ -342,8 +342,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.0035257936, y: -0.024680793}
+  m_Size: {x: 0.42243183, y: 0.9506384}
   m_Direction: 0
 --- !u!251 &4010532088406562283
 PlatformEffector2D:
@@ -394,11 +394,11 @@ MonoBehaviour:
   JumpToGrabForceCoefficient: 0.223
   isWallGrabing: 0
   TumblingForce_X: 60
-  TumblingForce_Y: 39
+  TumblingForce_Y: 28
   TumblingForceDecayRate: 0.81
   isNowTumbling: 0
   isJumping: 0
   isFalling: 0
-  AttackSlashEffect: {fileID: 7939580975937074003, guid: 19a0ff8c39929794fab87e71800fae62, type: 3}
-  AttackDashForce: 20
-  TAttackDashForceDecayRate: 0.99
+  AttackDashForce: 80
+  AttackDashForceDecayRate: 0.7
+  isAttacking: 0

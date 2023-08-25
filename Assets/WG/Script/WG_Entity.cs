@@ -34,6 +34,7 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Wall GrabInfo")]
     [SerializeField] public float IdleToGrabForce = 10f;
+    [SerializeField] public float GrabToWallOverAddSpeed = 12f;
     [SerializeField][Range(0f, 1f)] public float JumpToGrabForceCoefficient = 0.5f;
     public bool isWallGrabing = false;
 
@@ -50,7 +51,8 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Attack Info")]
     [SerializeField] public float AttackDashForce = 7f;
-    [SerializeField] public float TAttackDashForceDecayRate = 0.99f;
+    [SerializeField] public float AttackDashForceDecayRate = 0.99f;
+    public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
 
     #endregion

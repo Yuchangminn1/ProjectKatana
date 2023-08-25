@@ -22,7 +22,11 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     public override void Update()
     {
         base.Update();
-        player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
+
+        //자유롭게 움직일 수 있는 상태에서 칼질하면 대쉬가 안나오는 문제가 있었음
+        if (!player.isAttacking)
+            player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
+
 
         if (Mathf.Abs(rb.velocity.x) >= 2f && canEmit)
         {
@@ -40,8 +44,8 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         }
         if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
 
-        //왼쪽이나 오른쪽으로 달리다가 정지시
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) || player.isWallAhead())
+        //왼쪽이나 오른쪽으로 달리다가 정지시 혹은 동시 키 입력시
+        if ((!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) || player.isWallAhead() || XY_InputAtOnce)
         {
             //벽에서 RunToIdle 모션으로 점프되는 버그가 있었음
             if (!player.isJumping)
