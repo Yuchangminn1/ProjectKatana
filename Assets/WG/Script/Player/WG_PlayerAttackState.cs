@@ -13,6 +13,8 @@ public class WG_PlayerAttackState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+
+
     }
     public override void FixedUpdate()
     {
@@ -23,6 +25,12 @@ public class WG_PlayerAttackState : WG_PlayerState
     public override void Update()
     {
         base.Update();
+
+        if (isAnimationFinishTriggerCalled && player.isGrounded())
+            stateMachine.ChangeState(player.idleState);
+
+        else if (isAnimationFinishTriggerCalled && !player.isGrounded())
+            stateMachine.ChangeState(player.fallingState);
     }
 
     public override void Exit()

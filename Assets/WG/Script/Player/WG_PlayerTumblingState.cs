@@ -34,9 +34,15 @@ public class WG_PlayerTumblingState : WG_PlayerOnAirState
         base.Update();
 
 
-        if (player.isWallAhead() && !isAnimationFinishTriggerCalled && StateTimer <= 0f) stateMachine.ChangeState(player.wallGrabState);
-        if (isAnimationFinishTriggerCalled) stateMachine.ChangeState(player.fallingState);
-        if (player.isGrounded()) stateMachine.ChangeState(player.idleState);
+        if (player.isWallAhead() && !isAnimationFinishTriggerCalled && StateTimer <= 0f)
+            stateMachine.ChangeState(player.wallGrabState);
+
+        if (isAnimationFinishTriggerCalled)
+            stateMachine.ChangeState(player.fallingState);
+
+        if (player.isGrounded())
+            stateMachine.ChangeState(player.idleState);
+
     }
 
     //텀블링 거리가 화면 사이즈마다 달라지는 버그가 있었음
