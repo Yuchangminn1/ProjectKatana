@@ -14,12 +14,18 @@ public class WG_PlayerAttackState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+        //Busy Exit에두니까 상태 변할때마다 공격 가능 초기화되는 문제가 있었음
         player.StartCoroutine("nowBusy", 0.4f);
+
+        //공격중일때 Flip막을때 쓸 변수
         player.isAttacking = true;
+
+
         player.SetVelocityToZero();
         rb.AddForce(
             new Vector2(InputManager.instance.cursorDir.x, InputManager.instance.cursorDir.y)
             * player.AttackDashForce, ForceMode2D.Impulse);
+
 
         FXManager.instance.playerSlashEffect.CreateSlashEffect();
     }
