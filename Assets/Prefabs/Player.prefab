@@ -391,6 +391,7 @@ MonoBehaviour:
   wall_distance: 0.54
   smalljumpReverseForce: 20
   IdleToGrabForce: 0.2
+  GrabToWallOverAddSpeed: 12
   JumpToGrabForceCoefficient: 0.223
   isWallGrabing: 0
   TumblingForce_X: 60
@@ -401,4 +402,5 @@ MonoBehaviour:
   isFalling: 0
   AttackDashForce: 80
   AttackDashForceDecayRate: 0.7
+  isAttackAfterOnAir: 0
   isAttacking: 0

@@ -66,6 +66,7 @@ public class WG_PlayerState
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
+
     }
     public virtual void FixedUpdate()
     {
