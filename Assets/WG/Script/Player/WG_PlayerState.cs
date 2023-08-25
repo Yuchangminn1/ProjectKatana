@@ -55,7 +55,8 @@ public class WG_PlayerState
         if (rb.velocity.y <= 0 && player.isFalling)
             rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) stateMachine.ChangeState(player.attackState);
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
+            stateMachine.ChangeState(player.attackState);
     }
     public virtual void FixedUpdate()
     {

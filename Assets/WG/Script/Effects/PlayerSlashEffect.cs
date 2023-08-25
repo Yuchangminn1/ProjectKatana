@@ -9,6 +9,6 @@ public class PlayerSlashEffect : Effects
     public GameObject Instant_slashEffect;
     public void CreateSlashEffect()
     {
-        Instant_slashEffect = Instantiate(playerSlashEffect, playerSlashEffectTransform.position, Quaternion.identity, playerSlashEffectTransform.parent);
+        Instant_slashEffect = Instantiate(playerSlashEffect, playerSlashEffectTransform.position, Quaternion.identity, playerSlashEffectTransform);
     }
 }

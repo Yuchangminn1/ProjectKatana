@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     public static InputManager instance;
     public Vector2 CurrentMousePosition;
     public GameObject MouseCursorPrefab;
+    public Vector2 cursorDir = new Vector2();
+    public float playerLookingCursorAngle;
     GameObject cursor;
 
     private void Awake()
@@ -20,20 +22,17 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        cursor = Instantiate(MouseCursorPrefab, CurrentMousePosition, Quaternion.identity, this.transform.parent);
+        cursor = Instantiate(MouseCursorPrefab, CurrentMousePosition, Quaternion.identity, transform);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CurrentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    private void FixedUpdate()
-    {
-
         cursor.transform.position = CurrentMousePosition;
 
+        playerLookingCursorAngle = Mathf.Atan2(InputManager.instance.cursorDir.y, InputManager.instance.cursorDir.x) * Mathf.Rad2Deg;
 
+        //플레이어가 커서블 바라보는 벡터2의 방향값
+        cursorDir = (CurrentMousePosition - (Vector2)PlayerManager.instance.player.transform.position).normalized;
     }
 }

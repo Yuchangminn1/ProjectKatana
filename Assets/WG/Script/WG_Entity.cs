@@ -49,7 +49,9 @@ public class WG_Entity : MonoBehaviour
     public bool isFalling = false;
 
     [Header("Attack Info")]
-    [SerializeField] public GameObject AttackSlashEffect;
+    [SerializeField] public float AttackDashForce = 7f;
+    [SerializeField] public float TAttackDashForceDecayRate = 0.99f;
+    public bool isAttacking = false;
 
     #endregion
 
@@ -72,7 +74,7 @@ public class WG_Entity : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        
+
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)
@@ -89,9 +91,9 @@ public class WG_Entity : MonoBehaviour
 
     public void FlipController()
     {
-        //벽 잡고있는중이나 텀블링 중일땐 Flip안시키거나 따로 그 상태에서 관리할거임
-        if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing && !isNowTumbling) Flip();
-        else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing && !isNowTumbling) Flip();
+        //벽 잡고있는중 공격중이나 텀블링 중일땐 Flip안시키거나 따로 그 상태에서 관리할거임
+        if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking) Flip();
+        else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking) Flip();
     }
 
     public bool isGrounded() => Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);

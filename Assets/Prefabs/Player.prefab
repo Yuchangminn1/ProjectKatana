@@ -281,7 +281,7 @@ Transform:
   - {fileID: 5888024769090420257}
   - {fileID: 8885993031700552566}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1616626927258171707
 Rigidbody2D:
@@ -399,4 +399,6 @@ MonoBehaviour:
   isNowTumbling: 0
   isJumping: 0
   isFalling: 0
-  isBusy: 0
+  AttackSlashEffect: {fileID: 7939580975937074003, guid: 19a0ff8c39929794fab87e71800fae62, type: 3}
+  AttackDashForce: 20
+  TAttackDashForceDecayRate: 0.99

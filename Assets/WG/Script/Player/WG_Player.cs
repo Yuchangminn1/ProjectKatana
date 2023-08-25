@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WG_Player : WG_Entity
 {
-    public bool isBusy;
+    public bool isBusy { get; set; }
 
     #region states
     public WG_PlayerStateMachine stateMachine { get; private set; }
@@ -56,6 +56,17 @@ public class WG_Player : WG_Entity
     {
         base.FixedUpdate();
         stateMachine.currentState.FixedUpdate();
+    }
+
+    //따로 스레드에서 코루틴이 돌아가니까
+    //!isBusy일때 실행 가능한 코드로 써먹기.
+    public IEnumerator nowBusy(float seconds)
+    {
+        isBusy = true;
+        Debug.Log("BusyNow");
+        yield return new WaitForSeconds(seconds);
+        Debug.Log("NotBusy");
+        isBusy = false;
     }
     public void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 }

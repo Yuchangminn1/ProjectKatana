@@ -7,7 +7,7 @@ public class FXManager : MonoBehaviour
     public static FXManager instance;
     public Effects effects { get; private set; }
     public PlayerStartRunDust playerStartRun { get; private set; }
-
+    public PlayerSlashEffect playerSlashEffect { get; private set; }
 
     private void Awake()
     {
@@ -19,5 +19,6 @@ public class FXManager : MonoBehaviour
     {
         effects = GetComponent<Effects>();
         playerStartRun = GetComponent<PlayerStartRunDust>();
+        playerSlashEffect = GetComponent<PlayerSlashEffect>();
     }
 }

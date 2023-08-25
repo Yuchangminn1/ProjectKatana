@@ -13,7 +13,7 @@ public class PlayerStartRunDust : Effects
     }
     public void playerStartRunDustEmit()
     {
-        go = Instantiate(playerStartRunDust, Emitposition_playerStartRunDust.position, Quaternion.identity);
+        go = Instantiate(playerStartRunDust, Emitposition_playerStartRunDust.position, Quaternion.identity, FXManager.instance.transform);
         Destroy(go.gameObject, 0.5f);
     }
 }
