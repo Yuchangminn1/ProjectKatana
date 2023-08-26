@@ -18,10 +18,18 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     {
         base.Enter();
         canEmit = true;
+
+        //player.transform.GetChild(1).gameObject.SetActive(true);
+        //player.transform.GetChild(2).gameObject.SetActive(true);
+        //player.transform.GetChild(3).gameObject.SetActive(true);
     }
     public override void Update()
     {
         base.Update();
+
+        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W))
+            player.stateMachine.ChangeState(player.jumpState);
+
 
         //자유롭게 움직일 수 있는 상태에서 칼질하면 대쉬가 안나오는 문제가 있었음
         if (!player.isAttacking)
@@ -67,5 +75,9 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         base.Exit();
         isRunning = false;
         canEmit = true;
+
+        //player.transform.GetChild(1).gameObject.SetActive(false);
+        //player.transform.GetChild(2).gameObject.SetActive(false);
+        //player.transform.GetChild(3).gameObject.SetActive(false);
     }
 }

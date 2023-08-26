@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //어떠한 상태에서도 공격이 되어야함(사망했을 때 빼고)
@@ -14,8 +15,7 @@ public class WG_PlayerAttackState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
-
-        player.SetVelocityToZero();
+        player.ResetRigidBody();
 
         //Busy Exit에두니까 상태 변할때마다 공격 가능 초기화되는 문제가 있었음
         player.StartCoroutine("nowBusy", 0.25f);
@@ -40,7 +40,7 @@ public class WG_PlayerAttackState : WG_PlayerState
         //공격 후 체공상태면 Y축은 아래로만 강하게 받기 가능
         else
             rb.AddForce(new Vector2(InputManager.instance.cursorDir.x * player.AttackDashForce,
-                Mathf.Clamp(InputManager.instance.cursorDir.y * player.AttackDashForce, -9999f, 3f)), ForceMode2D.Impulse);
+                Mathf.Clamp(InputManager.instance.cursorDir.y * player.AttackDashForce, -9999, 3f)), ForceMode2D.Impulse);
 
 
         FXManager.instance.playerSlashEffect.CreateSlashEffect();
@@ -58,7 +58,6 @@ public class WG_PlayerAttackState : WG_PlayerState
 
         if (!player.isGrounded())
             player.isAttackAfterOnAir = true;
-
 
         if (isAnimationFinishTriggerCalled && player.isGrounded())
             stateMachine.ChangeState(player.idleState);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -41,6 +42,7 @@ public class WG_PlayerState
     {
         Debug.Log("State Update : " + AnimationName);
 
+
         StateTimer -= Time.deltaTime;
 
         X_Input = Input.GetAxis("Horizontal");
@@ -60,13 +62,12 @@ public class WG_PlayerState
 
         Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
 
-
         if (rb.velocity.y <= 0 && player.isFalling)
             rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
-
+ 
     }
     public virtual void FixedUpdate()
     {

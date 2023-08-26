@@ -14,13 +14,13 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         base.Enter();
         player.isJumping = true;
 
+
         rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
     }
 
     public override void Update()
     {
         base.Update();
-
 
         //키 정교하게 체크해야해서 Update
         if (Input.GetKeyUp(KeyCode.W))

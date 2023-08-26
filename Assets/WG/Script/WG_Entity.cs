@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WG_Entity : MonoBehaviour
@@ -55,6 +56,7 @@ public class WG_Entity : MonoBehaviour
     public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
 
+
     #endregion
 
     protected virtual void Awake()
@@ -84,6 +86,12 @@ public class WG_Entity : MonoBehaviour
         rb.velocity = new Vector2(X_Velocity, Y_Velocity);
     }
 
+    public void ResetRigidBody()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0;
+    }
+
     public void Flip()
     {
         FacingDir = -FacingDir;
@@ -94,8 +102,12 @@ public class WG_Entity : MonoBehaviour
     public void FlipController()
     {
         //벽 잡고있는중 공격중이나 텀블링 중일땐 Flip안시키거나 따로 그 상태에서 관리할거임
-        if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking) Flip();
-        else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking) Flip();
+        //공격 이펙트 나오는 도중에도 불가능하게
+        if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking &&
+            FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
+
+        else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking &&
+            FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
     }
 
     public bool isGrounded() => Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);

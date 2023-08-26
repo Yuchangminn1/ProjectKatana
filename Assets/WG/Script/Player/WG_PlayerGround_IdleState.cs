@@ -19,6 +19,9 @@ public class WG_PlayerGround_IdleState : WG_PlayerGroundState
     {
         base.Update();
 
+        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W))
+            player.stateMachine.ChangeState(player.jumpState);
+
         if (player.isGrounded() && player.isWallAhead())
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
