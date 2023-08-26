@@ -65,7 +65,6 @@ public class WG_PlayerAttackState : WG_PlayerState
 
         else if (isAnimationFinishTriggerCalled && !player.isGrounded())
             stateMachine.ChangeState(player.fallingState);
-
     }
 
     public override void Exit()

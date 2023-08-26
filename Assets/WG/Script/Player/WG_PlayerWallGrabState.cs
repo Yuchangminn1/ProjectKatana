@@ -19,6 +19,7 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
         StateTimer = 0.15f;
 
         rb.AddForce(Vector2.up * rb.velocity.y * player.JumpToGrabForceCoefficient, ForceMode2D.Impulse);
+
     }
     public override void Update()
     {
@@ -30,7 +31,8 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
         else if (rb.velocity.y <= 0 && !Input.GetKey(KeyCode.S))
             rb.gravityScale = 1f;
 
-        if (player.isGrounded() && StateTimer <= 0) stateMachine.ChangeState(player.idleState);
+        if (player.isGrounded() && StateTimer <= 0)
+            stateMachine.ChangeState(player.idleState);
 
     }
     public override void FixedUpdate()
@@ -41,6 +43,7 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
         //벽에서 미끌어져서 떨어질때는 적용 X
         if (!player.isGrounded() && !player.isWallAhead() && rb.velocity.y >= 0)
         {
+
             player.SetVelocity(0, player.GrabToWallOverAddSpeed);
             stateMachine.ChangeState(player.fallingState);
         }
@@ -49,5 +52,6 @@ public class WG_PlayerWallGrabState : WG_PlayerStickToWallState
     public override void Exit()
     {
         base.Exit();
+
     }
 }

@@ -20,7 +20,7 @@ public class WG_PlayerFallingState : WG_PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             ControlRecover = true;
 
         if (player.isGrounded())
