@@ -15,6 +15,7 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         player.isJumping = true;
 
 
+
         rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
     }
 

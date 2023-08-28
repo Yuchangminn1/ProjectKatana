@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -27,7 +28,8 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     {
         base.Update();
 
-        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W))
+        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W)
+            && FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
             player.stateMachine.ChangeState(player.jumpState);
 
 
@@ -50,7 +52,8 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
                     break;
             }
         }
-        if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed) isRunning = true;
+        if (Mathf.Abs(rb.velocity.x) >= player.basic_movespeed)
+            isRunning = true;
 
         //왼쪽이나 오른쪽으로 달리다가 정지시 혹은 동시 키 입력시
         if ((!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) || player.isWallAhead() || XY_InputAtOnce)
@@ -58,8 +61,10 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
             //벽에서 RunToIdle 모션으로 점프되는 버그가 있었음
             if (!player.isJumping)
             {
-                if (isRunning) player.stateMachine.ChangeState(player.run_to_idleState);
-                else player.stateMachine.ChangeState(player.idleState);
+                if (isRunning)
+                    player.stateMachine.ChangeState(player.run_to_idleState);
+                else
+                    player.stateMachine.ChangeState(player.idleState);
             }
         }
 

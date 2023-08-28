@@ -61,13 +61,14 @@ public class WG_PlayerState
         player.FlipController();
 
         Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
+        Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
 
         if (rb.velocity.y <= 0 && player.isFalling)
             rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
- 
+
     }
     public virtual void FixedUpdate()
     {
