@@ -54,11 +54,14 @@ public class WG_PlayerState
         else
             XY_InputAtOnce = false;
 
+        player.BulletTime();
+
         player.anim.SetFloat("Velocity_Y", rb.velocity.y);
         player.anim.SetFloat("Velocity_X", rb.velocity.x);
         player.anim.SetFloat("Y_Input", Y_Input);
 
         player.FlipController();
+
 
         Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
         Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
@@ -69,10 +72,14 @@ public class WG_PlayerState
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
 
+        if (player.isTrail)
+            FXManager.instance.ghostControl.Shadows_Skill();
     }
     public virtual void FixedUpdate()
     {
         Debug.Log("State FixedUpdate : " + AnimationName);
+
+
 
     }
 
