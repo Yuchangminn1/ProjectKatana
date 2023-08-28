@@ -58,7 +58,8 @@ public class WG_Entity : MonoBehaviour
     public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
 
-
+    [Header("Ghost Trail Info")]
+    public bool isTrail = false;
     #endregion
 
     protected virtual void Awake()

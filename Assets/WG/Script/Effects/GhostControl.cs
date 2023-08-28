@@ -2,14 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ShaderType
+{
+    NoShader,
+    Sprite_Default,
+    Sprite_URP_Lit
+}
 public class GhostControl : MonoBehaviour
 {
+    public ShaderType shaderType = ShaderType.Sprite_Default;
+    ShaderType shaderTypeChecker;
+
     public GameObject Shadow;
     public GameObject Player;
     float timer;
     public float ShadowSpawnSpeed;
     public float ShadowLifeTime = 0.3f;
     public Color _color;
+    [Range(0.000f, 1.000f)] public float MaxAlpha = 1.0f;
+    [Range(0.000f, 1.000f)] public float MinAlpha = 0f;
     Animator anim;
 
     private void Start()
@@ -36,5 +47,10 @@ public class GhostControl : MonoBehaviour
             clone_Shadow.GetComponent<GhostTrailTest>()._color = _color;
 
         }
+    }
+
+    private void OnValidate()
+    {
+        ObjectPool.instance.RefreshTheQueue(0);
     }
 }

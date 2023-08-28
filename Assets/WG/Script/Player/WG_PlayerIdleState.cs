@@ -13,6 +13,10 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
         base.Enter();
         player.SetVelocityToZero();
 
+        player.isTrail = false;
+        FXManager.instance.ghostControl.ShadowSpawnSpeed = 10f;
+        FXManager.instance.ghostControl.ShadowLifeTime = 0.1f;
+        FXManager.instance.ghostControl._color = Color.red;
 
     }
     public override void Update()
@@ -35,6 +39,8 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
     public override void Exit()
     {
         base.Exit();
+
+        player.isTrail = true;
     }
 
 }
