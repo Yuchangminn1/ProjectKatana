@@ -23,18 +23,22 @@ public class ObjectPool : MonoBehaviour
 
     //데이터가 선입선출 순서대로
     public Queue<GameObject> ObjectQueue = new Queue<GameObject>();
-
     private void Start()
+    {
+        GetMyself();
+
+        //노트 큐에 배열 오브젝트인포 0번째 객체 넣어줌
+        ObjectQueue = InsterQueue(ObejctInfos[0]);
+    }
+
+    private void GetMyself()
     {
         //자기 자신 값을 넣어줘서 데이터 할당
         if (instance != null)
             Destroy(instance.gameObject);
 
-        else 
+        else
             instance = this;
-
-        //노트 큐에 배열 오브젝트인포 0번째 객체 넣어줌
-        ObjectQueue = InsterQueue(ObejctInfos[0]);
     }
 
     //GameObject형식의 큐를 리턴시키는 함수
@@ -66,6 +70,7 @@ public class ObjectPool : MonoBehaviour
 
     public void RefreshTheQueue(int RoomNumber)
     {
+
         ObjectQueue = InsterQueue(ObejctInfos[RoomNumber]);
     }
 }

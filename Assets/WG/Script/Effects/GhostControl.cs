@@ -51,6 +51,8 @@ public class GhostControl : MonoBehaviour
 
     private void OnValidate()
     {
-        ObjectPool.instance.RefreshTheQueue(0);
+        //ObjectPool instance 값 가져가기전에 실행되는것 방지
+        if (ObjectPool.instance != null)
+            ObjectPool.instance.RefreshTheQueue(0);
     }
 }

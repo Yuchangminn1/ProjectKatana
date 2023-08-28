@@ -8,6 +8,7 @@ public class WG_Entity : MonoBehaviour
 {
     #region Components
     public Animator anim { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public GameObject GlobalLight { get; private set; }
 
@@ -72,6 +73,7 @@ public class WG_Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         GlobalLight = GameObject.Find("GlobalLight");
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     protected virtual void Update()
@@ -88,7 +90,8 @@ public class WG_Entity : MonoBehaviour
     {
         var lit = GlobalLight.GetComponent<Light2D>();
         float timeSclaeMirror = Time.timeScale;
-
+        var BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
+        
         //일단 BulletTime 만들어둠
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -98,6 +101,9 @@ public class WG_Entity : MonoBehaviour
             lit.intensity -= 4 * Time.deltaTime;
             timeSclaeMirror -= 4 * Time.deltaTime;
             Time.timeScale = timeSclaeMirror;
+
+            transform.Find("BulletTimeLight").gameObject.SetActive(true);
+            BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -105,6 +111,8 @@ public class WG_Entity : MonoBehaviour
             lit.intensity = 1f;
             timeSclaeMirror = 1f;
             Time.timeScale = timeSclaeMirror;
+
+            transform.Find("BulletTimeLight").gameObject.SetActive(false);
         }
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
