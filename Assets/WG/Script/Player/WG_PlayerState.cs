@@ -60,6 +60,8 @@ public class WG_PlayerState
 
         player.FlipController();
 
+        FXManager.instance.ghostControl.Shadows_Skill();
+
         Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
         Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
 
@@ -69,10 +71,18 @@ public class WG_PlayerState
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
 
+        //일단 BulletTime 만들어둠
+        if (Input.GetKey(KeyCode.LeftShift))
+            Time.timeScale = 0.2f;
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+            Time.timeScale = 1f;
     }
     public virtual void FixedUpdate()
     {
         Debug.Log("State FixedUpdate : " + AnimationName);
+
+
 
     }
 
