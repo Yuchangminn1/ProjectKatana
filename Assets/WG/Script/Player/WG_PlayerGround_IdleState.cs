@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WG_PlayerGround_IdleState : WG_PlayerGroundState
@@ -19,8 +20,9 @@ public class WG_PlayerGround_IdleState : WG_PlayerGroundState
     {
         base.Update();
 
-        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W))
-            player.stateMachine.ChangeState(player.jumpState);
+        //Attack 도중에 idle타고 jump로 와서 로켓점프 일어나던 버그 수정
+        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W) & !player.isBusy)
+            stateMachine.ChangeState(player.jumpState);
 
         if (player.isGrounded() && player.isWallAhead())
         {
@@ -36,7 +38,8 @@ public class WG_PlayerGround_IdleState : WG_PlayerGroundState
         }
 
         //Y_Input으로하면 일정시간동안 값이 남아있기때문에 그냥 KeyDown으로 처리
-        if (Input.GetKeyDown(KeyCode.S)) stateMachine.ChangeState(player.crouchState);
+        if (Input.GetKeyDown(KeyCode.S))
+            stateMachine.ChangeState(player.crouchState);
     }
     public override void FixedUpdate()
     {

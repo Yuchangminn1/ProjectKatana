@@ -32,7 +32,9 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
         FrameCheck++;
 
         if (FrameCheck >= 6) player.RecoverControl = true;
-        if (isAnimationFinishTriggerCalled) stateMachine.ChangeState(player.idleState);
+
+        if (isAnimationFinishTriggerCalled) 
+            stateMachine.ChangeState(player.idleState);
 
     }
     public override void FixedUpdate()

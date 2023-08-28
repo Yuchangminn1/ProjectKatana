@@ -16,9 +16,8 @@ public class WG_PlayerAttackState : WG_PlayerState
     {
         base.Enter();
         player.ResetRigidBody();
-
         //Busy Exit에두니까 상태 변할때마다 공격 가능 초기화되는 문제가 있었음
-        player.StartCoroutine("nowBusy", 0.25f);
+        player.StartCoroutine("nowBusy", 0.3f);
 
         //공격중일때 Flip막을때 쓸 변수
         player.isAttacking = true;
@@ -59,11 +58,11 @@ public class WG_PlayerAttackState : WG_PlayerState
         if (!player.isGrounded())
             player.isAttackAfterOnAir = true;
 
+
         if (isAnimationFinishTriggerCalled && player.isGrounded())
             stateMachine.ChangeState(player.idleState);
 
-
-        else if (isAnimationFinishTriggerCalled && !player.isGrounded())
+        else if (isAnimationFinishTriggerCalled && !player.isGrounded() && rb.velocity.y <= 0f)
             stateMachine.ChangeState(player.fallingState);
     }
 

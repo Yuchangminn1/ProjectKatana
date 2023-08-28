@@ -20,8 +20,11 @@ public class WG_PlayerCrouchState : WG_PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyUp(KeyCode.S) && X_Input == 0) stateMachine.ChangeState(player.idleState);
-        if (X_Input != 0 && !player.isWallAhead()) stateMachine.ChangeState(player.dodgeRollState);
+        if (Input.GetKeyUp(KeyCode.S) && X_Input == 0) 
+            stateMachine.ChangeState(player.idleState);
+
+        if (X_Input != 0 && !player.isWallAhead()) 
+            stateMachine.ChangeState(player.dodgeRollState);
     }
 
     public override void FixedUpdate()
