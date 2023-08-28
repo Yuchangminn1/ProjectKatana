@@ -5,13 +5,19 @@ using UnityEngine.UI;
 
 public class CMUIManager : MonoBehaviour
 {
+    [Header("Timer")]
+    [SerializeField] Slider timeSlider;
+    [SerializeField] float setTime = 10;
+    [SerializeField] GameObject TimeOverImage;
+
     private static CMUIManager instance = null;
     public static CMUIManager Instance;
-    
+
 
     [Header("0~1,Timer")]
     [Header("2.Item")]
     [Header("3~13.AbilityVar")]
+    [Header("14. TimeOverImage")]
 
     public GameObject[] UIGameObject;
 
@@ -24,13 +30,14 @@ public class CMUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         #region BlinkSetUp
         int size = UIGameObject.Length;
-        
+
         startTime = new float[size];
         midleTime = new float[size];
         int count = 0;
-        
+
         if (instance == null)
         {
             instance = new CMUIManager();
@@ -51,11 +58,11 @@ public class CMUIManager : MonoBehaviour
         startTime[3] = 4f;
         midleTime[3] = 3f;
 
-        StartCoroutine(BlinkSprite(startTime[0], midleTime[0], 0,1));
+        StartCoroutine(BlinkSprite(startTime[0], midleTime[0], 0, 1));
 
         StartCoroutine(BlinkSprite(startTime[2], midleTime[2], 2));
 
-        StartCoroutine(BlinkSprite(startTime[3], midleTime[3], 3,13));
+        StartCoroutine(BlinkSprite(startTime[3], midleTime[3], 3, 13));
         #endregion
 
     }
@@ -63,7 +70,7 @@ public class CMUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CMOnTimer();
     }
 
     public void BlinckUI()
@@ -75,47 +82,99 @@ public class CMUIManager : MonoBehaviour
     {
         Image thisImage = UIGameObject[_num].GetComponent<Image>();
 
-        yield return new WaitForSeconds(_startTime);
-        while (true)
+        if (thisImage == null)
         {
 
-            int i = 0;
-            int maxi = Random.Range(3, 8);
-            while (i < maxi)
+            Text thisText = UIGameObject[_num].GetComponent<Text>();
+
+
+            while (true)
             {
-                float setA = 1f;
-                while (true)
-                {
-                    if (setA <= 0f)
-                        break;
-                    setA -= 0.1f * darkSpeed;
-                    thisImage.color = new Color(1, 1, 1, setA);
-                    yield return null;
-                }
-                setA = 0f;
-                while (true)
-                {
-                    if (setA >= 1f)
-                        break;
-                    setA += 0.04f * darkSpeed;
-                    thisImage.color = new Color(1, 1, 1, setA);
-                    yield return null;
 
-                }
-                thisImage.color = new Color(1, 1, 1, 1);
+                int i = 0;
+                int maxi = Random.Range(3, 8);
+                while (i < maxi)
+                {
+                    float setA = 1f;
+                    while (true)
+                    {
+                        if (setA <= 0f)
+                            break;
+                        setA -= 0.1f * darkSpeed;
+                        thisText.color = new Color(0.8f, 0, 0.7f, setA);
+                        yield return new WaitForSeconds(0.05f);
 
-                ++i;
+                    }
+                    setA = 0f;
+                    while (true)
+                    {
+                        if (setA >= 1f)
+                            break;
+                        setA += 0.04f * darkSpeed;
+                        thisText.color = new Color(0.8f, 0, 0.7f, setA);
+
+                        yield return new WaitForSeconds(0.05f);
+
+
+
+                    }
+                    setA = 1f;
+                    thisText.color = new Color(0.8f, 0, 0.7f, setA);
+
+
+
+                    ++i;
+                }
+                yield return new WaitForSeconds(0.3f);
+
             }
-            yield return new WaitForSeconds(_midleTime);
 
         }
+        else
+        {
+            yield return new WaitForSeconds(_startTime);
+            while (true)
+            {
+
+                int i = 0;
+                int maxi = Random.Range(3, 8);
+                while (i < maxi)
+                {
+                    float setA = 1f;
+                    while (true)
+                    {
+                        if (setA <= 0f)
+                            break;
+                        setA -= 0.1f * darkSpeed;
+                        thisImage.color = new Color(1, 1, 1, setA);
+                        yield return null;
+                    }
+                    setA = 0f;
+                    while (true)
+                    {
+                        if (setA >= 1f)
+                            break;
+                        setA += 0.04f * darkSpeed;
+                        thisImage.color = new Color(1, 1, 1, setA);
+                        yield return null;
+
+                    }
+                    thisImage.color = new Color(1, 1, 1, 1);
+
+                    ++i;
+                }
+                yield return new WaitForSeconds(_midleTime);
+
+            }
+        }
+
     }
 
     IEnumerator BlinkSprite(float _startTime, float _midleTime, int _num, int _num2)
     {
-        int imageSize = _num2 - _num +1;
+        int imageSize = _num2 - _num + 1;
         Image[] thisImage = new Image[imageSize];
-        for(int i = 0; i < imageSize; i++)
+        for (int i = 0; i < imageSize; i++)
         {
             thisImage[i] = UIGameObject[_num + i].GetComponent<Image>();
         }
@@ -167,5 +226,25 @@ public class CMUIManager : MonoBehaviour
         }
     }
     #endregion
-    
+
+
+    //타이머 바 줄어들기
+    public void CMOnTimer()
+    {
+        timeSlider.value -= Time.deltaTime / setTime;
+        if (timeSlider.value <= 0f)
+        {
+            CMTimeOverImage();
+            StartCoroutine(BlinkSprite(startTime[0], midleTime[0], 14));
+            timeSlider.transform.gameObject.SetActive(false);
+
+
+        }
+    }
+
+    // 시간초과 메세지 
+    public void CMTimeOverImage()
+    {
+        TimeOverImage.SetActive(true);
+    }
 }
