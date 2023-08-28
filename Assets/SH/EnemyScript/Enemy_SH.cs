@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_SH : WG_Entity
@@ -74,13 +71,17 @@ public class Enemy_SH : WG_Entity
 
     public virtual void FacingPlayer()
     {
-        if (transform.position.x > player.transform.position.x +0.1f && FacingDir > 0)
+        if (player != null)
         {
-            Flip();
-        }
-        else if (transform.position.x < player.transform.position.x -0.1f && FacingDir < 0)
-        {
-            Flip();
+
+            if (transform.position.x > player.transform.position.x + 0.1f && FacingDir > 0)
+            {
+                Flip();
+            }
+            else if (transform.position.x < player.transform.position.x - 0.1f && FacingDir < 0)
+            {
+                Flip();
+            }
         }
     }
 
@@ -88,7 +89,7 @@ public class Enemy_SH : WG_Entity
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
 
-  
+
 
     //protected override void OnDrawGizmos()
     //{

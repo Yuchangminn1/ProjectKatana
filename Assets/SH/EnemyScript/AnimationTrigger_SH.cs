@@ -23,4 +23,9 @@ public class AnimationTrigger_SH : MonoBehaviour
         snow.stateMachine.ChangeState(snow.walkState);
     }
 
+    void ThrowDagger()
+    {
+        snow.ThrowDagger();
+    }
+
 }
