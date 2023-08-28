@@ -16,6 +16,7 @@ public class Enemy_Snow : Enemy_SH
     private float dodgeCooldownTimer;
     private float attackCooldownTimer;
 
+    private float dashDistance = 3;
 
     bool isBusy = false;
 
@@ -160,7 +161,7 @@ public class Enemy_Snow : Enemy_SH
 
             snow.SetVelocity(snow.moveSpeed * snow.FacingDir, rb.velocity.y);
 
-            if (snow.pDistance >= 5)
+            if (snow.pDistance >= snow.dashDistance)
                 stateMachine.ChangeState(snow.dashState);
         }
     }
@@ -190,7 +191,7 @@ public class Enemy_Snow : Enemy_SH
             snow.FacingPlayer();
             snow.SetVelocity(snow.moveSpeed * snow.FacingDir * 2, rb.velocity.y);
 
-            if (snow.pDistance < 5)
+            if (snow.pDistance < snow.dashDistance)
             {
                 stateMachine.ChangeState(snow.walkState);
             }
