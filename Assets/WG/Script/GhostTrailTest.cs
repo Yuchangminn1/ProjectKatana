@@ -7,17 +7,32 @@ public class GhostTrailTest : MonoBehaviour
     SpriteRenderer sr;
     Shader shader;
     public Color _color;
-
+    float currentTime;
+    float ShadowLifeTime;
+    float interpolatedValue;
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         shader = Shader.Find("GUI/Text Shader");
-
+        currentTime = 0f;
+        ShadowLifeTime = FindObjectOfType<GhostControl>().ShadowLifeTime;
     }
 
     private void Update()
     {
         ColorSprite();
+
+
+        if (currentTime < ShadowLifeTime)
+        {
+            currentTime += Time.deltaTime;
+
+            float t = currentTime / ShadowLifeTime;
+
+            interpolatedValue = Mathf.Lerp(255, 0, t);
+        }
+
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, interpolatedValue);
     }
 
     void ColorSprite()
@@ -34,7 +49,7 @@ public class GhostTrailTest : MonoBehaviour
 
     public void ShadowLifeOver_TimeControllable()
     {
-        StartCoroutine(Shadow_Excute(GameObject.FindObjectOfType<GhostControl>().ShadowLifeTime));
+        StartCoroutine(Shadow_Excute(ShadowLifeTime));
     }
 
     IEnumerator Shadow_Excute(float Lifetime)

@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 525821501}
   - component: {fileID: 525821503}
   - component: {fileID: 525821502}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,6 +822,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 885623816}
   - {fileID: 1799505888}
   - {fileID: 1310073463}
   - {fileID: 1881658557}
@@ -1000,7 +1001,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1066,7 +1067,7 @@ GameObject:
   - component: {fileID: 885623816}
   - component: {fileID: 885623817}
   - component: {fileID: 885623818}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,12 +1081,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885623815}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9322, y: 1.27, z: 0.07184164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.8706, y: -8.94784, z: 0}
   m_LocalScale: {x: 36.353733, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1978972343}
+  m_Father: {fileID: 669931285}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &885623817
@@ -1196,7 +1197,7 @@ GameObject:
   - component: {fileID: 1045675695}
   - component: {fileID: 1045675694}
   m_Layer: 0
-  m_Name: Global Light 2D
+  m_Name: GlobalLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1278,7 +1279,7 @@ GameObject:
   - component: {fileID: 1065023684}
   - component: {fileID: 1065023686}
   - component: {fileID: 1065023685}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1409,7 @@ GameObject:
   - component: {fileID: 1310073463}
   - component: {fileID: 1310073462}
   - component: {fileID: 1310073464}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,7 +1748,7 @@ GameObject:
   - component: {fileID: 1799505888}
   - component: {fileID: 1799505887}
   - component: {fileID: 1799505889}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1910,7 @@ GameObject:
   - component: {fileID: 1881658557}
   - component: {fileID: 1881658556}
   - component: {fileID: 1881658555}
-  m_Layer: 3
+  m_Layer: 31
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2055,8 +2056,7 @@ Transform:
   m_LocalPosition: {x: -5.6727, y: -4.2378397, z: -0.07184164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 885623816}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2159,6 +2159,14 @@ PrefabInstance:
     - target: {fileID: 837667288120586443, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469913112321616321, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979020154622333144, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: m_Name

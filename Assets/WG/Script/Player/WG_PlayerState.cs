@@ -54,6 +54,8 @@ public class WG_PlayerState
         else
             XY_InputAtOnce = false;
 
+        player.BulletTime();
+
         player.anim.SetFloat("Velocity_Y", rb.velocity.y);
         player.anim.SetFloat("Velocity_X", rb.velocity.x);
         player.anim.SetFloat("Y_Input", Y_Input);
@@ -71,12 +73,6 @@ public class WG_PlayerState
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
             stateMachine.ChangeState(player.attackState);
 
-        //일단 BulletTime 만들어둠
-        if (Input.GetKey(KeyCode.LeftShift))
-            Time.timeScale = 0.2f;
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-            Time.timeScale = 1f;
     }
     public virtual void FixedUpdate()
     {
