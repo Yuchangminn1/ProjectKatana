@@ -20,6 +20,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         base.Enter();
         canEmit = true;
 
+
         //player.transform.GetChild(1).gameObject.SetActive(true);
         //player.transform.GetChild(2).gameObject.SetActive(true);
         //player.transform.GetChild(3).gameObject.SetActive(true);

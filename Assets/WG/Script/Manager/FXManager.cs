@@ -8,6 +8,8 @@ public class FXManager : MonoBehaviour
     public Effects effects { get; private set; }
     public PlayerStartRunDust playerStartRun { get; private set; }
     public PlayerSlashEffect playerSlashEffect { get; private set; }
+    public PlayerSlashHitEffect playerSlashHitEffect { get; private set; }
+    public GhostControl ghostControl { get; private set; }
 
     private void Awake()
     {
@@ -20,5 +22,7 @@ public class FXManager : MonoBehaviour
         effects = GetComponent<Effects>();
         playerStartRun = GetComponent<PlayerStartRunDust>();
         playerSlashEffect = GetComponent<PlayerSlashEffect>();
+        ghostControl = GetComponent<GhostControl>();
+        playerSlashHitEffect = GetComponent<PlayerSlashHitEffect>();
     }
 }

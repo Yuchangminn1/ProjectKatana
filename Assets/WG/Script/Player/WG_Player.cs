@@ -43,6 +43,7 @@ public class WG_Player : WG_Entity
         isFacingRight = true;
         FacingDir = 1;
         stateMachine.Initialize(idleState);
+
     }
 
     protected override void Update()

@@ -30,7 +30,8 @@ public class InputManager : MonoBehaviour
         CurrentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         cursor.transform.position = CurrentMousePosition;
 
-        playerLookingCursorAngle = Mathf.Atan2(InputManager.instance.cursorDir.y, InputManager.instance.cursorDir.x) * Mathf.Rad2Deg;
+        playerLookingCursorAngle = Mathf.Atan2(instance.cursorDir.y,
+            instance.cursorDir.x) * Mathf.Rad2Deg;
 
         //플레이어가 커서블 바라보는 벡터2의 방향값
         cursorDir = (CurrentMousePosition - (Vector2)PlayerManager.instance.player.transform.position).normalized;

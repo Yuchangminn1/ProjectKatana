@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class WG_Entity : MonoBehaviour
 {
     #region Components
     public Animator anim { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Rigidbody2D rb { get; private set; }
+    public GameObject GlobalLight { get; private set; }
 
     #endregion
     #region Infos
@@ -56,7 +59,8 @@ public class WG_Entity : MonoBehaviour
     public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
 
-
+    [Header("Ghost Trail Info")]
+    public bool isTrail = false;
     #endregion
 
     protected virtual void Awake()
@@ -68,6 +72,8 @@ public class WG_Entity : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        GlobalLight = GameObject.Find("GlobalLight");
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     protected virtual void Update()
@@ -79,6 +85,35 @@ public class WG_Entity : MonoBehaviour
     protected virtual void FixedUpdate()
     {
 
+    }
+    public void BulletTime()
+    {
+        var lit = GlobalLight.GetComponent<Light2D>();
+        float timeSclaeMirror = Time.timeScale;
+        var BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
+        
+        //일단 BulletTime 만들어둠
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (lit.intensity <= 0.4f) lit.intensity = 0.4f;
+            if (timeSclaeMirror <= 0.2f) timeSclaeMirror = 0.2f;
+
+            lit.intensity -= 4 * Time.deltaTime;
+            timeSclaeMirror -= 4 * Time.deltaTime;
+            Time.timeScale = timeSclaeMirror;
+
+            transform.Find("BulletTimeLight").gameObject.SetActive(true);
+            BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            lit.intensity = 1f;
+            timeSclaeMirror = 1f;
+            Time.timeScale = timeSclaeMirror;
+
+            transform.Find("BulletTimeLight").gameObject.SetActive(false);
+        }
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)
