@@ -61,6 +61,9 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Ghost Trail Info")]
     public bool isTrail = false;
+
+    [Header("Dead Info")]
+    public bool isDead = false;
     #endregion
 
     protected virtual void Awake()
@@ -91,7 +94,7 @@ public class WG_Entity : MonoBehaviour
         var lit = GlobalLight.GetComponent<Light2D>();
         float timeSclaeMirror = Time.timeScale;
         var BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
-        
+
         //일단 BulletTime 만들어둠
         if (Input.GetKey(KeyCode.LeftShift))
         {

@@ -48,32 +48,38 @@ public class WG_PlayerState
         X_Input = Input.GetAxis("Horizontal");
         Y_Input = Input.GetAxis("Vertical");
 
-        //A D키 동시입력 감지
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-            XY_InputAtOnce = true;
-        else
-            XY_InputAtOnce = false;
+        if (!player.isDead)
+        {
+            //A D키 동시입력 감지
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                XY_InputAtOnce = true;
+            else
+                XY_InputAtOnce = false;
 
-        player.BulletTime();
+            player.BulletTime();
 
-        player.anim.SetFloat("Velocity_Y", rb.velocity.y);
-        player.anim.SetFloat("Velocity_X", rb.velocity.x);
-        player.anim.SetFloat("Y_Input", Y_Input);
+            player.anim.SetFloat("Velocity_Y", rb.velocity.y);
+            player.anim.SetFloat("Velocity_X", rb.velocity.x);
+            player.anim.SetFloat("Y_Input", Y_Input);
 
-        player.FlipController();
+            player.FlipController();
 
 
-        Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
-        Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
+            Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
+            Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
 
-        if (rb.velocity.y <= 0 && player.isFalling)
-            rb.gravityScale = PlayerRBStartGravity * 1.5f;
+            if (rb.velocity.y <= 0 && player.isFalling)
+                rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
-            stateMachine.ChangeState(player.attackState);
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
+                stateMachine.ChangeState(player.attackState);
 
-        if (player.isTrail)
-            FXManager.instance.ghostControl.Shadows_Skill();
+            if (player.isTrail)
+                FXManager.instance.ghostControl.Shadows_Skill();
+
+            if (Input.GetKey(KeyCode.Home))
+                stateMachine.ChangeState(player.deadStartState);
+        }
     }
     public virtual void FixedUpdate()
     {
