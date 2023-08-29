@@ -12,6 +12,7 @@ public class WG_PlayerDeadStartState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.isDead = true;
     }
 
     public override void FixedUpdate()

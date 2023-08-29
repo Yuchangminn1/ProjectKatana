@@ -108,7 +108,8 @@ MonoBehaviour:
   isAttackAfterOnAir: 0
   isAttacking: 0
   isTrail: 0
-  player: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+  isDead: 0
+  player: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 0
@@ -122,12 +123,14 @@ MonoBehaviour:
   attackDistance: 1
   attackCooldown: 1
   lasttimeAttacked: 0
-  daggerPrefab:
-  - {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
+  daggerPrefab: {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
+  daggerCount: 1
   daggerFirepos: {fileID: 706791515146508342}
   throwCooldown: 5
   p1Cooldown: 5
   dodgeCooldown: 5
+  dashDistance: 3
+  throwDistance: 7
 --- !u!50 &8817697910062806761
 Rigidbody2D:
   serializedVersion: 4

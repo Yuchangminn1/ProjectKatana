@@ -978,10 +978,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 223647920}
-    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
-      propertyPath: daggerPrefab
-      value: 
-      objectReference: {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
     - target: {fileID: 5337428310326865383, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_Name
       value: Snow

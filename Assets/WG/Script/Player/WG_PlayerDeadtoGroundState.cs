@@ -25,6 +25,7 @@ public class WG_PlayerDeadtoGroundState : WG_PlayerState
     public override void Exit()
     {
         base.Exit();
+        player.isDead = false;
     }
 
 
