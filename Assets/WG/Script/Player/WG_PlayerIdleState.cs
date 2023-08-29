@@ -14,8 +14,6 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
         player.SetVelocityToZero();
 
         player.isTrail = false;
-        FXManager.instance.ghostControl.ShadowSpawnSpeed = 10f;
-        FXManager.instance.ghostControl.ShadowLifeTime = 0.1f;
         FXManager.instance.ghostControl._color = Color.red;
 
     }

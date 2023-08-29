@@ -6,11 +6,13 @@ public enum ShaderType
 {
     NoShader,
     Sprite_Default,
-    Sprite_URP_Lit
+    Sprite_URP_Lit,
+    Custom
 }
 public class GhostControl : MonoBehaviour
 {
     public ShaderType shaderType = ShaderType.Sprite_Default;
+    [SerializeField] public Shader CustomShader;
     ShaderType shaderTypeChecker;
 
     public GameObject Shadow;
