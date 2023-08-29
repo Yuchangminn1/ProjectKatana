@@ -13,10 +13,14 @@ public class Dagger : MonoBehaviour
 
     private void Awake()
     {
-        spr = GetComponentInChildren<SpriteRenderer>();   
+        spr = GetComponentInChildren<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
 
-        target = GameObject.FindGameObjectWithTag("Player");
+        //원래코드
+        //target = GameObject.FindGameObjectWithTag("Player");
+
+        target = GameObject.Find("Player");
+
         if (target != null)
         {
             direction = (target.transform.position - transform.position).normalized;
@@ -40,7 +44,7 @@ public class Dagger : MonoBehaviour
     {
         // 계산된 방향으로 프로젝타일 이동
         rb2D.velocity = direction * speed;
-    
+
     }
 
     private void OnBecameInvisible()

@@ -12,6 +12,9 @@ public class WG_PlayerDeadtoGroundState : WG_PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.ResetRigidBody();
+        rb.isKinematic = true;
+        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 0.3f);
     }
     public override void FixedUpdate()
     {
@@ -21,10 +24,14 @@ public class WG_PlayerDeadtoGroundState : WG_PlayerState
     public override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.R))
+            stateMachine.ChangeState(player.idleState);
     }
     public override void Exit()
     {
         base.Exit();
+        rb.isKinematic = false;
+        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 0.3f);
         player.isDead = false;
     }
 

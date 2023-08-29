@@ -25,7 +25,7 @@ public class WG_PlayerDeadStartState : WG_PlayerState
         base.Update();
 
         if (isAnimationFinishTriggerCalled)
-            stateMachine.ChangeState(player.deadStartState);
+            stateMachine.ChangeState(player.deadState);
     }
     public override void Exit()
     {

@@ -77,9 +77,9 @@ public class WG_PlayerState
             if (player.isTrail)
                 FXManager.instance.ghostControl.Shadows_Skill();
 
-            if (Input.GetKey(KeyCode.Home))
-                stateMachine.ChangeState(player.deadStartState);
         }
+        if (Input.GetKey(KeyCode.H))
+            stateMachine.ChangeState(player.deadStartState);
     }
     public virtual void FixedUpdate()
     {

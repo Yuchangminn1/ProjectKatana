@@ -43,13 +43,13 @@ GameObject:
   - component: {fileID: 3041576660527087931}
   - component: {fileID: 8817697910062806761}
   - component: {fileID: 4339999676377065895}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Snow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1203357057423549532
 Transform:
   m_ObjectHideFlags: 0
