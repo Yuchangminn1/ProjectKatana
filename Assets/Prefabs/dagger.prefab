@@ -131,7 +131,11 @@ Transform:
   m_Children:
   - {fileID: 972560135633318910}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 5
+=======
+  m_RootOrder: 0
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4594863311797137124
 MonoBehaviour:
@@ -145,9 +149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8138af34634e4c877eb1251742b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   snow: {fileID: 5337428310326865383, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
   target: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
   speed: 5
+=======
+  target: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+  speed: 10
+>>>>>>> master
 --- !u!61 &4451755009325726751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +173,11 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
+<<<<<<< HEAD
   m_LayerOverridePriority: 1
+=======
+  m_LayerOverridePriority: 2
+>>>>>>> master
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295

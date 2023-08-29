@@ -604,7 +604,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0.68
+=======
+      value: 0.82
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalPosition.z
@@ -651,6 +655,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
     - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: WhatIsGround.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+>>>>>>> master
       propertyPath: daggerPrefab.Array.size
       value: 1
       objectReference: {fileID: 0}

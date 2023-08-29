@@ -65,7 +65,11 @@ Transform:
   - {fileID: 3534861435287598915}
   - {fileID: 706791515146508342}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 3
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3041576660527087931
 MonoBehaviour:
@@ -83,6 +87,7 @@ MonoBehaviour:
   jumpforce: 10
   isFacingRight: 0
   FacingDir: 1
+<<<<<<< HEAD
   GroundCheck: {fileID: 1203357057423549532}
   WhatIsGround:
     serializedVersion: 2
@@ -90,6 +95,34 @@ MonoBehaviour:
   ground_distance: 1
   WallCheck: {fileID: 1203357057423549532}
   wall_distance: 1
+=======
+  DodgeForce: 7
+  RecoverControl: 1
+  GroundCheck: {fileID: 1203357057423549532}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  ground_distance: 1
+  WallCheck: {fileID: 1203357057423549532}
+  wall_distance: 1
+  smalljumpReverseForce: 0
+  IdleToGrabForce: 10
+  GrabToWallOverAddSpeed: 12
+  JumpToGrabForceCoefficient: 0.5
+  isWallGrabing: 0
+  TumblingForce_X: 30
+  TumblingForce_Y: 10
+  TumblingForceDecayRate: 0.1
+  isNowTumbling: 0
+  isJumping: 0
+  isFalling: 0
+  AttackDashForce: 7
+  AttackDashForceDecayRate: 0.99
+  isAttackAfterOnAir: 0
+  isAttacking: 0
+  isTrail: 0
+  isDead: 0
+>>>>>>> master
   player: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
@@ -201,7 +234,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8023084551116178887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.05, y: -0.238, z: 0}
+=======
+  m_LocalPosition: {x: -0.05, y: -0.223, z: 0}
+>>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
