@@ -1,10 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Snow : Enemy_SH
 {
     float pDistance;
-    [SerializeField] GameObject[] daggerPrefab;
-    int daggerCount = 1;
+    [SerializeField] GameObject daggerPrefab;
+    [SerializeField] int daggerCount = 1;
     [SerializeField] Transform daggerFirepos;
 
     [SerializeField] private float throwCooldown;
@@ -100,7 +101,6 @@ public class Enemy_Snow : Enemy_SH
                 stateMachine.ChangeState(attackState);
 
         }
-
 
 
     }
@@ -367,7 +367,7 @@ public class Enemy_Snow : Enemy_SH
             // 단검이 퍼져 나가는 각도를 계산
 
             // 단검을 생성하고 회전
-            Instantiate(daggerPrefab[i],daggerFirepos.position,Quaternion.identity) ;
+            Instantiate(daggerPrefab,daggerFirepos.position, Quaternion.identity);
         }
 
         throwCooldownTimer = throwCooldown;
