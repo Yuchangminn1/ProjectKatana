@@ -14,6 +14,7 @@ public class GhostTrailTest : MonoBehaviour
     float t;
 
     ShaderType shaderType;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -27,6 +28,19 @@ public class GhostTrailTest : MonoBehaviour
 
         if (shaderType == ShaderType.Sprite_URP_Lit)
             shader = Shader.Find("Universal Render Pipeline/Lit");
+
+        if (shaderType == ShaderType.Custom)
+        {
+            if (FXManager.instance.ghostControl.CustomShader != null)
+                shader = FXManager.instance.ghostControl.CustomShader;
+
+            else
+            {
+                Debug.Log("쉐이더 지정되지않음");
+                shaderType = ShaderType.Sprite_Default;
+            }
+        }
+
     }
 
     private void Update()
