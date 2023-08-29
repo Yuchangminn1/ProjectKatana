@@ -1,22 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Snow : Enemy_SH
 {
     float pDistance;
-    [SerializeField] GameObject[] daggerPrefab;
-    int daggerCount = 2;
+    [SerializeField] GameObject daggerPrefab;
+    [SerializeField] int daggerCount = 1;
     [SerializeField] Transform daggerFirepos;
 
     [SerializeField] private float throwCooldown;
     [SerializeField] private float p1Cooldown;
     [SerializeField] private float dodgeCooldown;
+
+    private Animator animator;  
   
     private float throwCooldownTimer;
     private float p1CooldownTimer;
     private float dodgeCooldownTimer;
     private float attackCooldownTimer;
 
-    private float dashDistance = 3;
+    [SerializeField] private float dashDistance = 3;
+    [SerializeField] private float throwDistance = 7;
 
     bool isBusy = false;
 
@@ -45,6 +49,8 @@ public class Enemy_Snow : Enemy_SH
     protected override void Awake()
     {
         base.Awake();
+
+        animator = GetComponent<Animator>();
 
         idleState = new SnowIdleState(this, stateMachine, "Idle", this);
         walkState = new SnowWalkState(this, stateMachine, "Walk", this);
@@ -86,10 +92,17 @@ public class Enemy_Snow : Enemy_SH
             attackCooldownTimer -= Time.deltaTime;
         }
 
-        pDistance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(pDistance);
-        if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
-            stateMachine.ChangeState(attackState);
+        if (player != null)
+        {
+            pDistance = Vector2.Distance(transform.position, player.transform.position);
+
+      
+            if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
+                stateMachine.ChangeState(attackState);
+
+        }
+
+
     }
 
     //public override bool CanBeStunned()
@@ -196,6 +209,11 @@ public class Enemy_Snow : Enemy_SH
                 stateMachine.ChangeState(snow.walkState);
             }
 
+            if (snow.pDistance > snow.throwDistance && snow.throwCooldownTimer <= 0)
+            {
+                stateMachine.ChangeState(snow.throwState);
+            }
+
         }
     }
     public class SnowThrowState : EnemyState_SH
@@ -210,16 +228,24 @@ public class Enemy_Snow : Enemy_SH
         public override void Enter()
         {
             base.Enter();
+            snow.SetVelocityToZero();
         }
 
         public override void Exit()
         {
             base.Exit();
+        
         }
 
         public override void Update()
         {
             base.Update();
+
+         if(snow.throwCooldownTimer > 0)
+            {
+                stateMachine.ChangeState(snow.idleState);
+            }
+
         }
     }
 
@@ -334,24 +360,20 @@ public class Enemy_Snow : Enemy_SH
     }
 
     public void ThrowDagger()
-
     {
+        
         for (int i = 0; i < daggerCount; i++)
         {
             // 단검이 퍼져 나가는 각도를 계산
-            float spread = (i - daggerCount / 2f) * 10; // 1개당 10도씩 벌어짐
-                                                        // 생성시 단검의 회전을 계산
-            Quaternion bulletRotation = Quaternion.Euler(0, 0, spread);
+
             // 단검을 생성하고 회전
-            Instantiate(daggerPrefab[0], daggerFirepos.position, Quaternion.identity * bulletRotation);
+            Instantiate(daggerPrefab,daggerFirepos.position, Quaternion.identity);
         }
+
+        throwCooldownTimer = throwCooldown;
+      
     }
-
-    public void SetIdlestate()
-    {
-
-
-    }
+        
 }
 
 
