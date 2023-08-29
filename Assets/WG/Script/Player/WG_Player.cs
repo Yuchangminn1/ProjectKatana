@@ -19,6 +19,9 @@ public class WG_Player : WG_Entity
     public WG_PlayerCrouchState crouchState { get; private set; }
     public WG_PlayerDodgeRollState dodgeRollState { get; private set; }
     public WG_PlayerAttackState attackState { get; private set; }
+    public WG_PlayerDeadStartState deadStartState { get; private set; }
+    public WG_PlayerDeadState deadState { get; private set; }
+    public WG_PlayerDeadtoGroundState deadtoGroundState { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -35,6 +38,9 @@ public class WG_Player : WG_Entity
         crouchState = new WG_PlayerCrouchState(this, stateMachine, "Crouch");
         dodgeRollState = new WG_PlayerDodgeRollState(this, stateMachine, "Dodge");
         attackState = new WG_PlayerAttackState(this, stateMachine, "Attack");
+        deadStartState = new WG_PlayerDeadStartState(this, stateMachine, "DeadStart");
+        deadState = new WG_PlayerDeadState(this, stateMachine, "Dead");
+        deadtoGroundState = new WG_PlayerDeadtoGroundState(this, stateMachine, "DeadToGround");
     }
     #endregion
     protected override void Start()
