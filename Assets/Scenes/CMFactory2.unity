@@ -4762,7 +4762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1b2173022d805468db77b850f524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 284793146}
   setR: 0
   setG: 0
   setB: 0
@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1b2173022d805468db77b850f524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 300704108}
   setR: 0
   setG: 0
   setB: 0
@@ -6125,7 +6125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1b2173022d805468db77b850f524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 572091498}
   setR: 0
   setG: 0
   setB: 0
@@ -7745,7 +7745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005790841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.36, y: -2.6, z: 0}
+  m_LocalPosition: {x: -20.82, y: -2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7769,7 +7769,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.41037738, g: 1, b: 0.44999632, a: 1}
-  m_Intensity: 25
+  m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -7791,7 +7791,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 3
+  m_PointLightOuterRadius: 8
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -7814,21 +7814,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88a41feaf68f1240b16df80eb8cb031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 1005790843}
   setR: 0
   setG: 0
   setB: 0
   getintensity: 0
+  coroutineNum: 1
   originX: 0
   originY: 0
-  currentState: 1
-  stateX: 1
-  stateY: 1
-  startAngle: 45
+  startAngle: 1
+  currentAngle: 45
+  divAngle: 40
+  circleR: 3
   maxMove: 3
-  circleR: 4
-  moveDistance: 0
-  moveSpeed: 1
 --- !u!1 &1009815222
 GameObject:
   m_ObjectHideFlags: 0
@@ -8686,7 +8684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1b2173022d805468db77b850f524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 1119623819}
   setR: 0
   setG: 0
   setB: 0
@@ -12366,7 +12364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1b2173022d805468db77b850f524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  light: {fileID: 2029987093}
   setR: 0
   setG: 0
   setB: 0
