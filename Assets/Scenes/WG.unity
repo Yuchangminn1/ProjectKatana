@@ -1668,6 +1668,7 @@ GameObject:
   - component: {fileID: 1797801557}
   - component: {fileID: 1797801556}
   - component: {fileID: 1797801558}
+  - component: {fileID: 1797801559}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -1747,6 +1748,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 102147854}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1797801559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797801555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22f7a9c5da7f464d89dfb5ecb03cebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1799505886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,6 +2096,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
+      propertyPath: VirtualCamera
+      value: 
+      objectReference: {fileID: 1797801556}
+    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1797801556}
     - target: {fileID: 2023967870561620370, guid: ddaea453e788ab64aac04c353247384c, type: 3}
       propertyPath: m_Name
       value: Managers

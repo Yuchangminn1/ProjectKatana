@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 3004900266980619829}
   - component: {fileID: 4805272641057786909}
   - component: {fileID: 7251415476585196360}
+  - component: {fileID: 1282315979590605173}
   m_Layer: 0
   m_Name: FXManager
   m_TagString: Untagged
@@ -126,7 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSlashEffect: {fileID: 7939580975937074003, guid: 19a0ff8c39929794fab87e71800fae62, type: 3}
   playerSlashEffectTransform: {fileID: 0}
+  HitInterval: 0.3
   Instant_slashEffect: {fileID: 0}
+  alreadyHitEnemy: []
+  ClosestEnemyInList: {fileID: 0}
 --- !u!114 &4805272641057786909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,12 +159,25 @@ MonoBehaviour:
   shaderType: 1
   CustomShader: {fileID: -6465566751694194690, guid: 40658cd5fbfafed42995f138be5454ce, type: 3}
   Shadow: {fileID: 282547812419967485, guid: 8c5adefd317db0748a7a2e7d815c5d2f, type: 3}
-  Player: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+  Player: {fileID: 0}
   ShadowSpawnSpeed: 20
   ShadowLifeTime: 0.3
   _color: {r: 1, g: 1, b: 1, a: 1}
   MaxAlpha: 1
   MinAlpha: 0
+--- !u!114 &1282315979590605173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897643972083523563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e34f1ba8180074d9778f1e10446dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 0}
 --- !u!1 &2023967870561620370
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class FXManager : MonoBehaviour
     public PlayerSlashEffect playerSlashEffect { get; private set; }
     public PlayerSlashHitEffect playerSlashHitEffect { get; private set; }
     public GhostControl ghostControl { get; private set; }
-
+    public CameraEffect cameraEffect { get; private set; }
     private void Awake()
     {
         if (instance != null) Destroy(instance.gameObject);
@@ -22,7 +22,8 @@ public class FXManager : MonoBehaviour
         effects = GetComponent<Effects>();
         playerStartRun = GetComponent<PlayerStartRunDust>();
         playerSlashEffect = GetComponent<PlayerSlashEffect>();
-        ghostControl = GetComponent<GhostControl>();
         playerSlashHitEffect = GetComponent<PlayerSlashHitEffect>();
+        ghostControl = GetComponent<GhostControl>();
+        cameraEffect = GetComponent<CameraEffect>();
     }
 }

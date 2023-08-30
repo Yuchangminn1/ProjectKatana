@@ -16,7 +16,7 @@ public class LineThrowHitEffect : MonoBehaviour
     {
 
         go = Instantiate(EffectBullet, StartPoint.position, Quaternion.identity);
-        //  go.transform.rotation = Quaternion.Euler(0, 0, InputManager.instance.playerLookingCursorAngle);
+        go.transform.rotation = transform.rotation;
 
         tempV = InputManager.instance.cursorDir * speed;
         trr = go.GetComponent<TrailRenderer>();
