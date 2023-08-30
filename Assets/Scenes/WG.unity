@@ -1579,7 +1579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560097928}
   - component: {fileID: 1560097930}
-  - component: {fileID: 1560097929}
+  - component: {fileID: 1560097931}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1602,7 +1602,19 @@ Transform:
   m_Father: {fileID: 1797801557}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1560097929
+--- !u!114 &1560097930
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560097927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1560097931
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1645,18 +1657,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &1560097930
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560097927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1797801555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
+      propertyPath: ShakeIntense
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
       propertyPath: VirtualCamera
       value: 

@@ -11,7 +11,7 @@ public class PlayerSlash : MonoBehaviour
     GameObject Hit_Clone;
 
     bool isHit, timerStop;
-    float timer = 0f;
+    float shakeTimer = 0f;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class PlayerSlash : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        shakeTimer += Time.fixedDeltaTime;
         //플레이어 AnimationTrigger에서 매니저 접근해서 삭제시켜봤는데
         //상태 여러개 동시에 변할때 삭제 안되는 버그있어서 그냥 여기서 함
         Frame++;
@@ -50,6 +50,7 @@ public class PlayerSlash : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && !isHit
             && !FXManager.instance.playerSlashEffect.alreadyHitEnemy.Contains(collision.gameObject))
         {
+            shakeTimer = 0f;
             //콜라이더 연속으로 체크하는거 방지
             isHit = true;
 
@@ -63,6 +64,11 @@ public class PlayerSlash : MonoBehaviour
             {
 
                 OntriggerExcute();
+
+                if (shakeTimer <= 0.25f)
+                {
+                    FXManager.instance.cameraEffect.StartCoroutine("HitShake");
+                }
             }
         }
     }
