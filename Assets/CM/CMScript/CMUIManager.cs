@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 using UnityEngine.UI;
 
 public class CMUIManager : MonoBehaviour
@@ -36,7 +39,6 @@ public class CMUIManager : MonoBehaviour
 
         startTime = new float[size];
         midleTime = new float[size];
-        int count = 0;
 
         if (instance == null)
         {

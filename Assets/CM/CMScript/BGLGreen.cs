@@ -1,18 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using static UnityEngine.UI.Image;
 
 public class BGLGreen : LightBlink
 {
     [Header("BGLGreen")]
 
     [SerializeField] protected int coroutineNum =0;
+
+    [SerializeField] protected float StartTime = 0;
+
 
     [Header("Move 1 ")]
     [SerializeField] protected float originX;
@@ -26,7 +25,6 @@ public class BGLGreen : LightBlink
     [Header("Move 2 ")]
     [SerializeField] protected float maxMove;
 
-
     protected override void Start()
     {
         #region StartSetUp
@@ -37,6 +35,13 @@ public class BGLGreen : LightBlink
         currentAngle = startAngle;
         #endregion
 
+
+        StartCoroutine(StartTimeSeting());
+        
+    }
+
+    private void SelectC()
+    {
         if (coroutineNum == 0)
             StartCoroutine(LightCircleStar());
         else if (coroutineNum == 1)
@@ -44,7 +49,16 @@ public class BGLGreen : LightBlink
         else if (coroutineNum == 2)
             StartCoroutine(LightCircle());
     }
+
     //현재 높이는 8;
+
+    IEnumerator StartTimeSeting()
+    {
+        yield return new WaitForSeconds(FRandom());
+        SelectC();
+        yield return null;
+
+    }
 
     #region LightCircleStar
     IEnumerator LightCircleStar()
@@ -108,7 +122,7 @@ public class BGLGreen : LightBlink
                 transform.position = new Vector3(currentPos.x, currentPos.y - PlusY);
                 currentPos = transform.position;
                 ++count;
-                Debug.Log(count);
+               // Debug.Log(count);
                 yield return null;
             }
             count = 0;
@@ -148,4 +162,13 @@ public class BGLGreen : LightBlink
     }
     #endregion
 
+
+    float FRandom()
+    {
+        return UnityEngine.Random.Range(0.0f, 2.1f);
+    }
+    float IRandom()
+    {
+        return UnityEngine.Random.Range(0, 3);
+    }
 }
