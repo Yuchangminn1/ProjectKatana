@@ -12,8 +12,8 @@ public class Enemy_Snow : Enemy_SH
     [SerializeField] private float p1Cooldown;
     [SerializeField] private float dodgeCooldown;
 
-    private Animator animator;  
-  
+    private Animator animator;
+
     private float throwCooldownTimer;
     private float p1CooldownTimer;
     private float dodgeCooldownTimer;
@@ -96,7 +96,7 @@ public class Enemy_Snow : Enemy_SH
         {
             pDistance = Vector2.Distance(transform.position, player.transform.position);
 
-      
+
             if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
                 stateMachine.ChangeState(attackState);
 
@@ -234,14 +234,14 @@ public class Enemy_Snow : Enemy_SH
         public override void Exit()
         {
             base.Exit();
-        
+
         }
 
         public override void Update()
         {
             base.Update();
 
-         if(snow.throwCooldownTimer > 0)
+            if (snow.throwCooldownTimer > 0)
             {
                 stateMachine.ChangeState(snow.idleState);
             }
@@ -361,19 +361,19 @@ public class Enemy_Snow : Enemy_SH
 
     public void ThrowDagger()
     {
-        
+
         for (int i = 0; i < daggerCount; i++)
         {
             // 단검이 퍼져 나가는 각도를 계산
 
             // 단검을 생성하고 회전
-            Instantiate(daggerPrefab,daggerFirepos.position, Quaternion.identity);
+            Instantiate(daggerPrefab, daggerFirepos.position, Quaternion.identity, transform);
         }
 
         throwCooldownTimer = throwCooldown;
-      
+
     }
-        
+
 }
 
 
