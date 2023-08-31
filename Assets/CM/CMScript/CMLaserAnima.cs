@@ -9,6 +9,8 @@ public class CMLaserAnima : MonoBehaviour
     [SerializeField] float DivY;
     [SerializeField] Transform StartPos;
 
+    // 
+    
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class CMLaserAnima : MonoBehaviour
                 laser[1].transform.position = new Vector2(MoveX, laser[1].transform.position.y - MoveY);
                 ++count;
                 yield return null;
-                Debug.Log("count = " + count);
+                //Debug.Log("count = " + count);
 
             }
             count = 0;
