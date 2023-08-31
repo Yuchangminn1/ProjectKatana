@@ -7,10 +7,12 @@ using UnityEngine.UIElements;
 public class PlayerSlash : MonoBehaviour
 {
     int Frame = 0;
-    GameObject slashHitEffect;
-    GameObject Hit_Clone;
+    protected GameObject slashHitEffect;
+    protected GameObject Hit_Clone;
 
-    bool isHit, isHitBullet, timerStop;
+    protected bool isHit, isHitBullet, timerStop;
+    protected float parryAngle;
+    protected Vector2 parryDir;
 
     private void Awake()
     {
@@ -64,10 +66,7 @@ public class PlayerSlash : MonoBehaviour
 
                 OntriggerExcute();
 
-                //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
-                FXManager.instance.cameraEffect.StartCoroutine("HitShake");
-
-                FXManager.instance.playerSlashEffect.TimeStop();
+                CameraShakeEffect();
             }
         }
 
@@ -80,19 +79,30 @@ public class PlayerSlash : MonoBehaviour
                 && collision.gameObject.TryGetComponent<BulletParentsData>(out var bulletParentsData))
             {
                 //총알이 총알의 부모를 바라보는 방향을 정규화
-                Vector2 parryDir = (bulletParentsData.Parent.transform.position - colRb.transform.position).normalized;
+                parryDir = (bulletParentsData.Parent.transform.position - colRb.transform.position).normalized;
 
                 //혹시 각도가 쓰일지도 모르니 일단 계산
-                float parryAngle = Mathf.Atan2(parryDir.y, parryDir.x) * Mathf.Rad2Deg;
+                parryAngle = Mathf.Atan2(parryDir.y, parryDir.x) * Mathf.Rad2Deg;
 
                 colRb.velocity = Vector2.zero;
 
                 //정규화 된 방향으로 날려주기
                 colRb.velocity =
                     parryDir * FXManager.instance.playerSlashEffect.ParryToShootSpeed;
+
+                collision.gameObject.AddComponent<WG_ParriedBullet>();
             }
         }
     }
+
+    protected virtual void CameraShakeEffect()
+    {
+        //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
+        FXManager.instance.cameraEffect.StartCoroutine("HitShake");
+
+        FXManager.instance.playerSlashEffect.TimeStop();
+    }
+
     private GameObject SetClosestEnemy()
     {
 
@@ -122,7 +132,7 @@ public class PlayerSlash : MonoBehaviour
     }
 
 
-    void OntriggerExcute()
+    protected virtual void OntriggerExcute()
     {
         Hit_Clone
         = Instantiate(slashHitEffect,
@@ -133,6 +143,4 @@ public class PlayerSlash : MonoBehaviour
 
         FXManager.instance.playerSlashEffect.alreadyHitEnemy.Clear();
     }
-
-
 }
