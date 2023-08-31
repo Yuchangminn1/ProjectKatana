@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 4805272641057786909}
   - component: {fileID: 7251415476585196360}
   - component: {fileID: 1282315979590605173}
+  - component: {fileID: 5680265764236964386}
   m_Layer: 0
   m_Name: FXManager
   m_TagString: Untagged
@@ -188,6 +189,18 @@ MonoBehaviour:
   ShakeTimer: 0
   ShakeRange: 100
   ShakePreview_Debug: 0
+--- !u!114 &5680265764236964386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897643972083523563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4165c7bda1255774fbfd0ebe304eebb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2023967870561620370
 GameObject:
   m_ObjectHideFlags: 0

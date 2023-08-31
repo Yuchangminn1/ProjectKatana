@@ -7,8 +7,12 @@ using UnityEngine.UIElements;
 public class WG_PlayerSlash : MonoBehaviour
 {
     int Frame = 0;
+
+    //인스펙터에서 이펙트 넣어줌
     protected GameObject slashHitEffect;
-    protected GameObject Hit_Clone;
+    //생성될 이펙트
+    GameObject Hit_Clone;
+
 
     bool isHit, isHitBullet, timerStop;
     Vector2 parryDir;

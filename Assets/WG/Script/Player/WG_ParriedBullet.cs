@@ -23,7 +23,7 @@ public class WG_ParriedBullet : WG_PlayerSlash
         {
             parryAngle = Mathf.Atan2(parryDir.y, parryDir.x) * Mathf.Rad2Deg;
 
-            Hit_Clone
+            GameObject Hit_Clone
             = Instantiate(slashHitEffect,
             collision.gameObject.transform.position,
             Quaternion.Euler(0, 0, parryAngle), WG_FXManager.instance.transform);

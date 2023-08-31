@@ -14,11 +14,15 @@ public class WG_LineThrowHitEffect : MonoBehaviour
     public float speed = 50f;
     private void Start()
     {
-
+        //발사체 생성
         go = Instantiate(EffectBullet, StartPoint.position, Quaternion.identity);
+
+        //플레이어 칼질 방향과 같게 만들어줌
         go.transform.rotation = transform.rotation;
 
+        //StartPoint에서 EndPoint를 바라보는 방향값
         tempV = (EndPoint.position - StartPoint.position).normalized;
+
         trr = go.GetComponent<TrailRenderer>();
         trr.time = LifeTime;
 
