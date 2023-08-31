@@ -10,8 +10,7 @@ public class PlayerSlash : MonoBehaviour
     GameObject slashHitEffect;
     GameObject Hit_Clone;
 
-    bool isHit, timerStop;
-    float shakeTimer = 0f;
+    bool isHit, isHitBullet, timerStop;
 
     private void Awake()
     {
@@ -26,11 +25,11 @@ public class PlayerSlash : MonoBehaviour
     private void Start()
     {
         isHit = false;
+        isHitBullet = false;
     }
 
     private void FixedUpdate()
     {
-        shakeTimer += Time.fixedDeltaTime;
         //플레이어 AnimationTrigger에서 매니저 접근해서 삭제시켜봤는데
         //상태 여러개 동시에 변할때 삭제 안되는 버그있어서 그냥 여기서 함
         Frame++;
@@ -50,7 +49,7 @@ public class PlayerSlash : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && !isHit
             && !FXManager.instance.playerSlashEffect.alreadyHitEnemy.Contains(collision.gameObject))
         {
-            shakeTimer = 0f;
+            FXManager.instance.cameraEffect.ShakeTimer = 0f;
             //콜라이더 연속으로 체크하는거 방지
             isHit = true;
 
@@ -65,10 +64,32 @@ public class PlayerSlash : MonoBehaviour
 
                 OntriggerExcute();
 
-                if (shakeTimer <= 0.25f)
-                {
-                    FXManager.instance.cameraEffect.StartCoroutine("HitShake");
-                }
+                //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
+                FXManager.instance.cameraEffect.StartCoroutine("HitShake");
+
+                FXManager.instance.playerSlashEffect.TimeStop();
+            }
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet") && !isHitBullet)
+        {
+            collision.gameObject.tag = "PlayerBullet";
+
+            //trigger된 오브젝트에 이하 컴포넌트들이 들어있는지 확인하고 있으면 true 없으면 false 반환
+            if (collision.gameObject.TryGetComponent<Rigidbody2D>(out var colRb)
+                && collision.gameObject.TryGetComponent<BulletParentsData>(out var bulletParentsData))
+            {
+                //총알이 총알의 부모를 바라보는 방향을 정규화
+                Vector2 parryDir = (bulletParentsData.Parent.transform.position - colRb.transform.position).normalized;
+
+                //혹시 각도가 쓰일지도 모르니 일단 계산
+                float parryAngle = Mathf.Atan2(parryDir.y, parryDir.x) * Mathf.Rad2Deg;
+
+                colRb.velocity = Vector2.zero;
+
+                //정규화 된 방향으로 날려주기
+                colRb.velocity =
+                    parryDir * FXManager.instance.playerSlashEffect.ParryToShootSpeed;
             }
         }
     }

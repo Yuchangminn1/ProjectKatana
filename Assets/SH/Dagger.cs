@@ -43,7 +43,10 @@ public class Dagger : MonoBehaviour
     private void FixedUpdate()
     {
         // 계산된 방향으로 프로젝타일 이동
-        rb2D.velocity = direction * speed;
+
+        //추가한 코드
+        if(gameObject.tag == "EnemyBullet")
+            rb2D.velocity = direction * speed;
 
     }
 

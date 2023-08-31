@@ -129,8 +129,12 @@ MonoBehaviour:
   playerSlashEffectTransform: {fileID: 0}
   HitInterval: 0.3
   Instant_slashEffect: {fileID: 0}
+  timeStopDuration: 0.05
+  timer: 0
+  currentTimeSclae: 0
   alreadyHitEnemy: []
   ClosestEnemyInList: {fileID: 0}
+  ParryToShootSpeed: 100
 --- !u!114 &4805272641057786909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e34f1ba8180074d9778f1e10446dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 0}
+  cine: {fileID: 0}
+  cine_FramingTransposer: {fileID: 0}
+  ShakeIntervalSec: 0.01
+  ShakeDuration: 0.2
+  ShakeTimer: 0
+  ShakeRange: 100
+  ShakePreview_Debug: 0
 --- !u!1 &2023967870561620370
 GameObject:
   m_ObjectHideFlags: 0

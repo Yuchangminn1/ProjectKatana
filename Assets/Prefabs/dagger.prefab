@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 4594863311797137124}
   - component: {fileID: 4451755009325726751}
   - component: {fileID: 9125146510314506053}
+  - component: {fileID: 7186090043885359954}
   m_Layer: 0
   m_Name: dagger
   m_TagString: EnemyBullet
@@ -219,3 +220,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7186090043885359954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220402599199791937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1edcddcd9118ba54fa44563be6c5de74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -64,6 +64,10 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Dead Info")]
     public bool isDead = false;
+
+    [Header("BulletTIme Info")]
+    public bool isBulletTime = false;
+
     #endregion
 
     protected virtual void Awake()
@@ -98,6 +102,7 @@ public class WG_Entity : MonoBehaviour
         //일단 BulletTime 만들어둠
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            isBulletTime = true;
             if (lit.intensity <= 0.4f) lit.intensity = 0.4f;
             if (timeSclaeMirror <= 0.2f) timeSclaeMirror = 0.2f;
 
@@ -111,6 +116,7 @@ public class WG_Entity : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            isBulletTime = false;
             lit.intensity = 1f;
             timeSclaeMirror = 1f;
             Time.timeScale = timeSclaeMirror;

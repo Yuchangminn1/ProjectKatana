@@ -2096,18 +2096,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
-      propertyPath: ShakeIntense
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
-      propertyPath: VirtualCamera
-      value: 
-      objectReference: {fileID: 1797801556}
-    - target: {fileID: 1282315979590605173, guid: ddaea453e788ab64aac04c353247384c, type: 3}
-      propertyPath: virtualCamera
-      value: 
-      objectReference: {fileID: 1797801556}
     - target: {fileID: 2023967870561620370, guid: ddaea453e788ab64aac04c353247384c, type: 3}
       propertyPath: m_Name
       value: Managers
