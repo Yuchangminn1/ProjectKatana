@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Debugger : MonoBehaviour
+public class WG_Debugger : MonoBehaviour
 {
     float t, a, currentTime;
     public float duration;

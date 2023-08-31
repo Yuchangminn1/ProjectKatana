@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class WG_InputManager : MonoBehaviour
 {
-    public static InputManager instance;
+    public static WG_InputManager instance;
     public Vector2 CurrentMousePosition;
     public GameObject MouseCursorPrefab;
     public Vector2 cursorDir = new Vector2();
@@ -34,6 +34,6 @@ public class InputManager : MonoBehaviour
             instance.cursorDir.x) * Mathf.Rad2Deg;
 
         //플레이어가 커서블 바라보는 벡터2의 방향값
-        cursorDir = (CurrentMousePosition - (Vector2)PlayerManager.instance.player.transform.position).normalized;
+        cursorDir = (CurrentMousePosition - (Vector2)WG_PlayerManager.instance.player.transform.position).normalized;
     }
 }

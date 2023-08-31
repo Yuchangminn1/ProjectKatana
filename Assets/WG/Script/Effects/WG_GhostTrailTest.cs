@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostTrailTest : MonoBehaviour
+public class WG_GhostTrailTest : MonoBehaviour
 {
     SpriteRenderer sr;
     Shader shader;
@@ -18,7 +18,7 @@ public class GhostTrailTest : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        shaderType = FXManager.instance.ghostControl.shaderType;
+        shaderType = WG_FXManager.instance.ghostControl.shaderType;
 
         //유니티 기본 쉐이더
         //이 쉐이더를 스프라이트에 덮어서 플레이어의 형상만나오고
@@ -31,8 +31,8 @@ public class GhostTrailTest : MonoBehaviour
 
         if (shaderType == ShaderType.Custom)
         {
-            if (FXManager.instance.ghostControl.CustomShader != null)
-                shader = FXManager.instance.ghostControl.CustomShader;
+            if (WG_FXManager.instance.ghostControl.CustomShader != null)
+                shader = WG_FXManager.instance.ghostControl.CustomShader;
 
             else
             {
@@ -52,9 +52,9 @@ public class GhostTrailTest : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         t = currentTime / ShadowLifeTime;
-        interpolatedValue = Mathf.Lerp(FXManager.instance.ghostControl.MaxAlpha, FXManager.instance.ghostControl.MinAlpha, t);
+        interpolatedValue = Mathf.Lerp(WG_FXManager.instance.ghostControl.MaxAlpha, WG_FXManager.instance.ghostControl.MinAlpha, t);
 
-        if (FXManager.instance.ghostControl.shaderType != ShaderType.NoShader)
+        if (WG_FXManager.instance.ghostControl.shaderType != ShaderType.NoShader)
             //material에 붙어있는 쉐이더 설정
             sr.material.shader = shader;
 
@@ -65,7 +65,7 @@ public class GhostTrailTest : MonoBehaviour
 
     public void ShadowLifeOver()
     {
-        ObjectPool.instance.ObjectQueue.Enqueue(gameObject);
+        WG_ObjectPool.instance.ObjectQueue.Enqueue(gameObject);
         gameObject.SetActive(false);
     }
 
@@ -78,7 +78,7 @@ public class GhostTrailTest : MonoBehaviour
     IEnumerator Shadow_Excute()
     {
         yield return new WaitForSeconds(ShadowLifeTime);
-        ObjectPool.instance.ObjectQueue.Enqueue(gameObject);
+        WG_ObjectPool.instance.ObjectQueue.Enqueue(gameObject);
         gameObject.SetActive(false);
     }
 
@@ -86,6 +86,6 @@ public class GhostTrailTest : MonoBehaviour
     private void OnEnable()
     {
         currentTime = 0f;
-        ShadowLifeTime = FXManager.instance.gameObject.GetComponent<GhostControl>().ShadowLifeTime;
+        ShadowLifeTime = WG_FXManager.instance.gameObject.GetComponent<WG_GhostControl>().ShadowLifeTime;
     }
 }

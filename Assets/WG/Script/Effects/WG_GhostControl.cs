@@ -9,7 +9,7 @@ public enum ShaderType
     Sprite_URP_Lit,
     Custom
 }
-public class GhostControl : MonoBehaviour
+public class WG_GhostControl : MonoBehaviour
 {
     public ShaderType shaderType = ShaderType.Sprite_Default;
     [SerializeField] public Shader CustomShader;
@@ -38,7 +38,7 @@ public class GhostControl : MonoBehaviour
         {
             timer = 0;
 
-            GameObject clone_Shadow = ObjectPool.instance.ObjectQueue.Dequeue();
+            GameObject clone_Shadow = WG_ObjectPool.instance.ObjectQueue.Dequeue();
             clone_Shadow.transform.position = Player.transform.position;
             clone_Shadow.transform.rotation = Player.transform.rotation;
             clone_Shadow.SetActive(true);
@@ -46,7 +46,7 @@ public class GhostControl : MonoBehaviour
             clone_Shadow.GetComponent<SpriteRenderer>().sprite =
                 Player.GetComponentInChildren<SpriteRenderer>().sprite;
 
-            clone_Shadow.GetComponent<GhostTrailTest>()._color = _color;
+            clone_Shadow.GetComponent<WG_GhostTrailTest>()._color = _color;
 
         }
     }
@@ -54,7 +54,7 @@ public class GhostControl : MonoBehaviour
     private void OnValidate()
     {
         //ObjectPool instance 값 가져가기전에 실행되는것 방지
-        if (ObjectPool.instance != null)
-            ObjectPool.instance.RefreshTheQueue(0);
+        if (WG_ObjectPool.instance != null)
+            WG_ObjectPool.instance.RefreshTheQueue(0);
     }
 }

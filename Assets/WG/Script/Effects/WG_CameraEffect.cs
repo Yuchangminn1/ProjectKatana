@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 //[RequireComponent(typeof(CinemachineVirtualCamera))]
-public class CameraEffect : MonoBehaviour
+public class WG_CameraEffect : MonoBehaviour
 {
     public CinemachineVirtualCamera cine;
     public CinemachineFramingTransposer cine_FramingTransposer;

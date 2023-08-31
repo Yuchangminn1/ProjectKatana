@@ -369,7 +369,7 @@ public class Enemy_Snow : Enemy_SH
             // 단검을 생성하고 회전
             // WG 가 코드 추가
             GameObject clone = Instantiate(daggerPrefab, daggerFirepos.position, Quaternion.identity, transform);
-            clone.GetComponent<BulletParentsData>().Parent = clone.transform.parent.gameObject;
+            clone.GetComponent<WG_BulletParentsData>().Parent = clone.transform.parent.gameObject;
             clone.transform.SetParent(null);
         }
 

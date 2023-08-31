@@ -65,8 +65,8 @@ public class WG_PlayerState
             player.FlipController();
 
 
-            Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
-            Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
+            //Debug.Log($"Current Velocity => X : {rb.velocity.x}, Y : {rb.velocity.y}");
+            //Debug.Log("애니메이션 종료 : " + isAnimationFinishTriggerCalled);
 
             if (rb.velocity.y <= 0 && player.isFalling)
                 rb.gravityScale = PlayerRBStartGravity * 1.5f;
@@ -75,7 +75,7 @@ public class WG_PlayerState
                 stateMachine.ChangeState(player.attackState);
 
             if (player.isTrail)
-                FXManager.instance.ghostControl.Shadows_Skill();
+                WG_FXManager.instance.ghostControl.Shadows_Skill();
 
         }
         if (Input.GetKey(KeyCode.H))

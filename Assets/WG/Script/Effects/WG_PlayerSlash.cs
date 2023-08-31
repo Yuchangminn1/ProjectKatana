@@ -4,23 +4,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerSlash : MonoBehaviour
+public class WG_PlayerSlash : MonoBehaviour
 {
     int Frame = 0;
     protected GameObject slashHitEffect;
     protected GameObject Hit_Clone;
 
-    protected bool isHit, isHitBullet, timerStop;
-    protected float parryAngle;
-    protected Vector2 parryDir;
+    bool isHit, isHitBullet, timerStop;
+    Vector2 parryDir;
+    float parryAngle;
 
     private void Awake()
     {
         //오브젝트 생명주기상 Awake, Start가 Update보다 일찍 일어나기 때문에
         //이 스크립트에서 각도 받으면 시작할때 각도 변하면서 나오는건 구현이 불가능함
         //InputManager에서 각도값 Update에서 갱신되는거 사용
-        transform.rotation = Quaternion.Euler(0, 0, InputManager.instance.playerLookingCursorAngle);
-        slashHitEffect = FXManager.instance.playerSlashHitEffect.slashHitEffect;
+        transform.rotation = Quaternion.Euler(0, 0, WG_InputManager.instance.playerLookingCursorAngle);
+        slashHitEffect = WG_FXManager.instance.playerSlashHitEffect.slashHitEffect;
 
     }
 
@@ -49,19 +49,19 @@ public class PlayerSlash : MonoBehaviour
 
         //같은 오브젝트가 리스트에 여러번 들어가는것 방지
         if (collision.gameObject.CompareTag("Enemy") && !isHit
-            && !FXManager.instance.playerSlashEffect.alreadyHitEnemy.Contains(collision.gameObject))
+            && !WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy.Contains(collision.gameObject))
         {
-            FXManager.instance.cameraEffect.ShakeTimer = 0f;
+            WG_FXManager.instance.cameraEffect.ShakeTimer = 0f;
             //콜라이더 연속으로 체크하는거 방지
             isHit = true;
 
             //공격 범위에 trigger한 모든 적들을 List에 넣어줌
-            FXManager.instance.playerSlashEffect.alreadyHitEnemy.Add(collision.gameObject);
+            WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy.Add(collision.gameObject);
 
             SetClosestEnemy();
 
-            if (FXManager.instance.playerSlashEffect.ClosestEnemyInList != null
-                && collision.gameObject == FXManager.instance.playerSlashEffect.ClosestEnemyInList)
+            if (WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList != null
+                && collision.gameObject == WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList)
             {
 
                 OntriggerExcute();
@@ -74,43 +74,26 @@ public class PlayerSlash : MonoBehaviour
         {
             collision.gameObject.tag = "PlayerBullet";
 
-            //trigger된 오브젝트에 이하 컴포넌트들이 들어있는지 확인하고 있으면 true 없으면 false 반환
-            if (collision.gameObject.TryGetComponent<Rigidbody2D>(out var colRb)
-                && collision.gameObject.TryGetComponent<BulletParentsData>(out var bulletParentsData))
-            {
-                //총알이 총알의 부모를 바라보는 방향을 정규화
-                parryDir = (bulletParentsData.Parent.transform.position - colRb.transform.position).normalized;
-
-                //혹시 각도가 쓰일지도 모르니 일단 계산
-                parryAngle = Mathf.Atan2(parryDir.y, parryDir.x) * Mathf.Rad2Deg;
-
-                colRb.velocity = Vector2.zero;
-
-                //정규화 된 방향으로 날려주기
-                colRb.velocity =
-                    parryDir * FXManager.instance.playerSlashEffect.ParryToShootSpeed;
-
-                collision.gameObject.AddComponent<WG_ParriedBullet>();
-            }
+            collision.gameObject.AddComponent<WG_ParriedBullet>();
         }
     }
 
     protected virtual void CameraShakeEffect()
     {
         //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
-        FXManager.instance.cameraEffect.StartCoroutine("HitShake");
+        WG_FXManager.instance.cameraEffect.StartCoroutine("HitShake");
 
-        FXManager.instance.playerSlashEffect.TimeStop();
+        WG_FXManager.instance.playerSlashEffect.TimeStop();
     }
 
     private GameObject SetClosestEnemy()
     {
 
         float closestDistance = Mathf.Infinity;
-        Vector2 playerPosition = PlayerManager.instance.player.transform.position;
+        Vector2 playerPosition = WG_PlayerManager.instance.player.transform.position;
         GameObject closestEnemy = null;
 
-        foreach (GameObject enemy in FXManager.instance.playerSlashEffect.alreadyHitEnemy)
+        foreach (GameObject enemy in WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy)
         {
             float DistanceBetweenPlayerAndEnemy = Vector2.Distance(playerPosition,
                 enemy.transform.position);
@@ -127,7 +110,7 @@ public class PlayerSlash : MonoBehaviour
                 closestEnemy = enemy;
             }
         }
-        FXManager.instance.playerSlashEffect.ClosestEnemyInList = closestEnemy;
+        WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList = closestEnemy;
         return closestEnemy;
     }
 
@@ -136,11 +119,11 @@ public class PlayerSlash : MonoBehaviour
     {
         Hit_Clone
         = Instantiate(slashHitEffect,
-          FXManager.instance.playerSlashEffect.ClosestEnemyInList.transform.position,
-          Quaternion.identity, FXManager.instance.transform);
+          WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList.transform.position,
+          Quaternion.identity, WG_FXManager.instance.transform);
 
         Hit_Clone.transform.rotation = transform.rotation;
 
-        FXManager.instance.playerSlashEffect.alreadyHitEnemy.Clear();
+        WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy.Clear();
     }
 }

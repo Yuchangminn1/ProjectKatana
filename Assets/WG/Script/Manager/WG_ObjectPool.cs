@@ -13,13 +13,13 @@ public class ObjectInfo
     //TFPoolParent 아래의 자식에서 생성되게 할거임 (Canvas니까)
     public Transform TFPoolParent;
 }
-public class ObjectPool : MonoBehaviour
+public class WG_ObjectPool : MonoBehaviour
 {
     //배열로 ObjectInfo클래스 불러옴
     [SerializeField] ObjectInfo[] ObejctInfos;
 
     //공유자원 인스턴스를 통해 어디서든 넣고 빼고가 자유롭게
-    public static ObjectPool instance;
+    public static WG_ObjectPool instance;
 
     //데이터가 선입선출 순서대로
     public Queue<GameObject> ObjectQueue = new Queue<GameObject>();

@@ -23,26 +23,26 @@ public class WG_PlayerAttackState : WG_PlayerState
         player.isAttacking = true;
 
         //바라보는 방향 반대로 공격하면 플립
-        if (player.transform.position.x > InputManager.instance.CurrentMousePosition.x && player.FacingDir == 1)
+        if (player.transform.position.x > WG_InputManager.instance.CurrentMousePosition.x && player.FacingDir == 1)
             player.Flip();
-        else if (player.transform.position.x < InputManager.instance.CurrentMousePosition.x && player.FacingDir == -1)
+        else if (player.transform.position.x < WG_InputManager.instance.CurrentMousePosition.x && player.FacingDir == -1)
             player.Flip();
 
         //카타나 제로 움직임 디테일 살리기위함
         if (player.isGrounded())
-            rb.AddForce(InputManager.instance.cursorDir * player.AttackDashForce * 0.2f, ForceMode2D.Impulse);
+            rb.AddForce(WG_InputManager.instance.cursorDir * player.AttackDashForce * 0.2f, ForceMode2D.Impulse);
 
         //공격 후 체공상태 아닐 때 
         if (!player.isAttackAfterOnAir)
-            rb.AddForce(InputManager.instance.cursorDir * player.AttackDashForce, ForceMode2D.Impulse);
+            rb.AddForce(WG_InputManager.instance.cursorDir * player.AttackDashForce, ForceMode2D.Impulse);
 
         //공격 후 체공상태면 Y축은 아래로만 강하게 받기 가능
         else
-            rb.AddForce(new Vector2(InputManager.instance.cursorDir.x * player.AttackDashForce,
-                Mathf.Clamp(InputManager.instance.cursorDir.y * player.AttackDashForce, -9999, 3f)), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(WG_InputManager.instance.cursorDir.x * player.AttackDashForce,
+                Mathf.Clamp(WG_InputManager.instance.cursorDir.y * player.AttackDashForce, -9999, 3f)), ForceMode2D.Impulse);
 
 
-        FXManager.instance.playerSlashEffect.CreateSlashEffect();
+        WG_FXManager.instance.playerSlashEffect.CreateSlashEffect();
     }
     public override void FixedUpdate()
     {

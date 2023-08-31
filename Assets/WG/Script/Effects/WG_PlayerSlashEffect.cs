@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSlashEffect : Effects
+public class WG_PlayerSlashEffect : WG_Effects
 {
     [Header("Slash Effect Info")]
     [SerializeField] protected GameObject playerSlashEffect;
@@ -31,7 +31,7 @@ public class PlayerSlashEffect : Effects
         timer += Time.unscaledDeltaTime;
 
         //Update만 TimeScale 0일때도 실행되니 따로 메소드로 빼주지않고 여기다가 넣어줌
-        if (timer >= timeStopDuration && !PlayerManager.instance.player.isBulletTime)
+        if (timer >= timeStopDuration && !WG_PlayerManager.instance.player.isBulletTime)
             Time.timeScale = currentTimeSclae;
     }
     private void FixedUpdate()

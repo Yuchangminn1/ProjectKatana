@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletParentsData : MonoBehaviour
+public class WG_BulletParentsData : MonoBehaviour
 {
     [SerializeField] public GameObject Parent;
     private void Awake()

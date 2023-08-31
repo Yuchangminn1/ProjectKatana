@@ -148,10 +148,10 @@ public class WG_Entity : MonoBehaviour
         //벽 잡고있는중 공격중이나 텀블링 중일땐 Flip안시키거나 따로 그 상태에서 관리할거임
         //공격 이펙트 나오는 도중에도 불가능하게
         if (Input.GetAxisRaw("Horizontal") > 0 && !isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking &&
-            FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
+            WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
 
         else if (Input.GetAxisRaw("Horizontal") < 0 && isFacingRight && !isWallGrabing && !isNowTumbling && !isAttacking &&
-            FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
+            WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed()) Flip();
     }
 
     public bool isGrounded() => Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);

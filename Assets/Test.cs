@@ -14,7 +14,7 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angle = Mathf.Atan2(InputManager.instance.cursorDir.y, InputManager.instance.cursorDir.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(WG_InputManager.instance.cursorDir.y, WG_InputManager.instance.cursorDir.x) * Mathf.Rad2Deg;
     }
 }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSlashHitEffectController : MonoBehaviour
+public class WG_PlayerSlashHitEffectController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

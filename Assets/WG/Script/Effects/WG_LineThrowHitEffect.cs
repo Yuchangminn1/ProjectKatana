@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class LineThrowHitEffect : MonoBehaviour
+public class WG_LineThrowHitEffect : MonoBehaviour
 {
     public Transform StartPoint, EndPoint;
     public GameObject EffectBullet;
@@ -18,7 +18,7 @@ public class LineThrowHitEffect : MonoBehaviour
         go = Instantiate(EffectBullet, StartPoint.position, Quaternion.identity);
         go.transform.rotation = transform.rotation;
 
-        tempV = InputManager.instance.cursorDir * speed;
+        tempV = (EndPoint.position - StartPoint.position).normalized;
         trr = go.GetComponent<TrailRenderer>();
         trr.time = LifeTime;
 
@@ -31,8 +31,7 @@ public class LineThrowHitEffect : MonoBehaviour
         if (go != null)
         {
             go.GetComponent<Rigidbody2D>().velocity
-               = tempV;
-
+               = tempV * speed;
         }
     }
 }

@@ -30,7 +30,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         base.Update();
 
         if (player.isGrounded() && Input.GetKeyDown(KeyCode.W)
-            && FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
+            && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
             player.stateMachine.ChangeState(player.jumpState);
 
 
@@ -43,11 +43,11 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         {
 
             canEmit = false;
-            FXManager.instance.playerStartRun.playerStartRunDustEmit();
+            WG_FXManager.instance.playerStartRun.playerStartRunDustEmit();
             switch (player.FacingDir) //흙먼지 파티클 방출 방향 바꾸려고
             {
                 case 1:
-                    FXManager.instance.playerStartRun.go.transform.Rotate(new Vector3(0, 180, 0));
+                    WG_FXManager.instance.playerStartRun.go.transform.Rotate(new Vector3(0, 180, 0));
                     break;
                 case 2:
                     break;
