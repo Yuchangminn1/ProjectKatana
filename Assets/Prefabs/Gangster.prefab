@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8126364435895396922}
   m_Layer: 0
-  m_Name: daggerpos
+  m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863984504117428832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.198, y: 0, z: 0}
+  m_LocalPosition: {x: 0.268, y: 0.078, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ Animator:
   m_GameObject: {fileID: 902315530520148822}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b63e2725b861b0943bdfc427a22c8dc9, type: 2}
+  m_Controller: {fileID: 9100000, guid: be6a7e4c6f48b844da1c8c01c7aa77dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: f646337b0b994e4498d0a4572bddc16c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -159,9 +159,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063824466453500611}
-  - component: {fileID: 5976288464526655663}
   - component: {fileID: 1226850039972423413}
   - component: {fileID: 4809518657066310336}
+  - component: {fileID: 4216944306200876367}
   m_Layer: 0
   m_Name: Gangster
   m_TagString: Untagged
@@ -186,70 +186,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5976288464526655663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2988264908335351897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac55372701231b947876460bae8c8428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basic_movespeed: 7
-  jumpforce: 10
-  isFacingRight: 0
-  FacingDir: 1
-  DodgeForce: 7
-  RecoverControl: 1
-  GroundCheck: {fileID: 1063824466453500611}
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  ground_distance: 1
-  WallCheck: {fileID: 1063824466453500611}
-  wall_distance: 1
-  smalljumpReverseForce: 0
-  IdleToGrabForce: 10
-  GrabToWallOverAddSpeed: 12
-  JumpToGrabForceCoefficient: 0.5
-  isWallGrabing: 0
-  TumblingForce_X: 30
-  TumblingForce_Y: 10
-  TumblingForceDecayRate: 0.1
-  isNowTumbling: 0
-  isJumping: 0
-  isFalling: 0
-  AttackDashForce: 7
-  AttackDashForceDecayRate: 0.99
-  isAttackAfterOnAir: 0
-  isAttacking: 0
-  isTrail: 0
-  isDead: 0
-  player: {fileID: 0}
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  hp: 3
-  stunDuration: 0
-  stunDirection: {x: 0, y: 0}
-  counterImage: {fileID: 0}
-  moveSpeed: 1
-  idleTime: 2
-  battleTime: 0
-  attackDistance: 1
-  attackCooldown: 1
-  lasttimeAttacked: 0
-  daggerPrefab: {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
-  daggerCount: 1
-  daggerFirepos: {fileID: 8126364435895396922}
-  throwCooldown: 5
-  p1Cooldown: 5
-  dodgeCooldown: 5
-  dashDistance: 3
-  throwDistance: 7
 --- !u!50 &1226850039972423413
 Rigidbody2D:
   serializedVersion: 4
@@ -312,3 +248,62 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0025470853, y: 0.014110833}
   m_Size: {x: 0.21454632, y: 0.47695452}
   m_Direction: 0
+--- !u!114 &4216944306200876367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988264908335351897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567f150aeb401bd4b91f7eee2c7dc43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basic_movespeed: 7
+  jumpforce: 10
+  isFacingRight: 0
+  FacingDir: 1
+  DodgeForce: 7
+  RecoverControl: 1
+  GroundCheck: {fileID: 1063824466453500611}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  ground_distance: 1
+  WallCheck: {fileID: 1063824466453500611}
+  wall_distance: 1
+  smalljumpReverseForce: 0
+  IdleToGrabForce: 10
+  GrabToWallOverAddSpeed: 12
+  JumpToGrabForceCoefficient: 0.5
+  isWallGrabing: 0
+  TumblingForce_X: 30
+  TumblingForce_Y: 10
+  TumblingForceDecayRate: 0.1
+  isNowTumbling: 0
+  isJumping: 0
+  isFalling: 0
+  AttackDashForce: 7
+  AttackDashForceDecayRate: 0.99
+  isAttackAfterOnAir: 0
+  isAttacking: 0
+  isTrail: 0
+  isDead: 0
+  player: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  hp: 0
+  stunDuration: 0
+  stunDirection: {x: 0, y: 0}
+  counterImage: {fileID: 0}
+  moveSpeed: 0
+  idleTime: 0
+  battleTime: 0
+  attackDistance: 100
+  attackCooldown: 5
+  lasttimeAttacked: 0
+  BulletPrefap: {fileID: 9024611537594734345, guid: 529c7fc6de96746418a800eb30542444, type: 3}
+  Firepos: {fileID: 8126364435895396922}
+  throwDistance: 7
