@@ -130,7 +130,7 @@ MonoBehaviour:
   playerSlashEffectTransform: {fileID: 0}
   HitInterval: 0.3
   Instant_slashEffect: {fileID: 0}
-  timeStopDuration: 0.03
+  timeStopDuration: 0.05
   timer: 0
   currentTimeSclae: 0
   alreadyHitEnemy: []
@@ -166,9 +166,9 @@ MonoBehaviour:
   Shadow: {fileID: 282547812419967485, guid: 8c5adefd317db0748a7a2e7d815c5d2f, type: 3}
   Player: {fileID: 0}
   ShadowSpawnSpeed: 20
-  ShadowLifeTime: 0.3
+  ShadowLifeTime: 0.2
   _color: {r: 1, g: 1, b: 1, a: 1}
-  MaxAlpha: 1
+  MaxAlpha: 0.4
   MinAlpha: 0
 --- !u!114 &1282315979590605173
 MonoBehaviour:
@@ -187,7 +187,8 @@ MonoBehaviour:
   ShakeIntervalSec: 0.01
   ShakeDuration: 0.2
   ShakeTimer: 0
-  ShakeRange: 100
+  ShakeRange: 10
+  isShaking: 0
   ShakePreview_Debug: 0
 --- !u!114 &5680265764236964386
 MonoBehaviour:

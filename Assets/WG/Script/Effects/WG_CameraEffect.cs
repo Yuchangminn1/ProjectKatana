@@ -16,14 +16,16 @@ public class WG_CameraEffect : MonoBehaviour
     public float ShakeTimer = 0f;
     [Range(0.01f, 1000)] public float ShakeRange = 1f;
     float ShakeRangeMirror;
+    public bool isShaking = false;
     public bool ShakePreview_Debug = false;
+
     private void Start()
     {
         cine = Camera.main.transform.parent.GetComponentInChildren<CinemachineVirtualCamera>();
         cine_FramingTransposer = cine.GetCinemachineComponent<CinemachineFramingTransposer>();
         // cine_Transposer = cine.GetCinemachineComponent<CinemachineTransposer>();
 
-        ShakeRangeMirror = ShakeRange;
+
     }
 
     private void Update()
@@ -33,6 +35,9 @@ public class WG_CameraEffect : MonoBehaviour
 
         if (ShakePreview_Debug)
             Shake();
+
+        if (!isShaking)
+            ShakeRangeMirror = ShakeRange;
     }
 
     private void FixedUpdate()
@@ -43,8 +48,8 @@ public class WG_CameraEffect : MonoBehaviour
 
     IEnumerator HitShake()
     {
+        isShaking = true;
         ShakeTimer = 0f;
-        ShakeRangeMirror = ShakeRange;
 
         while (ShakeTimer <= ShakeDuration)
         {
@@ -52,16 +57,17 @@ public class WG_CameraEffect : MonoBehaviour
             yield return new WaitForSeconds(ShakeIntervalSec);
         }
         ResetCameraPostion();
+        isShaking = false;
         yield return null;
     }
 
     private void Shake()
     {
-        float redutctionFactor = 1f - (ShakeTimer - ShakeDuration);
+        float redutctionFactor = 1f - (ShakeTimer / ShakeDuration);
         ShakeRange *= redutctionFactor;
 
-        cine_FramingTransposer.m_TrackedObjectOffset.x += Random.value * ShakeRange * 2 - ShakeRange;
-        cine_FramingTransposer.m_TrackedObjectOffset.y += Random.value * ShakeRange * 2 - ShakeRange;
+        cine_FramingTransposer.m_TrackedObjectOffset.x = Random.value * ShakeRange * 2 - ShakeRange;
+        cine_FramingTransposer.m_TrackedObjectOffset.y = Random.value * ShakeRange * 2 - ShakeRange;
     }
 
     public void ResetCameraPostion()

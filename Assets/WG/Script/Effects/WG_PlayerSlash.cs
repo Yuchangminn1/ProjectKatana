@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -84,10 +85,13 @@ public class WG_PlayerSlash : MonoBehaviour
 
     protected virtual void CameraShakeEffect()
     {
-        //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
-        WG_FXManager.instance.cameraEffect.StartCoroutine("HitShake");
+        if (!WG_FXManager.instance.cameraEffect.isShaking)
+        {
+            //코루틴 끝나는건 CameraEffect쪽에 yield넣어줌
+            WG_FXManager.instance.cameraEffect.StartCoroutine("HitShake");
 
-        WG_FXManager.instance.playerSlashEffect.TimeStop();
+            WG_FXManager.instance.playerSlashEffect.TimeStop();
+        }
     }
 
     private GameObject SetClosestEnemy()
