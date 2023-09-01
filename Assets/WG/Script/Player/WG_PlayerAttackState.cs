@@ -58,8 +58,8 @@ public class WG_PlayerAttackState : WG_PlayerState
         if (!player.isGrounded())
             player.isAttackAfterOnAir = true;
 
-
-        if (isAnimationFinishTriggerCalled && player.isGrounded())
+        //로켓발사 방지
+        if (isAnimationFinishTriggerCalled && player.isGrounded() && rb.velocity.y <= 0f)
             stateMachine.ChangeState(player.idleState);
 
         else if (isAnimationFinishTriggerCalled && !player.isGrounded() && rb.velocity.y <= 0f)
