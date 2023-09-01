@@ -909,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &121360618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,15 +922,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 1761978026}
+  shotPos: {fileID: 121360621}
   cmLaser: {fileID: 1761978024}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &121360619
 Animator:
   serializedVersion: 5
@@ -5029,7 +5029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &325292819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5042,15 +5042,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 2125400880}
+  shotPos: {fileID: 325292822}
   cmLaser: {fileID: 2125400878}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &325292820
 Animator:
   serializedVersion: 5
@@ -5736,7 +5736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &440329196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5749,15 +5749,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 290211208}
+  shotPos: {fileID: 440329199}
   cmLaser: {fileID: 290211206}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &440329197
 Animator:
   serializedVersion: 5
@@ -6102,12 +6102,12 @@ MonoBehaviour:
   shotPos: {fileID: 1849215092}
   cmLaser: {fileID: 1849215090}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 30
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!1 &502535357
 GameObject:
   m_ObjectHideFlags: 0
@@ -8355,7 +8355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1086750080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8368,15 +8368,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 150205390}
+  shotPos: {fileID: 1086750083}
   cmLaser: {fileID: 150205388}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &1086750081
 Animator:
   serializedVersion: 5
@@ -9702,7 +9702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1553656951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9715,15 +9715,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 1518143295}
+  shotPos: {fileID: 1553656954}
   cmLaser: {fileID: 1518143293}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &1553656952
 Animator:
   serializedVersion: 5
@@ -10670,7 +10670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1767317097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10683,15 +10683,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 816981813}
+  shotPos: {fileID: 1767317100}
   cmLaser: {fileID: 816981811}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &1767317098
 Animator:
   serializedVersion: 5
@@ -11030,7 +11030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1940355921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11043,15 +11043,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 575835924}
+  shotPos: {fileID: 1940355924}
   cmLaser: {fileID: 575835922}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &1940355922
 Animator:
   serializedVersion: 5
@@ -11488,7 +11488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2024786394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11501,15 +11501,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b359f71ddaf9e4ea0d84bf4bd2f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPos: {fileID: 200371768}
+  shotPos: {fileID: 2024786397}
   cmLaser: {fileID: 200371766}
   cmLaserList: []
-  laserNum: 20
+  laserNum: 16
   isShoot: 1
-  laserMoveSpeed: 20
-  laserScale: {x: 0.2, y: 0.2, z: 1}
+  laserMoveSpeed: 16
+  laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
-  cmy: -0.5
+  cmy: 0.225
 --- !u!95 &2024786395
 Animator:
   serializedVersion: 5

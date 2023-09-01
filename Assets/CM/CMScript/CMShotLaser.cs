@@ -29,12 +29,11 @@ public class CMShotLaser : MonoBehaviour
             cmLaserList[i] = Instantiate(cmLaser);
             cmLaserList[i].transform.parent = transform;
             cmLaserList[i].transform.localScale = laserScale;
-            cmLaserList[i].transform.position = new Vector2(cmLaserList[i].transform.position.x, cmLaserList[i].transform.position.y + 1f + cmy);
+            cmLaserList[i].transform.position = new Vector2(cmLaserList[i].transform.position.x, cmLaserList[i].transform.position.y + 1f );
             ++i;
         }
 
         StartCoroutine(ShotE());
-
     }
 
     IEnumerator ShotNReturn(GameObject _gameObject, float _startTime,int _i)
@@ -42,14 +41,24 @@ public class CMShotLaser : MonoBehaviour
         float yPos = _gameObject.transform.position.y;
         while (true)
         {
-            yield return null;
+            //yield return null;
+            yield return new WaitForFixedUpdate();
 
             if (yPos < yReturn)
             {
-                yPos = shotPos.position.y + 1f + cmy;
                 cmy *= -1;
+
+                if (cmy < 0)
+                {
+                    yPos = shotPos.position.y + 1f + cmy;
+                }
+                else
+                    yPos = shotPos.position.y + 1f;
+
+
                 _gameObject.transform.position = new Vector2(shotPos.position.x, yPos);
-                break;
+
+                
             }
             else yPos = _gameObject.transform.position.y - Time.deltaTime * laserMoveSpeed;
             _gameObject.transform.position = new Vector2(shotPos.position.x, yPos);
@@ -58,28 +67,35 @@ public class CMShotLaser : MonoBehaviour
 
     IEnumerator ShotE()
     {
-        yield return new WaitForFixedUpdate();
-
-        while (true)
+        //yield return new WaitForFixedUpdate();
+        int i = 0;
+        while (i < laserNum)
         {
-            int i = 0;
-            Debug.Log("Q");
-            while (i < laserNum)
-            {
-                yield return new WaitForFixedUpdate();
-                cmy *= -1f;
-                StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
-                ++i;
-                Debug.Log("W"); 
-                //StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
-                /*yield return new WaitForFixedUpdate();
-                Debug.Log("W");*/
-                /*yield return new WaitForFixedUpdate();
-                Debug.Log("E");*/
-                /* yield return new WaitForFixedUpdate();
-                 Debug.Log("R");*/
-            }
+            
+            cmy *= -1f;
+            StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
+            ++i;
+            Debug.Log($"W {i}");
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+
+            //Debug.Log("W"); 
+            //StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
+            /*yield return new WaitForFixedUpdate();
+            Debug.Log("W");*/
+            /*yield return new WaitForFixedUpdate();
+            Debug.Log("E");*/
+            /* yield return new WaitForFixedUpdate();
+             Debug.Log("R");*/
+            //yield return new WaitForFixedUpdate();
+
             //  yield return new WaitForFixedUpdate();
+
         }
+        yield return null;
+
+
     }
+
+
 }
