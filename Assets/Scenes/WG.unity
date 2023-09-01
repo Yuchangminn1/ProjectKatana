@@ -2153,10 +2153,6 @@ PrefabInstance:
       propertyPath: playerSlashEffectTransform
       value: 
       objectReference: {fileID: 2112416079}
-    - target: {fileID: 5680265764236964386, guid: ddaea453e788ab64aac04c353247384c, type: 3}
-      propertyPath: rewindSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7251415476585196360, guid: ddaea453e788ab64aac04c353247384c, type: 3}
       propertyPath: Player
       value: 

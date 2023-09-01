@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
 public class WG_PlayerState
@@ -19,6 +21,7 @@ public class WG_PlayerState
     public float X_Input, Y_Input;
     public bool XY_InputAtOnce = false;
     protected float PlayerRBStartGravity = 3.5f;
+
 
     public WG_PlayerState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
     {
@@ -80,6 +83,9 @@ public class WG_PlayerState
         }
         if (Input.GetKey(KeyCode.H))
             stateMachine.ChangeState(player.deadStartState);
+
+        if (Input.GetKey(KeyCode.L))
+            SceneManager.LoadScene("WG");
     }
     public virtual void FixedUpdate()
     {

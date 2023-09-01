@@ -27,5 +27,6 @@ public class WG_FXManager : MonoBehaviour
         ghostControl = GetComponent<WG_GhostControl>();
         cameraEffect = GetComponent<WG_CameraEffect>();
         rewind = GetComponent<WG_Rewind>();
+
     }
 }

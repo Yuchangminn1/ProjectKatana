@@ -68,6 +68,7 @@ public class WG_Entity : MonoBehaviour
     [Header("BulletTIme Info")]
     public bool isBulletTime = false;
 
+    public bool Pause = false;
     #endregion
 
     protected virtual void Awake()
@@ -103,17 +104,23 @@ public class WG_Entity : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             isBulletTime = true;
-            if (lit.intensity <= 0.4f) lit.intensity = 0.4f;
-            if (timeSclaeMirror <= 0.2f) timeSclaeMirror = 0.2f;
+            if (lit.intensity <= 0.4f)
+                lit.intensity = 0.4f;
+
+            if (timeSclaeMirror <= 0.2f)
+                timeSclaeMirror = 0.2f;
 
             lit.intensity -= 4 * Time.deltaTime;
             timeSclaeMirror -= 4 * Time.deltaTime;
+
             Time.timeScale = timeSclaeMirror;
 
             transform.Find("BulletTimeLight").gameObject.SetActive(true);
             BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
         }
 
+
+        //디버그용 일시정지
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isBulletTime = false;
@@ -122,6 +129,18 @@ public class WG_Entity : MonoBehaviour
             Time.timeScale = timeSclaeMirror;
 
             transform.Find("BulletTimeLight").gameObject.SetActive(false);
+        }
+
+        if (!Pause && Input.GetKeyDown(KeyCode.Space))
+        {
+            Pause = true;
+            timeSclaeMirror = 0;
+            Time.timeScale = timeSclaeMirror;
+        }
+
+        else if (Pause && Input.GetKeyDown(KeyCode.Space))
+        {
+            Pause = false;
         }
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;

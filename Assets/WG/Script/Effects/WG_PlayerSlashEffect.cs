@@ -21,6 +21,7 @@ public class WG_PlayerSlashEffect : WG_Effects
 
     [Header("BulletParry Info")]
     [SerializeField] public float ParryToShootSpeed = 10f;
+
     private void Start()
     {
         currentTimeSclae = Time.timeScale;
@@ -31,7 +32,9 @@ public class WG_PlayerSlashEffect : WG_Effects
         timer += Time.unscaledDeltaTime;
 
         //Update만 TimeScale 0일때도 실행되니 따로 메소드로 빼주지않고 여기다가 넣어줌
-        if (timer >= timeStopDuration && !WG_PlayerManager.instance.player.isBulletTime)
+        //시간 초기화
+        if (timer >= timeStopDuration && !WG_PlayerManager.instance.player.isBulletTime
+            && !WG_PlayerManager.instance.player.Pause)
             Time.timeScale = currentTimeSclae;
     }
     private void FixedUpdate()
