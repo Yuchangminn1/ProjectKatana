@@ -6368,10 +6368,12 @@ MonoBehaviour:
   shotPos: {fileID: 1849215092}
   cmLaser: {fileID: 1849215090}
   cmLaserList: []
-  laserNum: 8
+  laserNum: 20
+  isShoot: 1
   laserMoveSpeed: 20
-  laserScale: {x: 0.4, y: 0.2, z: 1}
-  yReturn: -6
+  laserScale: {x: 0.2, y: 0.3, z: 1}
+  yReturn: -7
+  shootdelay: 0.01
 --- !u!1 &488332390
 GameObject:
   m_ObjectHideFlags: 0
