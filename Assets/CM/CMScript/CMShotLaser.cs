@@ -29,7 +29,7 @@ public class CMShotLaser : MonoBehaviour
             cmLaserList[i] = Instantiate(cmLaser);
             cmLaserList[i].transform.parent = transform;
             cmLaserList[i].transform.localScale = laserScale;
-            cmLaserList[i].transform.position = new Vector2(cmLaserList[i].transform.position.x, cmLaserList[i].transform.position.y + 1f );
+            cmLaserList[i].transform.position = cmLaser.transform.position;
             ++i;
         }
 
