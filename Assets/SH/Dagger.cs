@@ -45,7 +45,7 @@ public class Dagger : MonoBehaviour
         // 계산된 방향으로 프로젝타일 이동
 
         //추가한 코드
-        if(gameObject.tag == "EnemyBullet")
+        if (gameObject.tag == "EnemyBullet")
             rb2D.velocity = direction * speed;
 
     }
@@ -60,7 +60,8 @@ public class Dagger : MonoBehaviour
         // 플레이어와 충돌하면
         if (collision.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            //잠시 꺼둠
+            //Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
