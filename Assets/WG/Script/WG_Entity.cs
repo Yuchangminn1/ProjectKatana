@@ -58,17 +58,15 @@ public class WG_Entity : MonoBehaviour
     [SerializeField] public float AttackDashForceDecayRate = 0.99f;
     public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
-
     [Header("Ghost Trail Info")]
     public bool isTrail = false;
 
-    [Header("Dead Info")]
-    public bool isDead = false;
-
     [Header("BulletTIme Info")]
     public bool isBulletTime = false;
-
+    [Header("Time Info")]
     public bool Pause = false;
+    [Header("Life Info")]
+    public bool isDead = false;
     #endregion
 
     protected virtual void Awake()

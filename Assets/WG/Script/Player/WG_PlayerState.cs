@@ -51,7 +51,7 @@ public class WG_PlayerState
         X_Input = Input.GetAxis("Horizontal");
         Y_Input = Input.GetAxis("Vertical");
 
-        if (!player.isDead)
+        if (!player.isDead && !WG_RecordManager.instance.Player_rewind.isRewinding)
         {
             //A D키 동시입력 감지
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
@@ -74,8 +74,12 @@ public class WG_PlayerState
             if (rb.velocity.y <= 0 && player.isFalling)
                 rb.gravityScale = PlayerRBStartGravity * 1.5f;
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.isBusy)
-                stateMachine.ChangeState(player.attackState);
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (!player.isBusy)
+                    stateMachine.ChangeState(player.attackState);
+            }
 
             if (player.isTrail)
                 WG_FXManager.instance.ghostControl.Shadows_Skill();

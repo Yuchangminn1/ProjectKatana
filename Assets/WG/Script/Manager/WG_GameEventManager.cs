@@ -10,12 +10,22 @@ public class WG_GameEventManager : MonoBehaviour
 {
     public static WG_GameEventManager instance;
 
+    //만약에 게임 시작하고 어느정도 뒤에부터 시작판정 낼거면 코드 수정해야함
+    public bool isGameStarted = false;
+    public bool isGameFinished = false;
+
     private void Awake()
     {
         if (instance != null)
             Destroy(instance.gameObject);
         else
             instance = this;
+    }
+
+    private void Start()
+    {
+        isGameStarted = true;
+        isGameFinished = false;
     }
 
     public event Action onGoalReached;
