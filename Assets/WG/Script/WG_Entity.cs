@@ -94,6 +94,11 @@ public class WG_Entity : MonoBehaviour
     {
 
     }
+
+    protected virtual void LateUpdate()
+    {
+
+    }
     public void BulletTime()
     {
         var lit = GlobalLight.GetComponent<Light2D>();

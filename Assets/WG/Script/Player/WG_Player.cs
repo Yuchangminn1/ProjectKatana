@@ -5,7 +5,6 @@ using UnityEngine;
 public class WG_Player : WG_Entity
 {
     public bool isBusy { get; set; }
-
     #region states
     public WG_PlayerStateMachine stateMachine { get; private set; }
     public WG_PlayerIdleState idleState { get; private set; }
@@ -25,6 +24,7 @@ public class WG_Player : WG_Entity
     protected override void Awake()
     {
         base.Awake();
+
         stateMachine = new WG_PlayerStateMachine();
 
         idleState = new WG_PlayerIdleState(this, stateMachine, "Idle");
@@ -63,6 +63,14 @@ public class WG_Player : WG_Entity
     {
         base.FixedUpdate();
         stateMachine.currentState.FixedUpdate();
+    }
+
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+        ReplayData data = new ReplayData(transform.position);
+
     }
 
     //따로 스레드에서 코루틴이 돌아가니까

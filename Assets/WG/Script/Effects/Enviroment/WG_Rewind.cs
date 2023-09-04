@@ -7,7 +7,6 @@ public class WG_Rewind : MonoBehaviour
     public float MaxRewindDuration = 60f;
     public float rewindSpeed = 2f;
     public bool isRewinding = false;
-
     List<TimeSnapShot> timeSnapShots = new List<TimeSnapShot>();
 
     WG_Player player;
@@ -20,11 +19,14 @@ public class WG_Rewind : MonoBehaviour
     {
         public Vector3 position;
         public Quaternion rotation;
-
-        public TimeSnapShot(Vector3 position, Quaternion rotation)
+        public Sprite sprite;
+        public int FacingDir;
+        public TimeSnapShot(Vector3 position, Quaternion rotation, Sprite sprite, int FacingDir)
         {
             this.position = position;
             this.rotation = rotation;
+            this.sprite = sprite;
+            this.FacingDir = FacingDir;
         }
     }
 
@@ -40,8 +42,9 @@ public class WG_Rewind : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
+
         if (!isRewinding)
             RecordSnapShot();
 
@@ -49,10 +52,13 @@ public class WG_Rewind : MonoBehaviour
             RewindTime();
     }
 
+
+
     void RecordSnapShot()
     {
 
-        timeSnapShots.Insert(0, new TimeSnapShot(player.transform.position, player.transform.rotation));
+        timeSnapShots.Insert(0, new TimeSnapShot(player.transform.position, player.transform.rotation, player.spriteRenderer.sprite
+            , player.FacingDir));
 
         //MaxRewindDuration 시간 초과하면 오래된 데이터부터 삭제
         if (timeSnapShots.Count > Mathf.Round(MaxRewindDuration / Time.fixedDeltaTime))
@@ -70,6 +76,8 @@ public class WG_Rewind : MonoBehaviour
             TimeSnapShot snapShot = timeSnapShots[0];
             player.transform.position = snapShot.position;
             player.transform.rotation = snapShot.rotation;
+            player.spriteRenderer.sprite = snapShot.sprite;
+            player.FacingDir = snapShot.FacingDir;
 
             timeSnapShots.RemoveAt(0);
         }
