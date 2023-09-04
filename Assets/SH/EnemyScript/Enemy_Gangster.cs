@@ -5,7 +5,14 @@ public class Enemy_Gangster : Enemy_SH
     float pDistance;
     [SerializeField] GameObject BulletPrefap;
     [SerializeField] Transform Firepos;
+    [SerializeField] GameObject slashBlood;
+    [SerializeField] GameObject putBlood;
+    [SerializeField] Transform bloodPos;
 
+    WG_PlayerSlashHitEffect WG_PlayerSlashHitEffect { get; set; }
+    public LayerMask pAttack;
+
+    private float detectionRange = 2f;
     private Animator animator;
 
     [SerializeField] private float shootCooldown;
@@ -21,7 +28,7 @@ public class Enemy_Gangster : Enemy_SH
     public GangsterShootState shootState { get; private set; }
     public GangsterMoveState moveState { get; private set; }
 
-    //public GangsterHitState hitState { get; private set; }
+    public GangsterHitState hitState { get; private set; }
 
 
     #endregion
@@ -36,7 +43,7 @@ public class Enemy_Gangster : Enemy_SH
         idleState = new GangsterIdleState(this, stateMachine, "Idle", this);
         shootState = new GangsterShootState(this, stateMachine, "Shoot", this);
         moveState = new GangsterMoveState(this, stateMachine, "Move", this);
-        //hitState = new GangsterHitState(this, stateMachine, "Hit", this);
+        hitState = new GangsterHitState(this, stateMachine, "Hit", this);
 
 
     }
@@ -66,8 +73,13 @@ public class Enemy_Gangster : Enemy_SH
         if (player != null)
         {
             pDistance = Vector2.Distance(transform.position, player.transform.position);
-
         }
+
+        if (shootCooldownTimer <= 0)
+        {
+            stateMachine.ChangeState(shootState);
+        }
+
 
 
     }
@@ -96,6 +108,7 @@ public class Enemy_Gangster : Enemy_SH
             base.Enter();
 
             stateTimer = gangster.idleTime;
+            gangster.shootCooldownTimer = gangster.idleTime;
         }
 
         public override void Exit()
@@ -106,8 +119,13 @@ public class Enemy_Gangster : Enemy_SH
         public override void Update()
         {
             base.Update();
-            if (stateTimer < 0 && !gangster.isBusy)
+            if (stateTimer < 0 && !gangster.isBusy && gangster.pDistance > 2)
+            {
+
+
                 stateMachine.ChangeState(gangster.moveState);
+
+            }
         }
     }
 
@@ -139,12 +157,13 @@ public class Enemy_Gangster : Enemy_SH
 
             base.Update();
             gangster.FacingPlayer();
-            gangster.SetVelocity(gangster.moveSpeed * gangster.FacingDir, rb.velocity.y);
-
-            if (gangster.shootCooldownTimer <= 0 && stateTimer <= 0)
+            if (gangster.pDistance >= 2)
             {
-                stateMachine.ChangeState(gangster.shootState);
+                gangster.SetVelocity(gangster.moveSpeed * gangster.FacingDir, rb.velocity.y);
             }
+            else
+                stateMachine.ChangeState(gangster.idleState);
+
 
         }
     }
@@ -186,6 +205,7 @@ public class Enemy_Gangster : Enemy_SH
     public class GangsterHitState : EnemyState_SH
     {
         Enemy_Gangster gangster;
+
         public GangsterHitState(Enemy_SH _enemyBase, EnemyStateMachine_SH _stateMachine, string _animBoolName, Enemy_Gangster _gangster)
             : base(_enemyBase, _stateMachine, _animBoolName)
         {
@@ -195,6 +215,11 @@ public class Enemy_Gangster : Enemy_SH
         public override void Enter()
         {
             base.Enter();
+
+            if (gangster.FacingDir == -1)
+                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 180, 0));
+            else if (gangster.FacingDir == 1)
+                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.identity);
 
         }
 
@@ -218,10 +243,20 @@ public class Enemy_Gangster : Enemy_SH
 
 
         GameObject Clone = Instantiate(BulletPrefap, Firepos.position, Quaternion.identity, transform);
+        shootCooldownTimer = shootCooldown;
+
 
         //WG 추가한 코드
         Clone.GetComponent<WG_BulletParentsData>().Parent = gameObject;
         Clone.transform.SetParent(null);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("attack"))
+        {
+            this.stateMachine.ChangeState(hitState);
+        }
     }
 
 }
