@@ -130,7 +130,7 @@ public class WG_PlayerSlash : MonoBehaviour
           WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList.transform.position,
           Quaternion.identity, WG_FXManager.instance.transform);
 
-        Hit_Clone.transform.rotation = transform.rotation;
+        Hit_Clone.transform.rotation = transform.rotation; 
 
         WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy.Clear();
     }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Gangster : Enemy_SH
@@ -12,7 +13,7 @@ public class Enemy_Gangster : Enemy_SH
     WG_PlayerSlashHitEffect WG_PlayerSlashHitEffect { get; set; }
     public LayerMask pAttack;
 
-    private float detectionRange = 2f;
+    private float nuckBackForce = 15f;
     private Animator animator;
 
     [SerializeField] private float shootCooldown;
@@ -37,6 +38,8 @@ public class Enemy_Gangster : Enemy_SH
     protected override void Awake()
     {
         base.Awake();
+
+        shootCooldownTimer = 2f;
 
         animator = GetComponent<Animator>();
 
@@ -75,7 +78,7 @@ public class Enemy_Gangster : Enemy_SH
             pDistance = Vector2.Distance(transform.position, player.transform.position);
         }
 
-        if (shootCooldownTimer <= 0)
+        if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
         {
             stateMachine.ChangeState(shootState);
         }
@@ -108,7 +111,7 @@ public class Enemy_Gangster : Enemy_SH
             base.Enter();
 
             stateTimer = gangster.idleTime;
-            gangster.shootCooldownTimer = gangster.idleTime;
+
         }
 
         public override void Exit()
@@ -221,18 +224,33 @@ public class Enemy_Gangster : Enemy_SH
             else if (gangster.FacingDir == 1)
                 Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.identity);
 
+            Vector2 enemyNuckbackNormalized = (gangster.transform.position - gangster.player.transform.position).normalized;
+            Vector2 nuckBackVector = enemyNuckbackNormalized * gangster.nuckBackForce;
+
+
+            gangster.rb.AddForce( nuckBackVector, ForceMode2D.Impulse );
+
+            stateTimer = 1.2f;
         }
 
+        
         public override void Exit()
         {
             base.Exit();
-            gangster.hp--;
+          
 
         }
+
 
         public override void Update()
         {
             base.Update();
+            Instantiate(gangster.putBlood, gangster.bloodPos.position, Quaternion.identity);
+            
+            if(stateTimer <= 0)
+            {
+                gangster.hp--;
+            }
         }
     }
 

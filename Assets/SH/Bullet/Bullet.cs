@@ -25,16 +25,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-
-        if (target.transform.position.x < transform.position.x)
-        {
-            spr.flipX = false;
-        }
-        else
-            spr.flipX = true;
-    }
 
     private void FixedUpdate()
     {
