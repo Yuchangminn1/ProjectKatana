@@ -11,6 +11,7 @@ public class WG_FXManager : MonoBehaviour
     public WG_PlayerSlashHitEffect playerSlashHitEffect { get; private set; }
     public WG_GhostControl ghostControl { get; private set; }
     public WG_CameraEffect cameraEffect { get; private set; }
+    public WG_ScreenEffect screenEffect { get; private set; }
     private void Awake()
     {
         if (instance != null) Destroy(instance.gameObject);
@@ -25,6 +26,7 @@ public class WG_FXManager : MonoBehaviour
         playerSlashHitEffect = GetComponent<WG_PlayerSlashHitEffect>();
         ghostControl = GetComponent<WG_GhostControl>();
         cameraEffect = GetComponent<WG_CameraEffect>();
+        screenEffect = GetComponent<WG_ScreenEffect>();
 
     }
 }

@@ -13,7 +13,6 @@ public class WG_Rewind : MonoBehaviour
     List<TimeSnapShot> timeSnapShots = new List<TimeSnapShot>();
 
     WG_Player player;
-
     private void Start()
     {
         player = WG_PlayerManager.instance.player;
@@ -22,21 +21,23 @@ public class WG_Rewind : MonoBehaviour
     }
     struct TimeSnapShot
     {
-        public Vector3 velocity;
         public Vector3 position;
         public Quaternion rotation;
         public Sprite sprite;
-        public int FacingDir;
-        public bool Input_Mouse0;
+        public bool isInputMouse0;
+        public float attackAngle;
+        //public int FacingDir;
 
-        public TimeSnapShot(Vector3 velocity, Vector3 position, Quaternion rotation, Sprite sprite, int FacingDir, bool Input_Mouse0)
+
+        public TimeSnapShot(Vector3 position, Quaternion rotation, Sprite sprite,
+            bool isInputMouse0, float attackAngle)
         {
-            this.velocity = velocity;
             this.position = position;
             this.rotation = rotation;
             this.sprite = sprite;
-            this.FacingDir = FacingDir;
-            this.Input_Mouse0 = Input_Mouse0;
+            // this.FacingDir = FacingDir;
+            this.isInputMouse0 = isInputMouse0;
+            this.attackAngle = attackAngle;
         }
     }
 
@@ -68,8 +69,8 @@ public class WG_Rewind : MonoBehaviour
 
     void RecordSnapShot()
     {
-        timeSnapShots.Insert(0, new TimeSnapShot(player.rb.velocity, player.transform.position, player.transform.rotation, player.spriteRenderer.sprite
-            , player.FacingDir, Input.GetKeyDown(KeyCode.Mouse0)));
+        timeSnapShots.Insert(0, new TimeSnapShot(player.transform.position, player.transform.rotation, player.spriteRenderer.sprite
+            , player.isAttackForRewind, WG_InputManager.instance.playerLookingCursorAngle));
 
         //MaxRewindDuration 시간 초과하면 오래된 데이터부터 삭제
         if (timeSnapShots.Count > Mathf.Round(MaxRewindDuration / Time.fixedDeltaTime))
@@ -89,16 +90,18 @@ public class WG_Rewind : MonoBehaviour
         //데이터 존재하면
         if (timeSnapShots.Count > 0)
         {
-
             TimeSnapShot snapShot = timeSnapShots[0];
-            player.rb.velocity = snapShot.velocity;
             player.transform.position = snapShot.position;
             player.transform.rotation = snapShot.rotation;
             player.spriteRenderer.sprite = snapShot.sprite;
-            player.FacingDir = snapShot.FacingDir;
+            //  player.FacingDir = snapShot.FacingDir;
 
-            if (snapShot.Input_Mouse0)
-                //이펙트 리와인드 작업 해야함
+            if (snapShot.isInputMouse0)
+            {
+                WG_FXManager.instance.playerSlashEffect.CreateSlashEffect();
+                WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.transform.rotation
+                    = Quaternion.Euler(0, 0, snapShot.attackAngle);
+            }
 
             timeSnapShots.RemoveAt(0);
         }
@@ -109,12 +112,13 @@ public class WG_Rewind : MonoBehaviour
 
     public void StartRewind()
     {
+        WG_FXManager.instance.screenEffect.RetroEffectON();
         isRewinding = true;
     }
 
     public void StopRewind()
     {
-
+        WG_FXManager.instance.screenEffect.RetroEffectOff();
         isRewinding = false;
         isRecordPaused = false;
 

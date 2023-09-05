@@ -58,6 +58,7 @@ public class WG_Entity : MonoBehaviour
     [SerializeField] public float AttackDashForceDecayRate = 0.99f;
     public bool isAttackAfterOnAir = false;
     public bool isAttacking = false;
+    public bool isAttackForRewind = false;
     [Header("Ghost Trail Info")]
     public bool isTrail = false;
 
@@ -71,7 +72,7 @@ public class WG_Entity : MonoBehaviour
 
     protected virtual void Awake()
     {
-
+        isDead = false;
     }
 
     protected virtual void Start()
@@ -85,7 +86,6 @@ public class WG_Entity : MonoBehaviour
     protected virtual void Update()
     {
         Debug.DrawLine(GroundCheck.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance), Color.red);
-
     }
 
     protected virtual void FixedUpdate()

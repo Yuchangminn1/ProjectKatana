@@ -20,6 +20,8 @@ public class WG_GameEventManager : MonoBehaviour
             Destroy(instance.gameObject);
         else
             instance = this;
+
+        Time.timeScale = 1.0f;
     }
 
     private void Start()
