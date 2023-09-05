@@ -18,9 +18,19 @@ public class CMShotLaser : MonoBehaviour
     [SerializeField] Vector3 laserScale;
     [SerializeField] float yReturn = -1.360f;
     [SerializeField] float cmy = 0;
+    public bool laserOn  = true;
 
+    [SerializeField] LaserSwich laserSwich;
+
+
+   // Coroutine LaserShoot;
     private void Start()
     {
+        laserSwich = GameObject.Find("LaserSwitch").GetComponent<LaserSwich>();
+        if (laserSwich == null)
+            Debug.Log("아 안들어간다고 ");
+        if (laserSwich.laserOn == null)
+            Debug.Log("아 안들어간다고2 ");
         if (laserScale == null || laserScale == Vector3.zero)
         {
             laserScale = Vector3.one;
@@ -36,13 +46,29 @@ public class CMShotLaser : MonoBehaviour
             ++i;
         }
 
-        StartCoroutine(ShotE());
+        LaserStart();
     }
 
+    public void LaserStart()
+    {
+       
+
+        laserOn = laserSwich.laserOn;
+     //   StartCoroutine(ShotE());
+
+    }
+    public void LaserStop()
+    {
+        
+        laserOn = laserSwich.laserOn;
+        
+
+       // StopCoroutine(ShotE());
+    }
     IEnumerator ShotNReturn(GameObject _gameObject, float _startTime,int _i)
     {
         float yPos = _gameObject.transform.position.y;
-        while (true)
+        while (laserOn)
         {
             //yield return null;
             yield return new WaitForFixedUpdate();
@@ -78,21 +104,9 @@ public class CMShotLaser : MonoBehaviour
             cmy *= -1f;
             StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
             ++i;
-            //Debug.Log($"W {i}");
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
 
-            //Debug.Log("W"); 
-            //StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
-            /*yield return new WaitForFixedUpdate();
-            Debug.Log("W");*/
-            /*yield return new WaitForFixedUpdate();
-            Debug.Log("E");*/
-            /* yield return new WaitForFixedUpdate();
-             Debug.Log("R");*/
-            //yield return new WaitForFixedUpdate();
-
-            //  yield return new WaitForFixedUpdate();
 
         }
         yield return null;
@@ -102,50 +116,12 @@ public class CMShotLaser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"태그이름 {collision.tag}");
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-
-
-
+        
 
         if (collision.tag == "Player")
         {
             Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망"); Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-
-
-            Debug.Log("플레이어 사망");
+            
         }
     }
 }

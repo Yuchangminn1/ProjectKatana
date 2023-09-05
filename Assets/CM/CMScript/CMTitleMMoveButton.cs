@@ -28,7 +28,11 @@ public class CMTitleMMoveButton : MonoBehaviour
             ChangButton(-1);
         if (Input.GetKeyDown(KeyCode.DownArrow))
             ChangButton(1);
-        
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            ClickButton();
+            Debug.Log($"{currentNum}번 버튼 눌렀음");
+        }
     }
 
     private void ChangButton(int num)
@@ -61,5 +65,9 @@ public class CMTitleMMoveButton : MonoBehaviour
 
         }
 
+    }
+    void ClickButton()
+    {
+        buttons[currentNum].GetComponent<Button>().onClick.Invoke();
     }
 }
