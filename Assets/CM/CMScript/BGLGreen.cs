@@ -91,7 +91,7 @@ public class BGLGreen : LightBlink
                 transform.position = new Vector3(currentPos.x - PlusX, currentPos.y - PlusY);
                 currentPos = transform.position;
                 ++count;
-                Debug.Log(count);
+                //Debug.Log(count);
                 yield return null;
             }
             count = 0;
