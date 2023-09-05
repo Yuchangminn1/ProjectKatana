@@ -8,6 +8,10 @@ public class CMShotLaser : MonoBehaviour
     [SerializeField] Transform shotPos;
     [SerializeField] GameObject cmLaser;
     [SerializeField] GameObject[] cmLaserList;
+
+
+
+
     [SerializeField] int laserNum = 15;
     [SerializeField] bool isShoot = true;
     [SerializeField] float laserMoveSpeed = 1;
@@ -17,7 +21,6 @@ public class CMShotLaser : MonoBehaviour
 
     private void Start()
     {
-    
         if (laserScale == null || laserScale == Vector3.zero)
         {
             laserScale = Vector3.one;
@@ -75,7 +78,7 @@ public class CMShotLaser : MonoBehaviour
             cmy *= -1f;
             StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
             ++i;
-            Debug.Log($"W {i}");
+            //Debug.Log($"W {i}");
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
 
@@ -97,5 +100,52 @@ public class CMShotLaser : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log($"태그이름 {collision.tag}");
+        Debug.Log($"태그이름 {collision.tag}");
 
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+        Debug.Log($"태그이름 {collision.tag}");
+
+
+
+
+
+        if (collision.tag == "Player")
+        {
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망"); Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+            Debug.Log("플레이어 사망");
+
+
+            Debug.Log("플레이어 사망");
+        }
+    }
 }
