@@ -70,7 +70,7 @@ public class Enemy_Snow : Enemy_SH
         stateMachine.Initialize(idleState);
         throwCooldownTimer = throwCooldown; //쿨다운이 다 되면 언제든지 공격 할 수 있도록 하려면?
         p1CooldownTimer = p1Cooldown;
-        dodgeCooldownTimer = dodgeCooldown;
+        dodgeCooldownTimer = 0;
 
     }
 
@@ -287,6 +287,7 @@ public class Enemy_Snow : Enemy_SH
         public override void Enter()
         {
             base.Enter();
+            snow.dodgeCooldownTimer = snow.dodgeCooldown;
         }
 
         public override void Exit()
@@ -318,13 +319,13 @@ public class Enemy_Snow : Enemy_SH
         public override void Exit()
         {
             base.Exit();
-            snow.hp--;
-            snow.daggerCount++;
+            Destroy(snow.gameObject);
         }
 
         public override void Update()
         {
             base.Update();
+            snow.SetVelocityToZero();
         }
     }
 
@@ -376,6 +377,19 @@ public class Enemy_Snow : Enemy_SH
         throwCooldownTimer = throwCooldown;
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("attack"))
+        {
+            if (dodgeCooldownTimer <= 0)
+                this.stateMachine.ChangeState(dodgeState);
+            else
+                this.stateMachine.ChangeState(hitState);
+
+        }
+    }
+
 
 }
 
