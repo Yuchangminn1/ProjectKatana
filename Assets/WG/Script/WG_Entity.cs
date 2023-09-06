@@ -78,6 +78,8 @@ public class WG_Entity : MonoBehaviour
     public Collider2D rayhit_WhatisGround_Down_other;
     public Collider2D rayhit_WhatisGround_Up_other;
 
+    [Header("Physics Materials2D Info")]
+    public PhysicsMaterial2D[] PhysicsMaterias;
     #endregion
 
     protected virtual void Awake()

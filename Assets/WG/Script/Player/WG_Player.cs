@@ -84,4 +84,30 @@ public class WG_Player : WG_Entity
         isBusy = false;
     }
     public void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //계단에 리지드바디 달려야함
+        if (collision.gameObject.CompareTag("Stair"))
+        {
+            if (Input.GetAxisRaw("Horizontal") == 0 && rb.velocity.y <= 0)
+                rb.sharedMaterial = PhysicsMaterias[0];
+
+            else if (Input.GetAxisRaw("Horizontal") != 0)
+                rb.sharedMaterial = null;
+
+
+            //collision.gameObject.GetComponent<Collider2D>().sharedMaterial = PhysicsMaterias[1];
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Stair"))
+        {
+            rb.sharedMaterial = null;
+
+        }
+    }
 }

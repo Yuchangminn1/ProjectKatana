@@ -3071,9 +3071,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1031847186}
   - component: {fileID: 1031847187}
+  - component: {fileID: 1031847188}
   m_Layer: 27
   m_Name: Edge1
-  m_TagString: Untagged
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3130,10 +3131,37 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.4526049, y: -8.057196}
   - {x: 8.572994, y: 0.9637033}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_AdjacentStartPoint: {x: -4.5, y: -8}
+  m_AdjacentEndPoint: {x: 12.69, y: 1}
+  m_UseAdjacentStartPoint: 1
+  m_UseAdjacentEndPoint: 1
+--- !u!50 &1031847188
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031847185}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1036923043
 GameObject:
   m_ObjectHideFlags: 0
@@ -16190,8 +16218,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.4700499, y: -0.81485, z: 0}
-    m_Extent: {x: 5.94475, y: 2.07415, z: 0}
+    m_Center: {x: 2.4726, y: -0.819, z: 0}
+    m_Extent: {x: 5.9451, y: 2.0732, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

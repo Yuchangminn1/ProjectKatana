@@ -95,7 +95,7 @@ public class WG_PlayerState
         }
 
         if (Input.GetKey(KeyCode.L))
-            SceneManager.LoadScene("WG");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         if (player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>() != null)
         {
