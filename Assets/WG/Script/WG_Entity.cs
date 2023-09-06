@@ -72,11 +72,10 @@ public class WG_Entity : MonoBehaviour
     public bool isDead = false;
 <<<<<<< HEAD
 
-    [Header("RayCast Info")]
-    public RaycastHit2D rayhit_WhatisGround_Down;
-    public RaycastHit2D rayhit_WhatisGround_Up;
-    public Collider2D rayhit_WhatisGround_Down_other;
-    public Collider2D rayhit_WhatisGround_Up_other;
+    [HideInInspector] public RaycastHit2D rayhit_WhatisGround_Down;
+    [HideInInspector] public RaycastHit2D rayhit_WhatisGround_Up;
+    [HideInInspector] public Collider2D rayhit_WhatisGround_Down_other;
+    [HideInInspector] public Collider2D rayhit_WhatisGround_Up_other;
 
 =======
 >>>>>>> parent of fa6d81be (121312)
@@ -92,7 +91,7 @@ public class WG_Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        GlobalLight = GameObject.Find("GlobalLight");
+        GlobalLight = GameObject.Find("Global");
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
