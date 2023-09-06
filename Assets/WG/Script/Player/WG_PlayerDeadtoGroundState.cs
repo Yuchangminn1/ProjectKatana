@@ -24,8 +24,14 @@ public class WG_PlayerDeadtoGroundState : WG_PlayerState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.R))
-            stateMachine.ChangeState(player.idleState);
+        if (isAnimationFinishTriggerCalled)
+        {
+            WG_RecordManager.instance.Player_rewind.PauseRecord();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                WG_RecordManager.instance.Player_rewind.StartRewind();
+            }
+        }
     }
     public override void Exit()
     {
