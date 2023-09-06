@@ -103,21 +103,7 @@ public class CMShotLaser : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log($"태그이름 {collision.tag}");
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
-
-        Debug.Log($"태그이름 {collision.tag}");
+        
 
 
 
@@ -126,26 +112,7 @@ public class CMShotLaser : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망"); Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-            Debug.Log("플레이어 사망");
-
-
-            Debug.Log("플레이어 사망");
+            
         }
     }
 }
