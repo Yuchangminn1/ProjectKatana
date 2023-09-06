@@ -523,7 +523,7 @@ Transform:
   m_GameObject: {fileID: 6356533392284414006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2506905, y: -0.734, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8702657324612526317}
@@ -534,7 +534,7 @@ Transform:
   - {fileID: 3326118312988850869}
   - {fileID: 2586316532900701010}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1616626927258171707
 Rigidbody2D:
@@ -609,7 +609,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 2684354615
+    m_Bits: 2818572343
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
   wall_distance: 0.54
   WhatIsStair:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 134217728
   stair_distance: 3
   playerHead: {fileID: 8702657324612526317}
   smalljumpReverseForce: 20

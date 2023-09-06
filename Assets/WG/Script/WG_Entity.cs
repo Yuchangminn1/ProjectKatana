@@ -72,10 +72,11 @@ public class WG_Entity : MonoBehaviour
     [Header("Life Info")]
     public bool isDead = false;
 
-    [HideInInspector] public RaycastHit2D rayhit_WhatisGround_Down;
-    [HideInInspector] public RaycastHit2D rayhit_WhatisGround_Up;
-    [HideInInspector] public Collider2D rayhit_WhatisGround_Down_other;
-    [HideInInspector] public Collider2D rayhit_WhatisGround_Up_other;
+    [Header("RayCast Info")]
+    public RaycastHit2D rayhit_WhatisGround_Down;
+    public RaycastHit2D rayhit_WhatisGround_Up;
+    public Collider2D rayhit_WhatisGround_Down_other;
+    public Collider2D rayhit_WhatisGround_Up_other;
 
     #endregion
 
@@ -89,7 +90,7 @@ public class WG_Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        GlobalLight = GameObject.Find("Global");
+        GlobalLight = GameObject.Find("GlobalLight");
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
