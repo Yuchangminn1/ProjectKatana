@@ -1970,19 +1970,20 @@ MonoBehaviour:
   TimeOverImage: {fileID: 2120929960}
   UIGameObject:
   - {fileID: 739073421}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2053497715}
+  - {fileID: 960884953}
+  - {fileID: 2059486234}
+  - {fileID: 1125143231}
+  - {fileID: 1060671948}
+  - {fileID: 1984780760}
+  - {fileID: 1478028713}
+  - {fileID: 425515455}
+  - {fileID: 1645321641}
+  - {fileID: 2123275178}
+  - {fileID: 1642353783}
+  - {fileID: 512424149}
+  - {fileID: 1880674936}
+  - {fileID: 2120929960}
   startTime: []
   midleTime: []
   ABTime: 10
