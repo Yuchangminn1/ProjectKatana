@@ -29,7 +29,7 @@ public class WG_PlayerGroundState : WG_PlayerState
         //점프중에 아래로 내려오는거 시작하거나 움직이다가 떨어지거나 하면 fallingState
         //벽잡고 있을땐 안나와야 하니까 그라운드 쯤에 놓으면 좋을듯
         //공격 이펙트 나오는중엔 그 이펙트 사라지기 전까진 falling 안나오게 (점프하자마자 아래로 공격하면 급강하하는 버그가 있었음)
-        if (rb.velocity.y <= 0 && !player.isGrounded()
+        if (rb.velocity.y <= 0 && !player.isGrounded() && !player.isStaired()
             && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
             player.stateMachine.ChangeState(player.fallingState);
 
