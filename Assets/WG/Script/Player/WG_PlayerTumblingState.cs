@@ -27,6 +27,10 @@ public class WG_PlayerTumblingState : WG_PlayerState
         //rb.AddForce(new Vector2(-player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
 
         rb.AddForce(new Vector2(player.FacingDir * player.TumblingForce_X, player.TumblingForce_Y), ForceMode2D.Impulse);
+        if (!WG_FXManager.instance.jumpAndtumblingDustEffect.tumblingdust.activeSelf)
+            WG_FXManager.instance.jumpAndtumblingDustEffect.PlayTumblingDust();
+        else
+            WG_FXManager.instance.jumpAndtumblingDustEffect.InstantiateTumblingDust();
 
     }
     public override void Update()

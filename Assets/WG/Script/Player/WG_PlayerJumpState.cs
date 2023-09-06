@@ -14,9 +14,10 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         base.Enter();
         player.isJumping = true;
 
-
-
         rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
+
+        if (player.isGrounded())
+            WG_FXManager.instance.jumpAndtumblingDustEffect.PlayJumpDust();
     }
 
     public override void Update()
