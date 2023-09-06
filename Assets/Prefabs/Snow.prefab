@@ -109,11 +109,13 @@ MonoBehaviour:
   isAttacking: 0
   isTrail: 0
   isDead: 0
+  isBulletTime: 0
+  Pause: 0
   player: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 0
-  hp: 3
+  hp: 1
   stunDuration: 0
   stunDirection: {x: 0, y: 0}
   counterImage: {fileID: 0}
