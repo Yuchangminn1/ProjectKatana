@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Gangster : Enemy_SH
@@ -9,6 +8,7 @@ public class Enemy_Gangster : Enemy_SH
     [SerializeField] GameObject slashBlood;
     [SerializeField] GameObject putBlood;
     [SerializeField] Transform bloodPos;
+    GameObject slash;
 
     WG_PlayerSlashHitEffect WG_PlayerSlashHitEffect { get; set; }
     public LayerMask pAttack;
@@ -78,9 +78,12 @@ public class Enemy_Gangster : Enemy_SH
             pDistance = Vector2.Distance(transform.position, player.transform.position);
         }
 
-        if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
+        if (player.transform.position.y >= transform.position.y)
         {
-            stateMachine.ChangeState(shootState);
+            if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
+            {
+                stateMachine.ChangeState(shootState);
+            }
         }
 
 
@@ -125,8 +128,9 @@ public class Enemy_Gangster : Enemy_SH
             if (stateTimer < 0 && !gangster.isBusy && gangster.pDistance > 2)
             {
 
+                if (gangster.player.transform.position.y >= gangster.transform.position.y)
 
-                stateMachine.ChangeState(gangster.moveState);
+                    stateMachine.ChangeState(gangster.moveState);
 
             }
         }
@@ -218,26 +222,26 @@ public class Enemy_Gangster : Enemy_SH
         public override void Enter()
         {
             base.Enter();
-
+            gangster.slash = GameObject.FindGameObjectWithTag("attack");
             if (gangster.FacingDir == -1)
-                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 180, 0));
+                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 180, WG_InputManager.instance.playerLookingCursorAngle));
             else if (gangster.FacingDir == 1)
-                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.identity);
+                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 0, WG_InputManager.instance.playerLookingCursorAngle));
 
             Vector2 enemyNuckbackNormalized = (gangster.transform.position - gangster.player.transform.position).normalized;
             Vector2 nuckBackVector = enemyNuckbackNormalized * gangster.nuckBackForce;
 
 
-            gangster.rb.AddForce( nuckBackVector, ForceMode2D.Impulse );
+            gangster.rb.AddForce(nuckBackVector, ForceMode2D.Impulse);
 
             stateTimer = 1.2f;
         }
 
-        
+
         public override void Exit()
         {
             base.Exit();
-          
+
 
         }
 
@@ -245,9 +249,11 @@ public class Enemy_Gangster : Enemy_SH
         public override void Update()
         {
             base.Update();
+     
+
             Instantiate(gangster.putBlood, gangster.bloodPos.position, Quaternion.identity);
-            
-            if(stateTimer <= 0)
+
+            if (stateTimer <= 0)
             {
                 gangster.hp--;
             }

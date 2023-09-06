@@ -210,30 +210,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6356533392284414006, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
   m_PrefabInstance: {fileID: 5210238772530296322}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &330917005 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
-  m_PrefabInstance: {fileID: 681818019}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &381054804
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.6
+      value: 5.829649
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.85
+      value: 11.98226
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -271,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gangster (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 223647920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -584,19 +583,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.67
+      value: 0.89964867
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.26
+      value: 4.39226
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -634,6 +633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gangster (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 223647920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -797,11 +800,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalScale.x
@@ -809,11 +812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.56
+      value: 23.78965
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.75
+      value: 12.882259
       objectReference: {fileID: 0}
     - target: {fileID: 1203357057423549532, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_LocalPosition.z
@@ -851,6 +854,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 223647920}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 536870912
+      objectReference: {fileID: 0}
     - target: {fileID: 5337428310326865383, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_Name
       value: Snow
@@ -866,11 +873,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalScale.x
@@ -878,11 +885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.9
+      value: 28.12965
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.2
+      value: 3.3322597
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -920,6 +927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gangster (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 223647920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1036,11 +1047,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739073421}
   m_CullTransparentMesh: 1
---- !u!4 &740502543 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
-  m_PrefabInstance: {fileID: 538952464}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &748544433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,43 +1376,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &899744423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 899744424}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &899744424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899744423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.770351, y: -5.86774, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 330917005}
-  - {fileID: 1641268427}
-  - {fileID: 1848743541}
-  - {fileID: 913074035}
-  - {fileID: 740502543}
-  - {fileID: 1717323410}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913051991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,11 +1452,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913051991}
   m_CullTransparentMesh: 1
---- !u!4 &913074035 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
-  m_PrefabInstance: {fileID: 381054804}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &957179675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,19 +2228,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.8
+      value: -9.970351
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.5
+      value: 11.632259
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2313,6 +2277,14 @@ PrefabInstance:
     - target: {fileID: 2988264908335351897, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_Name
       value: Gangster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 223647920}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: FacingDir
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2489,11 +2461,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!4 &1641268427 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
-  m_PrefabInstance: {fileID: 1515061110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642353783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,11 +2613,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645321641}
   m_CullTransparentMesh: 1
---- !u!4 &1717323410 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
-  m_PrefabInstance: {fileID: 701586050}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782194330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,11 +2920,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1848743541 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
-  m_PrefabInstance: {fileID: 2045489027}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856303872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,11 +3236,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 899744424}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalScale.x
@@ -3291,11 +3248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55
+      value: 39.22965
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.12
+      value: 11.25226
       objectReference: {fileID: 0}
     - target: {fileID: 1063824466453500611, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3333,6 +3290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gangster (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 223647920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12108,7 +12069,7 @@ Transform:
   - {fileID: 719733717558972156}
   - {fileID: 6435686035349104042}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2323899334738376262
 MonoBehaviour:
@@ -35067,7 +35028,7 @@ Transform:
   - {fileID: 5920033214616315195}
   - {fileID: 6228278108373257058}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4843943831900495437
 GameObject:
@@ -36862,7 +36823,7 @@ Transform:
   - {fileID: 3505628923826474988}
   - {fileID: 2167259421677617093}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5754209167119797288
 BoxCollider2D:
@@ -37941,7 +37902,7 @@ Transform:
   - {fileID: 5944579069352268741}
   - {fileID: 3727419103475496970}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6287339140452855482
 MonoBehaviour:

@@ -71,18 +71,22 @@ public class Enemy_SH : WG_Entity
 
     public virtual void FacingPlayer()
     {
+
         if (player != null)
         {
+            if (player.transform.position.y >= transform.position.y)
+            {
 
-            if (transform.position.x > player.transform.position.x + 0.1f && FacingDir > 0)
-            {
-                Flip();
+                if (transform.position.x > player.transform.position.x && FacingDir > 0)
+                {
+                    Flip();
+                }
+                else if (transform.position.x < player.transform.position.x && FacingDir < 0)
+                {
+                    Flip();
+                }
             }
-            else if (transform.position.x < player.transform.position.x - 0.1f && FacingDir < 0)
-            {
-                Flip();
-            }
-        }
+           }
     }
 
 
