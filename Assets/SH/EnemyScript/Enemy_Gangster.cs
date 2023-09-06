@@ -223,10 +223,12 @@ public class Enemy_Gangster : Enemy_SH
         {
             base.Enter();
             gangster.slash = GameObject.FindGameObjectWithTag("attack");
-            if (gangster.FacingDir == -1)
-                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 180, WG_InputManager.instance.playerLookingCursorAngle));
-            else if (gangster.FacingDir == 1)
+            if (gangster.slash != null)
+            {
                 Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.Euler(0, 0, WG_InputManager.instance.playerLookingCursorAngle));
+            }
+            else
+                Instantiate(gangster.slashBlood, gangster.bloodPos.position, Quaternion.identity);
 
             Vector2 enemyNuckbackNormalized = (gangster.transform.position - gangster.player.transform.position).normalized;
             Vector2 nuckBackVector = enemyNuckbackNormalized * gangster.nuckBackForce;
@@ -249,7 +251,6 @@ public class Enemy_Gangster : Enemy_SH
         public override void Update()
         {
             base.Update();
-     
 
             Instantiate(gangster.putBlood, gangster.bloodPos.position, Quaternion.identity);
 
@@ -277,7 +278,7 @@ public class Enemy_Gangster : Enemy_SH
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("attack"))
+        if (collision.CompareTag("attack") || collision.CompareTag("PlayerBullet"))
         {
             this.stateMachine.ChangeState(hitState);
         }
