@@ -24,12 +24,8 @@ public class WG_PlayerFallingState : WG_PlayerState
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             ControlRecover = true;
 
-        if (player.isGrounded())
+        if (player.isGrounded() || player.isStaired())
             player.stateMachine.ChangeState(player.idleState);
-
-        if (player.isStaired())
-            player.stateMachine.ChangeState(player.idleState);
-
 
         //카타나 제로는 공중에서 XINPUT값이 유지된 채 벽으로 가면 벽에 붙는듯
         if (player.isWallAhead() && X_Input * player.FacingDir >= 0.1f)

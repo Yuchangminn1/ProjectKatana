@@ -35,6 +35,7 @@ public class WG_Entity : MonoBehaviour
     [SerializeField] LayerMask WhatIsStair;
     [SerializeField] float stair_distance = 3f;
     [SerializeField] public Transform playerHead;
+    [SerializeField] public Transform playerLeftFoot;
 
     [Header("Jump Info")]
     public float smalljumpReverseForce;
@@ -195,6 +196,17 @@ public class WG_Entity : MonoBehaviour
     public bool isWallAhead() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDir, wall_distance, WhatIsGround);
     public bool isStaired() => Physics2D.Raycast(GroundCheck.position, Vector2.down, stair_distance, WhatIsStair);
 
+    //달리면서 경사로 탈출할 때 멀리 튀어나가는거 방지
+    public bool isStairedToEmptySpace()
+    {
+        if (isStaired())
+        {
+            if (!Physics2D.Raycast(playerLeftFoot.position, Vector2.right * FacingDir, stair_distance * 2.5f, WhatIsStair))
+                return true;
+        }
+        return false;
+    }
+
     void RayOtherCollider()
     {
         rayhit_WhatisGround_Down = Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);
@@ -205,11 +217,13 @@ public class WG_Entity : MonoBehaviour
 
         if (rayhit_WhatisGround_Up.collider != null)
             rayhit_WhatisGround_Up_other = rayhit_WhatisGround_Up.collider;
+        //
     }
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance));
         Gizmos.DrawLine(transform.position, new Vector2(WallCheck.position.x + wall_distance * FacingDir, WallCheck.position.y));
         Gizmos.DrawLine(transform.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - stair_distance));
+        Gizmos.DrawLine(playerLeftFoot.position, new Vector2(playerLeftFoot.position.x + stair_distance * 2.5f * FacingDir, playerLeftFoot.position.y));
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WG_PlayerJumpState : WG_PlayerGroundState
@@ -14,10 +15,13 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         base.Enter();
         player.isJumping = true;
 
-        rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
-
-        if (player.isGrounded())
+        if (player.isGrounded() || player.isStaired())
+        {
+            if (player.isStaired()) player.SetVelocityToZero();
+            rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
             WG_FXManager.instance.jumpAndtumblingDustEffect.PlayJumpDust();
+        }
+        StateTimer = 0.2f;
     }
 
     public override void Update()
@@ -39,6 +43,11 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
             // player.SetVelocityToZero();
             stateMachine.ChangeState(player.wallGrabState);
         }
+
+        //계단 체크는 좀 긴 길이로 하기때문에
+        if (StateTimer <= 0f && player.isStaired())
+            stateMachine.ChangeState(player.fallingState);
+
     }
     public override void FixedUpdate()
     {

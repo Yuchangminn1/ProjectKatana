@@ -21,8 +21,9 @@ public class WG_PlayerGround_IdleState : WG_PlayerGroundState
         base.Update();
 
         //Attack 도중에 idle타고 jump로 와서 로켓점프 일어나던 버그 수정
-        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W) & !player.isBusy)
-            stateMachine.ChangeState(player.jumpState);
+        if (player.isGrounded() || player.isStaired())
+            if (Input.GetKeyDown(KeyCode.W) && !player.isBusy)
+                stateMachine.ChangeState(player.jumpState);
 
         if (player.isGrounded() && player.isWallAhead())
         {

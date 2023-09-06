@@ -510,12 +510,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: jumpforce
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: wall_distance
       value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: playerLeftFoot
+      value: 
+      objectReference: {fileID: 7713314907826036740}
+    - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: basic_movespeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: ground_distance
-      value: 1.56
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: PhysicsMaterias.Array.size

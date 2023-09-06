@@ -29,6 +29,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     {
         base.Update();
 
+
         if (player.isGrounded() || player.isStaired())
             if (Input.GetKeyDown(KeyCode.W)
                 && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
@@ -39,6 +40,9 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
         if (!player.isAttacking)
             player.SetVelocity(X_Input * player.basic_movespeed, rb.velocity.y);
 
+        //달리면서 경사로 탈출할 때 멀리 튀어나가는거 방지
+        if (player.isStairedToEmptySpace())
+            player.SetVelocity(X_Input * player.basic_movespeed, 0);
 
         if (Mathf.Abs(rb.velocity.x) >= 2f && canEmit)
         {
