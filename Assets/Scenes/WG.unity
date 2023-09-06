@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[577].second.m_TileSpriteIndex
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 4451933123467345422, guid: 0dd04bab1e620d6468d2992a27221717, type: 3}
+      propertyPath: m_RotationalOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6487318922733724977, guid: 0dd04bab1e620d6468d2992a27221717, type: 3}
       propertyPath: m_Layer
       value: 27

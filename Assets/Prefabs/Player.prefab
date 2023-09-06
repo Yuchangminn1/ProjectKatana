@@ -455,8 +455,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5096412125506990001}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.148, y: -0.42, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.148, y: -0.41999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,25 +523,18 @@ Transform:
   m_GameObject: {fileID: 6356533392284414006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2506905, y: -0.734, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 8702657324612526317}
+  - {fileID: 5888024769090420257}
   - {fileID: 8017115169032929519}
   - {fileID: 4556039489116081704}
   - {fileID: 6229944858064762656}
-  - {fileID: 5888024769090420257}
   - {fileID: 3326118312988850869}
   - {fileID: 2586316532900701010}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: -1
-=======
-  m_RootOrder: 8
->>>>>>> parent of fa6d81be (121312)
-=======
-  m_RootOrder: 0
->>>>>>> parent of f24dbdf4 (Merge branch 'WG')
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1616626927258171707
 Rigidbody2D:
@@ -616,7 +609,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 2684354615
+    m_Bits: 2818572343
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -649,14 +642,11 @@ MonoBehaviour:
   ground_distance: 1.1
   WallCheck: {fileID: 6229944858064762656}
   wall_distance: 0.54
-<<<<<<< HEAD
   WhatIsStair:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 134217728
   stair_distance: 3
   playerHead: {fileID: 8702657324612526317}
-=======
->>>>>>> parent of fa6d81be (121312)
   smalljumpReverseForce: 20
   IdleToGrabForce: 0.2
   GrabToWallOverAddSpeed: 12
@@ -677,6 +667,8 @@ MonoBehaviour:
   isBulletTime: 0
   Pause: 0
   isDead: 0
+  rayhit_WhatisGround_Down_other: {fileID: 0}
+  rayhit_WhatisGround_Up_other: {fileID: 0}
 --- !u!1 &7178421402747322469
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +700,37 @@ Transform:
   - {fileID: 8885993031700552566}
   - {fileID: 3547111249751931133}
   - {fileID: 3740015267382400296}
+  m_Father: {fileID: 837667288120586443}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8293715848044151847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8702657324612526317}
+  m_Layer: 29
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8702657324612526317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293715848044151847}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.474, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 837667288120586443}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
