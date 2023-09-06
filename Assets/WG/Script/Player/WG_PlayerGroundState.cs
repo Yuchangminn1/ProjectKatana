@@ -6,8 +6,7 @@ using UnityEngine;
 //공통 기능 정리용이라 player에서 선언 X
 public class WG_PlayerGroundState : WG_PlayerState
 {
-
-
+    PlatformEffector2D otherPE;
     public WG_PlayerGroundState(WG_Player player, WG_PlayerStateMachine stateMachine, string AnimationName)
         : base(player, stateMachine, AnimationName)
     {
@@ -33,6 +32,11 @@ public class WG_PlayerGroundState : WG_PlayerState
             && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
             player.stateMachine.ChangeState(player.fallingState);
 
+        if (player.rayhit_WhatisGround_Down_other.GetComponent<PlatformEffector2D>() != null)
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+                player.rayhit_WhatisGround_Down_other.GetComponent<PlatformEffector2D>().rotationalOffset = 180f;
+        }
     }
     public override void FixedUpdate()
     {
@@ -43,6 +47,4 @@ public class WG_PlayerGroundState : WG_PlayerState
     {
         base.Exit();
     }
-
-
 }

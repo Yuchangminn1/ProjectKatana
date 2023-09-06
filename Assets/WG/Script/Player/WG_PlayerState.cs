@@ -96,6 +96,12 @@ public class WG_PlayerState
 
         if (Input.GetKey(KeyCode.L))
             SceneManager.LoadScene("WG");
+
+        if (player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>() != null)
+        {
+            if (player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>().rotationalOffset != 0f)
+                player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>().rotationalOffset = 0f;
+        }
     }
     public virtual void FixedUpdate()
     {
