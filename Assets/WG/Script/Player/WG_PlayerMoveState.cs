@@ -29,10 +29,9 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
     {
         base.Update();
 
-        if (player.isGrounded() || player.isStaired())
-            if (Input.GetKeyDown(KeyCode.W)
-                && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
-                player.stateMachine.ChangeState(player.jumpState);
+        if (player.isGrounded() && Input.GetKeyDown(KeyCode.W)
+            && WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.IsDestroyed())
+            player.stateMachine.ChangeState(player.jumpState);
 
 
         //자유롭게 움직일 수 있는 상태에서 칼질하면 대쉬가 안나오는 문제가 있었음
@@ -70,9 +69,7 @@ public class WG_PlayerMoveState : WG_PlayerGroundState
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !player.isWallAhead()
-            && player.rayhit_WhatisGround_Down_other.GetComponent<PlatformEffector2D>() == null)
-            stateMachine.ChangeState(player.dodgeRollState);
+        if (Input.GetKeyDown(KeyCode.S) && !player.isWallAhead()) stateMachine.ChangeState(player.dodgeRollState);
     }
     public override void FixedUpdate()
     {

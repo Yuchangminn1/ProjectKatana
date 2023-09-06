@@ -26,15 +26,14 @@ public class WG_Entity : MonoBehaviour
     public bool RecoverControl = true;
 
     [Header("Collosion Info")]
-    [SerializeField] public Transform GroundCheck;
-    [SerializeField] public LayerMask WhatIsGround;
-    [SerializeField] public float ground_distance = 1f;
+    [SerializeField] Transform GroundCheck;
+    [SerializeField] LayerMask WhatIsGround;
+    [SerializeField] float ground_distance = 1f;
     [SerializeField] Transform WallCheck;
     //[SerializeField] LayerMask WhatIsGround;
     [SerializeField] float wall_distance = 1f;
     [SerializeField] LayerMask WhatIsStair;
     [SerializeField] float stair_distance = 3f;
-    [SerializeField] public Transform playerHead;
 
     [Header("Jump Info")]
     public float smalljumpReverseForce;
@@ -71,6 +70,7 @@ public class WG_Entity : MonoBehaviour
     public bool Pause = false;
     [Header("Life Info")]
     public bool isDead = false;
+<<<<<<< HEAD
 
     [Header("RayCast Info")]
     public RaycastHit2D rayhit_WhatisGround_Down;
@@ -78,6 +78,8 @@ public class WG_Entity : MonoBehaviour
     public Collider2D rayhit_WhatisGround_Down_other;
     public Collider2D rayhit_WhatisGround_Up_other;
 
+=======
+>>>>>>> parent of fa6d81be (121312)
     #endregion
 
     protected virtual void Awake()
@@ -98,7 +100,6 @@ public class WG_Entity : MonoBehaviour
     protected virtual void Update()
     {
         Debug.DrawLine(GroundCheck.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance), Color.red);
-        RayOtherCollider();
     }
 
     protected virtual void FixedUpdate()
@@ -193,17 +194,6 @@ public class WG_Entity : MonoBehaviour
     public bool isWallAhead() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDir, wall_distance, WhatIsGround);
     public bool isStaired() => Physics2D.Raycast(GroundCheck.position, Vector2.down, stair_distance, WhatIsStair);
 
-    void RayOtherCollider()
-    {
-        rayhit_WhatisGround_Down = Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);
-        rayhit_WhatisGround_Up = Physics2D.Raycast(playerHead.position, Vector2.up, 100f, WhatIsGround);
-
-        if (rayhit_WhatisGround_Down.collider != null)
-            rayhit_WhatisGround_Down_other = rayhit_WhatisGround_Down.collider;
-
-        if (rayhit_WhatisGround_Up.collider != null)
-            rayhit_WhatisGround_Up_other = rayhit_WhatisGround_Up.collider;
-    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector2(GroundCheck.position.x, GroundCheck.position.y - ground_distance));
