@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276578467190710104}
   - component: {fileID: 5244132631745844948}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Ground1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875719510703222800}
   - component: {fileID: 3202044054321062739}
+  - component: {fileID: 2232280968253042459}
   m_Layer: 0
   m_Name: spr_panic_switch_1
   m_TagString: Untagged
@@ -281,6 +282,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2232280968253042459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361064473038429606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b08ee92c0b0c54ea990ed318826f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lasers:
+  - {fileID: 9006736800317610630}
+  - {fileID: 5796213905121801664}
+  - {fileID: 6549930204495454645}
+  - {fileID: 7441630676654689257}
+  - {fileID: 2720285075564487089}
+  laserOn: 1
 --- !u!1 &589026660189448310
 GameObject:
   m_ObjectHideFlags: 0
@@ -13589,7 +13609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3453224952985681765}
   - component: {fileID: 910520552947747929}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
