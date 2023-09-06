@@ -2234,8 +2234,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!114 &288125937021133328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3966,8 +3964,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!61 &1229329932152842110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4386,8 +4382,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 0
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!4 &1451685815667356444
 Transform:
   m_ObjectHideFlags: 0
@@ -4765,8 +4759,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!114 &1600021450726214272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4897,8 +4889,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!4 &1721829003629032271
 Transform:
   m_ObjectHideFlags: 0
@@ -14784,8 +14774,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!4 &2366071570767900253
 Transform:
   m_ObjectHideFlags: 0
@@ -14824,8 +14812,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!1 &2401815301437162765
 GameObject:
   m_ObjectHideFlags: 0
@@ -19492,7 +19478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2999427981838197893
 GameObject:
   m_ObjectHideFlags: 0
@@ -22014,8 +22000,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 0
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!114 &4216925097270664850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22037,8 +22021,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: 6
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!4 &4262513714513202814
 Transform:
   m_ObjectHideFlags: 0
@@ -29335,8 +29317,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!114 &4690956147073994636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29467,8 +29447,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 8
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!1 &4727954721325642565
 GameObject:
   m_ObjectHideFlags: 0
@@ -30342,8 +30320,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!61 &5177064513736710851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46025,8 +46001,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.4761002, y: -0.81459993, z: 0}
-    m_Extent: {x: 5.9533005, y: 2.0649, z: 0}
+    m_Center: {x: 2.4782, y: -0.80784994, z: 0}
+    m_Extent: {x: 5.9493, y: 2.06445, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -46773,7 +46749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6277638585866407443
 GameObject:
   m_ObjectHideFlags: 0
@@ -47842,8 +47818,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 8
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!156049354 &6830170428224873608
 Grid:
   m_ObjectHideFlags: 0
@@ -53796,7 +53770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7303934616216720289
 GameObject:
   m_ObjectHideFlags: 0
@@ -54868,8 +54842,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 8
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!4 &7664204505139505300
 Transform:
   m_ObjectHideFlags: 0
@@ -62467,8 +62439,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.15, z: 1}
   yReturn: 8
   cmy: 0.2
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!224 &9077239038491330527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62510,8 +62480,6 @@ MonoBehaviour:
   laserScale: {x: 0.2, y: 0.16, z: 1}
   yReturn: -7
   cmy: 0.225
-  laserOn: 1
-  laserSwich: {fileID: 0}
 --- !u!114 &9085091893718649033
 MonoBehaviour:
   m_ObjectHideFlags: 0
