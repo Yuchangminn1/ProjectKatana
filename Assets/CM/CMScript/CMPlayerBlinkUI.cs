@@ -22,6 +22,8 @@ public class CMPlayerBlinkUI : MonoBehaviour
 
     [SerializeField] float[] startTime;
     [SerializeField] float[] midleTime;
+    [SerializeField] float ABTime = 10f;
+
 
     [SerializeField] float darkSpeed = 2f;
     void Start()
@@ -67,6 +69,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
             return;
         }
         CMOnTimer();
+        ABTime -= Time.deltaTime;
     }
 
     public void BlinckUI()
