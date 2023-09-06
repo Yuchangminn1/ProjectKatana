@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 2135035014660069025}
+    - target: {fileID: 6381202156932511324, guid: ddaea453e788ab64aac04c353247384c, type: 3}
+      propertyPath: rewindSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7251415476585196360, guid: ddaea453e788ab64aac04c353247384c, type: 3}
       propertyPath: Player
       value: 

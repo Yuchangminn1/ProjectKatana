@@ -87,26 +87,32 @@ public class WG_Rewind : MonoBehaviour
 
     void RewindTime()
     {
-        //데이터 존재하면
-        if (timeSnapShots.Count > 0)
+        for (int i = 0; i < rewindSpeed; i++)
         {
-            TimeSnapShot snapShot = timeSnapShots[0];
-            player.transform.position = snapShot.position;
-            player.transform.rotation = snapShot.rotation;
-            player.spriteRenderer.sprite = snapShot.sprite;
-            //  player.FacingDir = snapShot.FacingDir;
-
-            if (snapShot.isInputMouse0)
+            //데이터 존재하면
+            if (timeSnapShots.Count > 0)
             {
-                WG_FXManager.instance.playerSlashEffect.CreateSlashEffect();
-                WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.transform.rotation
-                    = Quaternion.Euler(0, 0, snapShot.attackAngle);
-            }
+                TimeSnapShot snapShot = timeSnapShots[0];
+                player.transform.position = snapShot.position;
+                player.transform.rotation = snapShot.rotation;
+                player.spriteRenderer.sprite = snapShot.sprite;
+                //  player.FacingDir = snapShot.FacingDir;
 
-            timeSnapShots.RemoveAt(0);
+                if (snapShot.isInputMouse0)
+                {
+                    WG_FXManager.instance.playerSlashEffect.CreateSlashEffect();
+                    WG_FXManager.instance.playerSlashEffect.Instant_slashEffect.transform.rotation
+                        = Quaternion.Euler(0, 0, snapShot.attackAngle);
+                }
+
+                timeSnapShots.RemoveAt(0);
+            }
+            else
+            {
+                StopRewind();
+                break;
+            }
         }
-        else
-            StopRewind();
 
     }
 
