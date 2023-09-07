@@ -13,6 +13,7 @@ public class WG_PlayerDeadStartState : WG_PlayerState
     {
         base.Enter();
         player.isDead = true;
+        WG_SoundManager.instance.PlayEffectSound("Sound_Player_Dead");
     }
 
     public override void FixedUpdate()

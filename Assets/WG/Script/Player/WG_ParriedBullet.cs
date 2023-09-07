@@ -24,6 +24,8 @@ public class WG_ParriedBullet : WG_PlayerSlash
         transform.rotation = Quaternion.Euler(0, 0, parryAngle);
 
         rb.velocity = parryDir * WG_FXManager.instance.playerSlashEffect.ParryToShootSpeed;
+
+        WG_SoundManager.instance.PlayEffectSound("Sound_Player_Reflect");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +43,6 @@ public class WG_ParriedBullet : WG_PlayerSlash
 
             //일단 임시
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }

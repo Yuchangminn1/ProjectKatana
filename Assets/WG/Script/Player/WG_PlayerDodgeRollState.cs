@@ -26,7 +26,7 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
 
         rb.AddForce(Vector2.right * player.FacingDir * player.DodgeForce, ForceMode2D.Impulse);
 
-        WG_SoundManager.instance.PlayEffectSound("Sound_Player_Roll");
+        WG_SoundManager.instance.PlayEffectSound("Sound_Player_Roll", 0.5f);
     }
     public override void Update()
     {

@@ -56,7 +56,7 @@ public class WG_SoundManager : MonoBehaviour
         BGM_Player.Stop();
     }
 
-    public void PlayEffectSound(string soundName)
+    public void PlayEffectSound(string soundName, float Volume = 1.0f)
     {
         for (int i = 0; i < EffectSound.Length; i++)
         {
@@ -67,10 +67,12 @@ public class WG_SoundManager : MonoBehaviour
                     if (!EffectSound_Player[j].isPlaying)
                     {
                         EffectSound_Player[j].clip = EffectSound[i].clip;
+                        EffectSound_Player[j].volume = Volume;
                         EffectSound_Player[j].Play();
                         //EffectSound_Player[j].PlayOneShot(EffectSound[i].clip);
                         return;
                     }
+                    EffectSound_Player[j].volume = 1f;
                 }
                 Debug.Log("모든 사운드가 재생중");
                 return;

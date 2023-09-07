@@ -1249,6 +1249,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a7e9deb2fda4e2247a4c9f3d90ed426d, type: 3}
   - name: Sound_Player_Roll
     clip: {fileID: 8300000, guid: f70dab1e456339048990c526fe66543d, type: 3}
+  - name: Sound_Player_Dead
+    clip: {fileID: 8300000, guid: 701ff861e6982774396466f4f8393146, type: 3}
   EffectSound_Player:
   - {fileID: 3259741114326547107}
   - {fileID: 3896421737621576112}

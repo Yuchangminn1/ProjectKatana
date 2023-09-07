@@ -5,8 +5,11 @@ using UnityEngine;
 public class WG_StageManager : MonoBehaviour
 {
     public static WG_StageManager instance;
-    [SerializeField] public bool isEnemiesAllDead = false;
     [SerializeField] GameObject[] Enemies;
+
+    //CM 코드추가
+    [SerializeField] bool isEnemiesAllDead = false;
+
 
     private void Awake()
     {
@@ -24,7 +27,12 @@ public class WG_StageManager : MonoBehaviour
         if (Enemies.Length == 0)
             isEnemiesAllDead = true;
 
-        if (isEnemiesAllDead)
-            Debug.Log("적 전멸");
+
+    }
+
+    //CM 코드추가
+    public bool EnemyAllDead()
+    {
+        return isEnemiesAllDead;
     }
 }

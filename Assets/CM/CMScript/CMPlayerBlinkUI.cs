@@ -242,7 +242,8 @@ public class CMPlayerBlinkUI : MonoBehaviour
     //타이머 바 줄어들기
     public void CMOnTimer()
     {
-        timeSlider.value -= Time.deltaTime / TimelimitSetTime;
+        //WG - unscaledDeltaTime로 변경함
+        timeSlider.value -= Time.unscaledDeltaTime / TimelimitSetTime;
         if (timeSlider.value <= 0f)
         {
             CMTimeOverImage();
