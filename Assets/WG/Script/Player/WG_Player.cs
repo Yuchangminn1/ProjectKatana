@@ -97,9 +97,9 @@ public class WG_Player : WG_Entity
             else if (Input.GetAxisRaw("Horizontal") != 0)
                 rb.sharedMaterial = null;
 
-
             //collision.gameObject.GetComponent<Collider2D>().sharedMaterial = PhysicsMaterias[1];
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -109,5 +109,14 @@ public class WG_Player : WG_Entity
             rb.sharedMaterial = null;
 
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+            if (!isDead)
+                stateMachine.ChangeState(deadStartState);
+
     }
 }

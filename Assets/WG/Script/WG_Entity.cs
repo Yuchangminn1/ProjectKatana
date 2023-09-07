@@ -10,6 +10,7 @@ public class WG_Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
     public Rigidbody2D rb { get; private set; }
+    public PlatformEffector2D platformEffector2D { get; private set; }
     public GameObject GlobalLight { get; private set; }
 
     #endregion
@@ -23,6 +24,7 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Dodge Info")]
     [SerializeField] public float DodgeForce = 7f;
+    [SerializeField] public LayerMask Dodge_NoHitLayer;
     public bool RecoverControl = true;
 
     [Header("Collosion Info")]
@@ -95,7 +97,7 @@ public class WG_Entity : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
+        platformEffector2D = GetComponent<PlatformEffector2D>();
         GlobalLight = GameObject.Find("GlobalLight");
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
