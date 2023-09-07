@@ -171,7 +171,7 @@ public class WG_Entity : MonoBehaviour
             }
         }
 
-        if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
+        if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff || isDead)
         {
             if (!isSoundPlaying)
             {
