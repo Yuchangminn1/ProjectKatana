@@ -66,10 +66,10 @@ public class Enemy_Gangster : Enemy_SH
         {
             Destroy(gameObject);
         }
+        FacingPlayer();
 
-        if(player.transform.position.y >= transform.position.y)
+        if (player.transform.position.y >= transform.position.y)
         {
-            FacingPlayer();
 
             if (shootCooldownTimer > 0)
             {
@@ -286,6 +286,7 @@ public class Enemy_Gangster : Enemy_SH
     {
         if (collision.CompareTag("attack") || collision.CompareTag("PlayerBullet"))
         {
+            if(!anim.GetBool("Hit"))
             this.stateMachine.ChangeState(hitState);
         }
     }

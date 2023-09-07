@@ -375,7 +375,7 @@ public class Enemy_Snow : Enemy_SH
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("attack"))
+        if (collision.CompareTag("attack") && !anim.GetBool("Dodge"))
         {
             if (dodgeCooldownTimer <= 0)
                 this.stateMachine.ChangeState(dodgeState);
