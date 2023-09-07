@@ -107,6 +107,7 @@ public class CMShotLaser : MonoBehaviour
         if (collision.tag == "Player" && !isLaserStop)
         {
             Debug.Log("플레이어 사망");
+            isLaserStop = true;
             GameObject _hitLaser = Instantiate(hitLaser, new Vector2(transform.position.x, transform.position.y + hitLaserPosY), Quaternion.identity);
             StartCoroutine(HitLaserDis(_hitLaser));
 
@@ -128,6 +129,8 @@ public class CMShotLaser : MonoBehaviour
             yield return new WaitForFixedUpdate();
 
         }
+        isLaserStop = false;
+
         Destroy( _hit );
     }
     
