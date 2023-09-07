@@ -3122,6 +3122,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &735583261
 Animator:
   serializedVersion: 5
@@ -3605,6 +3608,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &883507273
 Animator:
   serializedVersion: 5
@@ -3866,6 +3872,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &981087036
 Animator:
   serializedVersion: 5
@@ -5726,6 +5735,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1435163992
 Animator:
   serializedVersion: 5
@@ -6141,6 +6153,10 @@ MonoBehaviour:
   - {fileID: 2116652497}
   - {fileID: 735583260}
   - {fileID: 981087035}
+  - {fileID: 1601326404}
+  - {fileID: 883507272}
+  - {fileID: 1435163991}
+  - {fileID: 1639601324}
   laserOn: 1
   spaceIcon: {fileID: 1142359961}
 --- !u!61 &1471468200
@@ -6634,6 +6650,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1601326405
 Animator:
   serializedVersion: 5
@@ -6895,6 +6914,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1639601325
 Animator:
   serializedVersion: 5
@@ -7316,6 +7338,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1825262713
 Animator:
   serializedVersion: 5
@@ -7615,6 +7640,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1883089764
 Animator:
   serializedVersion: 5
@@ -16922,6 +16950,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &2116652498
 Animator:
   serializedVersion: 5

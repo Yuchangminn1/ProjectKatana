@@ -9,6 +9,8 @@ TagManager:
   - PlayerBullet
   - attack
   - Stair
+  - Laser
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -35,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - EnemyLazer
   - EnemyBullet
   - Stair
   - Attack

@@ -30,6 +30,8 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
             LayerMask.NameToLayer("EnemyBullet"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("EnemyLazer"), true);
         player.platformEffector2D.useColliderMask = false;
 
     }
@@ -60,6 +62,8 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
             LayerMask.NameToLayer("EnemyBullet"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("EnemyLazer"), false);
         player.platformEffector2D.useColliderMask = true;
 
     }
