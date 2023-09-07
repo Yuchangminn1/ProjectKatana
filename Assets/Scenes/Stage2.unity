@@ -3255,6 +3255,7 @@ GameObject:
   - component: {fileID: 735583262}
   - component: {fileID: 735583261}
   - component: {fileID: 735583260}
+  - component: {fileID: 735583263}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (8)
   m_TagString: Untagged
@@ -3301,6 +3302,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &735583261
 Animator:
   serializedVersion: 5
@@ -3374,6 +3378,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &735583263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735583258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &811352925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3741,7 @@ GameObject:
   - component: {fileID: 883507274}
   - component: {fileID: 883507273}
   - component: {fileID: 883507272}
+  - component: {fileID: 883507275}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (2)
   m_TagString: Untagged
@@ -3738,6 +3788,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &883507273
 Animator:
   serializedVersion: 5
@@ -3811,6 +3864,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &883507275
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883507270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &927613939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,6 +4065,7 @@ GameObject:
   - component: {fileID: 981087037}
   - component: {fileID: 981087036}
   - component: {fileID: 981087035}
+  - component: {fileID: 981087038}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (9)
   m_TagString: Untagged
@@ -4013,6 +4112,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &981087036
 Animator:
   serializedVersion: 5
@@ -4086,6 +4188,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &981087038
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981087033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1037390386
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,6 +6048,7 @@ GameObject:
   - component: {fileID: 1435163993}
   - component: {fileID: 1435163992}
   - component: {fileID: 1435163991}
+  - component: {fileID: 1435163994}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (3)
   m_TagString: Untagged
@@ -5947,6 +6095,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1435163992
 Animator:
   serializedVersion: 5
@@ -6020,6 +6171,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1435163994
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435163989}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1441243353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6823,6 +7019,7 @@ GameObject:
   - component: {fileID: 1601326406}
   - component: {fileID: 1601326405}
   - component: {fileID: 1601326404}
+  - component: {fileID: 1601326407}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (1)
   m_TagString: Untagged
@@ -6869,6 +7066,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1601326405
 Animator:
   serializedVersion: 5
@@ -6942,6 +7142,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1601326407
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601326402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1611185898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7038,6 +7283,7 @@ GameObject:
   - component: {fileID: 1639601326}
   - component: {fileID: 1639601325}
   - component: {fileID: 1639601324}
+  - component: {fileID: 1639601327}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (4)
   m_TagString: Untagged
@@ -7084,6 +7330,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1639601325
 Animator:
   serializedVersion: 5
@@ -7157,6 +7406,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1639601327
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639601322}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1722211402
 GameObject:
   m_ObjectHideFlags: 0
@@ -7473,6 +7767,7 @@ GameObject:
   - component: {fileID: 1825262714}
   - component: {fileID: 1825262713}
   - component: {fileID: 1825262712}
+  - component: {fileID: 1825262715}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (5)
   m_TagString: Untagged
@@ -7519,6 +7814,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1825262713
 Animator:
   serializedVersion: 5
@@ -7592,6 +7890,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1825262715
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825262710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1863208663
 GameObject:
   m_ObjectHideFlags: 0
@@ -7726,6 +8069,7 @@ GameObject:
   - component: {fileID: 1883089765}
   - component: {fileID: 1883089764}
   - component: {fileID: 1883089763}
+  - component: {fileID: 1883089766}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (6)
   m_TagString: Untagged
@@ -7772,6 +8116,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &1883089764
 Animator:
   serializedVersion: 5
@@ -7845,6 +8192,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1883089766
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883089761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &1907397677
 GameObject:
   m_ObjectHideFlags: 0
@@ -17047,6 +17439,7 @@ GameObject:
   - component: {fileID: 2116652499}
   - component: {fileID: 2116652498}
   - component: {fileID: 2116652497}
+  - component: {fileID: 2116652500}
   m_Layer: 0
   m_Name: spr_ceiling_laser_tread_on_0 (7)
   m_TagString: Untagged
@@ -17093,6 +17486,9 @@ MonoBehaviour:
   yReturn: -7
   cmy: 0.225
   isLaserStop: 0
+  hitLaser: {fileID: 5221015071776766785, guid: eb4615406eb93dc4187523b39b992d2a, type: 3}
+  hitLaserPosY: -5
+  DisSpeed: 0.1
 --- !u!95 &2116652498
 Animator:
   serializedVersion: 5
@@ -17166,6 +17562,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2116652500
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116652495}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5409085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.11}
+    newSize: {x: 0.13, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 1.1918172}
+  m_EdgeRadius: 0
 --- !u!1 &2133851984
 GameObject:
   m_ObjectHideFlags: 0
