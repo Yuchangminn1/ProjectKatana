@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour
     private Vector2 direction; // 이동 방향
     private Rigidbody2D rb2D;
 
+    //WG 추가
+    float Temp_Speed;
+    float start_Speed;
     private void Awake()
     {
         spr = GetComponentInChildren<SpriteRenderer>();
@@ -23,16 +26,25 @@ public class Bullet : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
+        Temp_Speed = speed;
+        start_Speed = speed;
     }
 
 
     private void FixedUpdate()
     {
         // 계산된 방향으로 프로젝타일 이동
-        
 
-        if(gameObject.tag == "EnemyBullet") //WG 추가한 코드
-        rb2D.velocity = direction * speed;
+
+        if (gameObject.tag == "EnemyBullet") //WG 추가한 코드
+        {
+            if (WG_PlayerManager.instance.player.isBulletTime)
+                speed = Temp_Speed * 0.5f;
+            else
+                speed = start_Speed;
+
+            rb2D.velocity = direction * speed;
+        }
 
     }
 

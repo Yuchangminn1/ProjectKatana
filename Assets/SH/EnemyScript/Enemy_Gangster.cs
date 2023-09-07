@@ -169,7 +169,7 @@ public class Enemy_Gangster : Enemy_SH
         {
 
             base.Update();
-         
+
             if (gangster.pDistance >= 2)
             {
                 gangster.SetVelocity(gangster.moveSpeed * gangster.FacingDir, rb.velocity.y);
@@ -243,6 +243,9 @@ public class Enemy_Gangster : Enemy_SH
             gangster.rb.AddForce(nuckBackVector, ForceMode2D.Impulse);
 
             stateTimer = 1.5f;
+
+            WG_SoundManager.instance.PlayEffectSound("Sound_Enemy_Blood" + Random.Range(1, 5));
+            WG_SoundManager.instance.PlayEffectSound("Sound_Enemy_DeadBySword1" + Random.Range(1, 3));
         }
 
 
@@ -286,8 +289,8 @@ public class Enemy_Gangster : Enemy_SH
     {
         if (collision.CompareTag("attack") || collision.CompareTag("PlayerBullet"))
         {
-            if(!anim.GetBool("Hit"))
-            this.stateMachine.ChangeState(hitState);
+            if (!anim.GetBool("Hit"))
+                this.stateMachine.ChangeState(hitState);
         }
     }
 
