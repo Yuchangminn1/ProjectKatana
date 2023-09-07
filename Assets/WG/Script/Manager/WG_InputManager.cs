@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WG_InputManager : MonoBehaviour
+public class WG_InputManager : WG_Managers
 {
     public static WG_InputManager instance;
     public Vector2 CurrentMousePosition;
@@ -12,12 +12,15 @@ public class WG_InputManager : MonoBehaviour
     public float playerLookingCursorAngle;
     GameObject cursor;
 
-    private void Awake()
+    protected override void Awake()
     {
         if (instance != null)
             Destroy(instance.gameObject);
+
         else
             instance = this;
+
+        base.Awake();
     }
     void Start()
     {

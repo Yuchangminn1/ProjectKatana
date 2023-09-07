@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WG_StageManager : MonoBehaviour
+public class WG_StageManager : WG_Managers
 {
     public static WG_StageManager instance;
     [SerializeField] GameObject[] Enemies;
@@ -11,13 +11,15 @@ public class WG_StageManager : MonoBehaviour
     [SerializeField] bool isEnemiesAllDead = false;
 
 
-    private void Awake()
+    protected override void Awake()
     {
         if (instance != null)
             Destroy(instance.gameObject);
 
         else
             instance = this;
+
+        base.Awake();
     }
     private void Update()
     {

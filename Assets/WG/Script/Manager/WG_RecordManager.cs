@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WG_RecordManager : MonoBehaviour
+public class WG_RecordManager : WG_Managers
 {
     public static WG_RecordManager instance;
 
     public WG_Rewind Player_rewind { get; private set; }
-    private void Awake()
+    protected override void Awake()
     {
         if (instance != null)
             Destroy(instance.gameObject);
 
         else
             instance = this;
+
+        base.Awake();
     }
 
     private void Start()
