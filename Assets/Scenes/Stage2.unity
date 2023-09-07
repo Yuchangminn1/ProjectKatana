@@ -14554,6 +14554,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.6851792
       objectReference: {fileID: 0}
+    - target: {fileID: 942661835597843406, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 2919235639
+      objectReference: {fileID: 0}
     - target: {fileID: 3030231356829725044, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.1787416

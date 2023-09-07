@@ -33,12 +33,15 @@ public class CMPlayerBlinkUI : MonoBehaviour
     [SerializeField] public bool isBatteryOff = false;
     [SerializeField] public GameObject[] Batteries;
     float ABtimeMax;
+    float startTimelimitSetTime;
     #endregion
     void Start()
     {
         //WG Ãß°¡
         ABTime -= 1;
         ABtimeMax = ABTime;
+        startTimelimitSetTime = TimelimitSetTime;
+        TimelimitSetTime = startTimelimitSetTime;
 
         if (timeSlider == null)
         {

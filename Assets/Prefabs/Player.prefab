@@ -609,7 +609,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 2818572343
+    m_Bits: 2919235639
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -634,6 +634,9 @@ MonoBehaviour:
   isFacingRight: 0
   FacingDir: 1
   DodgeForce: 20
+  Dodge_NoHitLayer:
+    serializedVersion: 2
+    m_Bits: 0
   RecoverControl: 1
   GroundCheck: {fileID: 4556039489116081704}
   WhatIsGround:
@@ -647,6 +650,7 @@ MonoBehaviour:
     m_Bits: 134217728
   stair_distance: 3
   playerHead: {fileID: 8702657324612526317}
+  playerLeftFoot: {fileID: 0}
   smalljumpReverseForce: 20
   IdleToGrabForce: 0.2
   GrabToWallOverAddSpeed: 12
@@ -669,6 +673,7 @@ MonoBehaviour:
   isDead: 0
   rayhit_WhatisGround_Down_other: {fileID: 0}
   rayhit_WhatisGround_Up_other: {fileID: 0}
+  PhysicsMaterias: []
 --- !u!1 &7178421402747322469
 GameObject:
   m_ObjectHideFlags: 0
