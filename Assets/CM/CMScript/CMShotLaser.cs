@@ -10,14 +10,16 @@ public class CMShotLaser : MonoBehaviour
     [SerializeField] GameObject[] cmLaserList;
 
 
-
-
     [SerializeField] int laserNum = 15;
     [SerializeField] bool isShoot = true;
     [SerializeField] float laserMoveSpeed = 1;
     [SerializeField] Vector3 laserScale;
     [SerializeField] float yReturn = -1.360f;
     [SerializeField] float cmy = 0;
+
+    [Header("Switch")]
+    public bool isLaserStop = false; //On이 레이저 종료
+
 
     private void Start()
     {
@@ -41,9 +43,13 @@ public class CMShotLaser : MonoBehaviour
 
     IEnumerator ShotNReturn(GameObject _gameObject, float _startTime,int _i)
     {
+        
+
+
         float yPos = _gameObject.transform.position.y;
         while (true)
         {
+            _gameObject.GetComponent<SpriteRenderer>().enabled = !isLaserStop;
             //yield return null;
             yield return new WaitForFixedUpdate();
 
@@ -82,17 +88,6 @@ public class CMShotLaser : MonoBehaviour
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
 
-            //Debug.Log("W"); 
-            //StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
-            /*yield return new WaitForFixedUpdate();
-            Debug.Log("W");*/
-            /*yield return new WaitForFixedUpdate();
-            Debug.Log("E");*/
-            /* yield return new WaitForFixedUpdate();
-             Debug.Log("R");*/
-            //yield return new WaitForFixedUpdate();
-
-            //  yield return new WaitForFixedUpdate();
 
         }
         yield return null;
@@ -104,15 +99,13 @@ public class CMShotLaser : MonoBehaviour
     {
         Debug.Log($"태그이름 {collision.tag}");
         
-
-
-
-
-
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !isLaserStop)
         {
             Debug.Log("플레이어 사망");
             
         }
     }
+
+
+    
 }

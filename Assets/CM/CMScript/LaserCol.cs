@@ -10,9 +10,9 @@ public class LaserCol : MonoBehaviour
         lasercol = transform.GetComponent<Collider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
             Debug.Log("플레이어 사망");
-    }
+    }*/
 }
