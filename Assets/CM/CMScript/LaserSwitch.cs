@@ -18,7 +18,7 @@ public class LaserSwitch : MonoBehaviour
     {
         if (spaceIcon.enabled)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 OnOffLaser();
 
