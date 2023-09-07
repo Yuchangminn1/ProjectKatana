@@ -14,6 +14,8 @@ public class WG_PlayerDeadStartState : WG_PlayerState
         base.Enter();
         player.isDead = true;
         WG_SoundManager.instance.PlayEffectSound("Sound_Player_Dead");
+        player.SetVelocity(rb.velocity.x * 0.3f, rb.velocity.y);
+        player.EscapeBulletTime();
     }
 
     public override void FixedUpdate()

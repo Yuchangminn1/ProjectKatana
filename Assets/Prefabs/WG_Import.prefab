@@ -1661,6 +1661,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.1787416
       objectReference: {fileID: 0}
+    - target: {fileID: 3874177933124330147, guid: cfa370ff31215c84cb7638636e872619, type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4034076935872348238, guid: cfa370ff31215c84cb7638636e872619, type: 3}
       propertyPath: m_Name
       value: Camera

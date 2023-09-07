@@ -6,7 +6,7 @@ using UnityEngine;
 
 //이벤트 관리
 //클리어인지 아닌지 같은거 판별
-public class WG_GameEventManager : MonoBehaviour
+public class WG_GameEventManager : WG_Managers
 {
     public static WG_GameEventManager instance;
 
@@ -14,12 +14,15 @@ public class WG_GameEventManager : MonoBehaviour
     public bool isGameStarted = false;
     public bool isGameFinished = false;
 
-    private void Awake()
+    protected override void Awake()
     {
         if (instance != null)
             Destroy(instance.gameObject);
+
         else
             instance = this;
+
+        base.Awake();
 
         Time.timeScale = 1.0f;
     }
@@ -28,6 +31,7 @@ public class WG_GameEventManager : MonoBehaviour
     {
         isGameStarted = true;
         isGameFinished = false;
+
         WG_SoundManager.instance.PlayBGM("BGM_Bunker");
     }
 
