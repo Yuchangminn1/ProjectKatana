@@ -21,6 +21,7 @@ public class Enemy_Gangster : Enemy_SH
 
     [SerializeField] private float throwDistance = 7;
 
+    private float shootDelay = 0.3f;
     bool isBusy = false;
 
     #region States
@@ -88,8 +89,8 @@ public class Enemy_Gangster : Enemy_SH
         {
             if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
             {
-                if (pDistance < 10) 
-                stateMachine.ChangeState(shootState);
+                if (pDistance < 10)
+                    stateMachine.ChangeState(shootState);
             }
         }
 
@@ -163,11 +164,11 @@ public class Enemy_Gangster : Enemy_SH
         public override void Exit()
         {
             base.Exit();
-            gangster.shootCooldownTimer = gangster.shootCooldown;
         }
 
         public override void Update()
         {
+
 
             base.Update();
 
@@ -192,9 +193,9 @@ public class Enemy_Gangster : Enemy_SH
 
         public override void Enter()
         {
+
             base.Enter();
             gangster.SetVelocityToZero();
-            gangster.Shoot();
         }
 
         public override void Exit()
@@ -205,9 +206,20 @@ public class Enemy_Gangster : Enemy_SH
 
         public override void Update()
         {
+
             base.Update();
 
-            if (gangster.shootCooldownTimer > 0)
+            gangster.shootDelay -= Time.deltaTime;
+
+            if (gangster.shootDelay <= 0 && gangster.shootCooldownTimer <= 0)
+            {
+                gangster.Shoot();
+                gangster.shootCooldownTimer = gangster.shootCooldown;
+                gangster.shootDelay = 0.3f;
+            }
+
+
+            if (gangster.shootCooldownTimer > 0 && gangster.shootDelay <= 0)
             {
                 stateMachine.ChangeState(gangster.idleState);
             }
@@ -278,7 +290,7 @@ public class Enemy_Gangster : Enemy_SH
 
 
         GameObject Clone = Instantiate(BulletPrefap, Firepos.position, Quaternion.identity, transform);
-        shootCooldownTimer = shootCooldown;
+
 
 
         //WG 추가한 코드

@@ -29,7 +29,7 @@ public class CMTitleBlink : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
                 ++i;
             }
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
 
         }
