@@ -13789,14 +13789,6 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6467311715253197439, guid: 5c49b153368e6174ea5036928d756a69, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467311715253197439, guid: 5c49b153368e6174ea5036928d756a69, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467311715253197439, guid: 5c49b153368e6174ea5036928d756a69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.72
       objectReference: {fileID: 0}
@@ -14103,8 +14095,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.4780502, y: -0.8181499, z: 0}
-    m_Extent: {x: 5.95275, y: 2.0648499, z: 0}
+    m_Center: {x: 2.4698997, y: -0.81474996, z: 0}
+    m_Extent: {x: 5.9448, y: 2.06915, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

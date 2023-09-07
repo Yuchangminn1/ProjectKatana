@@ -56,10 +56,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 플레이어와 충돌하면
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" || collision.tag == "Door")
         {
-            //잠시 꺼둠
-            //Destroy(collision.gameObject);
+       
             Destroy(gameObject);
         }
     }
