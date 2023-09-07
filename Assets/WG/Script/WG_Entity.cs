@@ -118,11 +118,14 @@ public class WG_Entity : MonoBehaviour
     {
 
     }
+    float timeSclaeMirror;
+    Light2D lit;
+    Light2D BulletTimeBlueLight;
     public void BulletTime()
     {
-        var lit = GlobalLight.GetComponent<Light2D>();
-        float timeSclaeMirror = Time.timeScale;
-        var BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
+        timeSclaeMirror = Time.timeScale;
+        lit = GlobalLight.GetComponent<Light2D>();
+        BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
 
         //일단 BulletTime 만들어둠
 
@@ -130,62 +133,21 @@ public class WG_Entity : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                if (!isSoundPlaying)
-                {
-                    isSoundPlaying = true;
-                    WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowIn");
-                }
 
-                isBulletTime = true;
-                if (lit.intensity <= 0.4f)
-                    lit.intensity = 0.4f;
-
-                if (timeSclaeMirror <= 0.2f)
-                    timeSclaeMirror = 0.2f;
-
-                lit.intensity -= 4 * Time.deltaTime;
-                timeSclaeMirror -= 4 * Time.deltaTime;
-
-                Time.timeScale = timeSclaeMirror;
-
-                transform.Find("BulletTimeLight").gameObject.SetActive(true);
-                BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
+                IntoBulletTime();
             }
 
 
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                if (!isSoundPlaying)
-                {
-                    isSoundPlaying = true;
-                    WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowOut");
-                }
-
-                isBulletTime = false;
-                lit.intensity = 1f;
-                timeSclaeMirror = 1f;
-                Time.timeScale = timeSclaeMirror;
-
-                transform.Find("BulletTimeLight").gameObject.SetActive(false);
+                EscapeBulletTime();
             }
         }
 
-        if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff || isDead)
+        if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
         {
-            if (!isSoundPlaying)
-            {
-                isSoundPlaying = true;
-                WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowOut");
-            }
-
-            isBulletTime = false;
-            lit.intensity = 1f;
-            timeSclaeMirror = 1f;
-            Time.timeScale = timeSclaeMirror;
-
-            transform.Find("BulletTimeLight").gameObject.SetActive(false);
-
+            EscapeBulletTime();
         }
 
         ////디버그용 일시정지
@@ -201,6 +163,46 @@ public class WG_Entity : MonoBehaviour
         //    Pause = false;
         //}
     }
+    public void IntoBulletTime()
+    {
+        if (!isSoundPlaying)
+        {
+            isSoundPlaying = true;
+            WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowIn");
+        }
+        isBulletTime = true;
+        if (lit.intensity <= 0.4f)
+            lit.intensity = 0.4f;
+
+        if (timeSclaeMirror <= 0.2f)
+            timeSclaeMirror = 0.2f;
+
+        lit.intensity -= 4 * Time.deltaTime;
+        timeSclaeMirror -= 4 * Time.deltaTime;
+
+        Time.timeScale = timeSclaeMirror;
+
+        transform.Find("BulletTimeLight").gameObject.SetActive(true);
+        BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
+    }
+
+    public void EscapeBulletTime()
+    {
+        if (!isSoundPlaying)
+        {
+            isSoundPlaying = true;
+            WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowOut");
+        }
+
+        isBulletTime = false;
+        lit.intensity = 1f;
+        timeSclaeMirror = 1f;
+        Time.timeScale = timeSclaeMirror;
+
+        transform.Find("BulletTimeLight").gameObject.SetActive(false);
+    }
+
+
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)
     {
