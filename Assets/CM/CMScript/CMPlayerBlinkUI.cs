@@ -277,12 +277,16 @@ public class CMPlayerBlinkUI : MonoBehaviour
         {
             ABTime -= 2 * Time.unscaledDeltaTime;
             Batteries[BatteryCount].SetActive(false);
+            //Batteries[BatteryCount].GetComponentInChildren<Image>().color = Color.red;
+
         }
 
         else
         {
             ABTime += 3 * Time.unscaledDeltaTime;
             Batteries[BatteryCount].SetActive(true);
+            //Batteries[BatteryCount].GetComponentInChildren<Image>().color = Color.white;
+
         }
 
         if (ABTime <= 0)

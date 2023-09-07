@@ -11,11 +11,21 @@ public class CMUIManager : MonoBehaviour
     private static CMUIManager instance;
     public static CMUIManager Instance;
 
+    // Next Stage Icon
+    [Header("Next Stage Icon")]
+    [SerializeField] GameObject nextIcon;
+    [SerializeField] Vector2 nextIconTOrigin;
+    [SerializeField] float nextIconMoveSpeed = 0.1f;
+    [SerializeField] bool isNextIconOn = false;
+
+
     [Header("FadeIn out ")]
     public Image fadeImage = null;
     [SerializeField] float fadeTime = 2f;
 
     [SerializeField] bool isFading = false;
+    
+
 
     //WG코드추가
     public CMPlayerBlinkUI cmPlayerBlinkUI;
@@ -33,11 +43,26 @@ public class CMUIManager : MonoBehaviour
         }
         else
             Destroy(instance.gameObject);
+
     }
 
     private void Start()
     {
         cmPlayerBlinkUI = GetComponent<CMPlayerBlinkUI>();
+        Debug.Log(WG_StageManager.instance.EnemyAllDead());
+
+    }
+
+    private void Update()
+    {
+        if (isNextIconOn)
+        {
+            return;
+        }
+        else if (WG_StageManager.instance.EnemyAllDead())
+        {
+            NextStageIcon();
+        }
     }
     public void StartFadeIn()
     {
@@ -77,6 +102,12 @@ public class CMUIManager : MonoBehaviour
         // 페이드 완료 후 상태를 리셋합니다.
         fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
         isFading = false;
+    }
+
+    private void NextStageIcon()
+    {
+        nextIcon.SetActive(true);
+        isNextIconOn = true;
     }
 
 }
