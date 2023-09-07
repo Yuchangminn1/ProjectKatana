@@ -211,7 +211,9 @@ public class Enemy_Snow : Enemy_SH
 
             if (snow.pDistance > snow.throwDistance && snow.throwCooldownTimer <= 0)
             {
-                stateMachine.ChangeState(snow.throwState);
+                if(snow.player.transform.position.y -1 >= snow.transform.position.y)
+                if (snow.pDistance < 10)
+                    stateMachine.ChangeState(snow.throwState);
             }
 
         }

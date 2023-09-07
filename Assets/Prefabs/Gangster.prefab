@@ -216,7 +216,7 @@ Transform:
   - {fileID: 8126364435895396922}
   - {fileID: 8449759544697535865}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1226850039972423413
 Rigidbody2D:
@@ -342,7 +342,7 @@ MonoBehaviour:
   stunDuration: 0
   stunDirection: {x: 0, y: 0}
   counterImage: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 5
   idleTime: 1
   battleTime: 0
   attackDistance: 100

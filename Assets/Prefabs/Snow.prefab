@@ -129,7 +129,7 @@ MonoBehaviour:
   stunDuration: 0
   stunDirection: {x: 0, y: 0}
   counterImage: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 10
   idleTime: 2
   battleTime: 0
   attackDistance: 1
