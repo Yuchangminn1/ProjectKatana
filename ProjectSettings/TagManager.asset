@@ -10,6 +10,7 @@ TagManager:
   - attack
   - Stair
   - Laser
+  - Door
   layers:
   - Default
   - TransparentFX
