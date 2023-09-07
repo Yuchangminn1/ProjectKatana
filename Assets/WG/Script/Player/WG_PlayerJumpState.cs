@@ -49,6 +49,9 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
         if (StateTimer <= 0f && player.isStaired())
             stateMachine.ChangeState(player.fallingState);
 
+        if (player.isGrounded() && rb.velocity.y <= 0)
+            stateMachine.ChangeState(player.idleState);
+
     }
     public override void FixedUpdate()
     {
