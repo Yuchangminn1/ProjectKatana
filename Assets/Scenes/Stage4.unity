@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 41584942}
   m_Layer: 27
   m_Name: Edge
-  m_TagString: Untagged
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10897,7 +10897,7 @@ GameObject:
   - component: {fileID: 1434696274}
   m_Layer: 27
   m_Name: Edge2
-  m_TagString: Untagged
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

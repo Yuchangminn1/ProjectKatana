@@ -46,7 +46,7 @@ public class WG_PlayerTumblingState : WG_PlayerState
         if (isAnimationFinishTriggerCalled)
             stateMachine.ChangeState(player.fallingState);
 
-        if (player.isGrounded())
+        if (player.isGrounded() && rb.velocity.y <= 0f)
             stateMachine.ChangeState(player.idleState);
 
     }
