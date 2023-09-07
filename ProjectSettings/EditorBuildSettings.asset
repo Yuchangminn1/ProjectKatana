@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CMTest.unity
     guid: bbb9c2724c3f8ad4095cb6523cd7ff89
+  - enabled: 1
+    path: Assets/Scenes/Stage1.unity
+    guid: fdf1a50a8d06720429ec6e38ed684e69
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 79366c7736cbf3646a5b54b049243230
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: d89f661345e1fe74ab3028551327f1d2
+  - enabled: 1
+    path: Assets/Scenes/Stage4.unity
+    guid: 3b64ea520f49a234d84b27587a736392
   m_configObjects: {}
