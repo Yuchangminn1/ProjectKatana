@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class NextSceneCol : MonoBehaviour
 {
-    [SerializeField] string nextSceneName = "Stage2";
+    [SerializeField] string nextSceneName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         if(collision.gameObject.tag == "Player")
         {
-            if (WG_StageManager.instance.EnemyAllDead())
+            if (WG_StageManager.instance.EnemyAllDead() || player.transform.position.x >= 42)
             {
                 CMSceneManager.instance.CMNextScene(nextSceneName);
 
