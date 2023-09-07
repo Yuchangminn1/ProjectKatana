@@ -20,6 +20,11 @@ public class CMShotLaser : MonoBehaviour
     [Header("Switch")]
     public bool isLaserStop = false; //On이 레이저 종료
 
+    [Header("HitLaser")]
+    [SerializeField] GameObject hitLaser;
+    [SerializeField] float hitLaserPosY = 1f;
+    [SerializeField] float DisSpeed = 0.05f;
+
 
     private void Start()
     {
@@ -102,10 +107,28 @@ public class CMShotLaser : MonoBehaviour
         if (collision.tag == "Player" && !isLaserStop)
         {
             Debug.Log("플레이어 사망");
-            
+            GameObject _hitLaser = Instantiate(hitLaser, new Vector2(transform.position.x, transform.position.y + hitLaserPosY), Quaternion.identity);
+            StartCoroutine(HitLaserDis(_hitLaser));
+
+
         }
     }
 
+    IEnumerator HitLaserDis(GameObject _hit)
+    {
+        SpriteRenderer sr = _hit.GetComponent<SpriteRenderer>();
+        float _redColor = 0.1f;
+        Vector2 tmp = _hit.transform.localScale;
+        while(tmp.x - 0.1f >0)
+        {
+            tmp.x -= DisSpeed;
+            _hit.transform.localScale = tmp;
+            sr.color = new Color(1- _redColor, 1,1,1);
+            _redColor += DisSpeed;
+            yield return new WaitForFixedUpdate();
 
+        }
+        Destroy( _hit );
+    }
     
 }
