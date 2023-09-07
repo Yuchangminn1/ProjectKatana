@@ -2568,12 +2568,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5002723591091148250, guid: c13302fffa9c40842893bc855a22e595, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6811771100067780966, guid: c13302fffa9c40842893bc855a22e595, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6811771100067780966, guid: c13302fffa9c40842893bc855a22e595, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615539070895918190, guid: c13302fffa9c40842893bc855a22e595, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
