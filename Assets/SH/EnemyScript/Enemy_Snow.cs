@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Snow : Enemy_SH
@@ -76,6 +75,7 @@ public class Enemy_Snow : Enemy_SH
 
     protected override void Update()
     {
+        Debug.Log(throwCooldownTimer);
         base.Update();
         if (hp <= 0)
         {
@@ -95,11 +95,12 @@ public class Enemy_Snow : Enemy_SH
         if (player != null)
         {
             pDistance = Vector2.Distance(transform.position, player.transform.position);
-
-
-            if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
-                stateMachine.ChangeState(attackState);
-
+            if (player.transform.position.y >= transform.position.y)
+            {
+                FacingPlayer();
+                if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
+                    stateMachine.ChangeState(attackState);
+            }
         }
 
 
@@ -139,10 +140,9 @@ public class Enemy_Snow : Enemy_SH
         public override void Update()
         {
             base.Update();
-            snow.FacingPlayer();
-            if (stateTimer < 0 && !snow.isBusy)
-                stateMachine.ChangeState(snow.dashState);
 
+            if (stateTimer < 0 && !snow.isBusy && snow.player.transform.position.y >= snow.transform.position.y)
+                stateMachine.ChangeState(snow.dashState);
 
 
         }
@@ -169,7 +169,7 @@ public class Enemy_Snow : Enemy_SH
 
         public override void Update()
         {
-            snow.FacingPlayer();
+
             base.Update();
 
             snow.SetVelocity(snow.moveSpeed * snow.FacingDir, rb.velocity.y);
@@ -201,7 +201,7 @@ public class Enemy_Snow : Enemy_SH
         {
 
             base.Update();
-            snow.FacingPlayer();
+
             snow.SetVelocity(snow.moveSpeed * snow.FacingDir * 2, rb.velocity.y);
 
             if (snow.pDistance < snow.dashDistance)
@@ -229,6 +229,7 @@ public class Enemy_Snow : Enemy_SH
         {
             base.Enter();
             snow.SetVelocityToZero();
+            snow.throwCooldownTimer = snow.throwCooldown;
         }
 
         public override void Exit()
@@ -241,10 +242,7 @@ public class Enemy_Snow : Enemy_SH
         {
             base.Update();
 
-            if (snow.throwCooldownTimer > 0)
-            {
-                stateMachine.ChangeState(snow.idleState);
-            }
+
 
         }
     }
@@ -365,16 +363,13 @@ public class Enemy_Snow : Enemy_SH
 
         for (int i = 0; i < daggerCount; i++)
         {
-            // 단검이 퍼져 나가는 각도를 계산
-
-            // 단검을 생성하고 회전
             // WG 가 코드 추가
             GameObject clone = Instantiate(daggerPrefab, daggerFirepos.position, Quaternion.identity, transform);
             clone.GetComponent<WG_BulletParentsData>().Parent = clone.transform.parent.gameObject;
             clone.transform.SetParent(null);
         }
 
-        throwCooldownTimer = throwCooldown;
+        stateMachine.ChangeState(idleState);
 
     }
 
@@ -388,6 +383,34 @@ public class Enemy_Snow : Enemy_SH
                 this.stateMachine.ChangeState(hitState);
 
         }
+    }
+
+    public void SnowDodge()
+    {
+        Vector2 snowNewPosition = transform.position;
+        if (player.transform.position.x < transform.position.x)
+        {
+
+            snowNewPosition.x = player.transform.position.x - 5;
+            transform.position = snowNewPosition;
+        }
+        else
+        {
+            snowNewPosition.x = player.transform.position.x + 5;
+            transform.position = snowNewPosition;
+        }
+    }
+
+    public void MeleeAttackStart()
+    {
+        Collider2D box = GetComponentInChildren<BoxCollider2D>();
+        box.enabled = true;
+    }
+
+    public void MeleeAttackFinished()
+    {
+        Collider2D box = GetComponentInChildren<BoxCollider2D>();
+        box.enabled = false;
     }
 
 
