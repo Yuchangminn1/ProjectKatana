@@ -11,7 +11,7 @@ public class NextSceneCol : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
-            if (WG_StageManager.instance.EnemyAllDead() || player.transform.position.x >= 42)
+            if (WG_StageManager.instance.EnemyAllDead())
             {
                 CMSceneManager.instance.CMNextScene(nextSceneName);
 
