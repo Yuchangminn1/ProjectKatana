@@ -186,18 +186,18 @@ public class WG_Entity : MonoBehaviour
 
         }
 
-        //디버그용 일시정지
-        if (!Pause && Input.GetKeyDown(KeyCode.Space))
-        {
-            Pause = true;
-            timeSclaeMirror = 0;
-            Time.timeScale = timeSclaeMirror;
-        }
+        ////디버그용 일시정지
+        //if (!Pause && Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Pause = true;
+        //    timeSclaeMirror = 0;
+        //    Time.timeScale = timeSclaeMirror;
+        //}
 
-        else if (Pause && Input.GetKeyDown(KeyCode.Space))
-        {
-            Pause = false;
-        }
+        //else if (Pause && Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Pause = false;
+        //}
     }
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
     public void SetVelocity(float X_Velocity, float Y_Velocity)

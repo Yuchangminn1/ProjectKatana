@@ -27,7 +27,7 @@ public class WG_StageManager : MonoBehaviour
         if (Enemies.Length == 0)
             isEnemiesAllDead = true;
 
-        
+
     }
 
     //CM 코드추가
