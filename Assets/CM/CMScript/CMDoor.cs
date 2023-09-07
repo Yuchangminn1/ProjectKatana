@@ -6,12 +6,18 @@ public class CMDoor : MonoBehaviour
 {
     [SerializeField] bool isPlayer = false;
     Animator anima;
+
     private void Start()
     {
         anima = GetComponent<Animator>();
+
     }
     private void Update()
     {
+        if (WG_PlayerManager.instance.player.isDead)
+        {
+            return;
+        }
         if (isPlayer)
         {
             if (Input.GetMouseButtonDown(0))
