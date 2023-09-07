@@ -1896,7 +1896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: TumblingForce_Y
-      value: 42
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: basic_movespeed
@@ -1905,6 +1905,10 @@ PrefabInstance:
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: ground_distance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
+      propertyPath: TumblingForceDecayRate
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: Dodge_NoHitLayer.m_Bits
