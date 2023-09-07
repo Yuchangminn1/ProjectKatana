@@ -1892,11 +1892,11 @@ PrefabInstance:
       objectReference: {fileID: 7713314907826036740}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: TumblingForce_X
-      value: 90
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: TumblingForce_Y
-      value: 42
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7448074169844411487, guid: 72c1d6c5ff11eb045bde1b400664eb4b, type: 3}
       propertyPath: basic_movespeed

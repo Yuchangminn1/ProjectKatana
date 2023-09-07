@@ -11614,7 +11614,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07295668, y: -0.072956495}
+  m_Offset: {x: 0.06823951, y: -0.0729565}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11625,7 +11625,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.918266, y: 0.27043355}
+  m_Size: {x: 4.0031896, y: 0.27043355}
   m_EdgeRadius: 0
 --- !u!1 &1327671120
 GameObject:
@@ -11972,6 +11972,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1475924000}
+    - target: {fileID: 6764859229295702650, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
+      propertyPath: TumblingForce_X
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7771410455381403763, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
       propertyPath: m_RootOrder
       value: 3

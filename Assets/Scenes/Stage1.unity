@@ -1174,7 +1174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.4197836, y: 0}
+  m_Offset: {x: 6.402383, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1185,7 +1185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.360617, y: 2}
+  m_Size: {x: 23.395418, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &647684296
 GameObject:
@@ -1746,7 +1746,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 7.9363303, y: 0.9770982}
+  - {x: 8.49317, y: 0.9770982}
   - {x: -6.3537736, y: 0.9338045}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -14095,8 +14095,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.47925, y: -0.8144, z: 0}
-    m_Extent: {x: 5.94425, y: 2.0634, z: 0}
+    m_Center: {x: 2.4761498, y: -0.81995, z: 0}
+    m_Extent: {x: 5.94005, y: 2.07205, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14228,6 +14228,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6764859229295702650, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
+      propertyPath: TumblingForceDecayRate
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7771410455381403763, guid: cf094ed5bdbd289408b94bc6cfdd9b91, type: 3}
       propertyPath: m_RootOrder
       value: 3
