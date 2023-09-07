@@ -14,7 +14,9 @@ public class WG_PlayerIdleState : WG_PlayerGround_IdleState
         player.SetVelocityToZero();
 
         player.isTrail = false;
-        WG_FXManager.instance.ghostControl._color = Color.red;
+
+        if (WG_FXManager.instance.ghostControl != null)
+            WG_FXManager.instance.ghostControl._color = Color.red;
 
     }
     public override void Update()
