@@ -28,7 +28,10 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
 
         WG_SoundManager.instance.PlayEffectSound("Sound_Player_Roll", 0.5f);
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("EnemyBullet"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("EnemyBullet"), true);
+        player.platformEffector2D.useColliderMask = false;
+
     }
 
 
@@ -37,7 +40,8 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
         base.Update();
         FrameCheck++;
 
-        if (FrameCheck >= 6) player.RecoverControl = true;
+        if (FrameCheck >= 6)
+            player.RecoverControl = true;
 
         if (isAnimationFinishTriggerCalled)
             stateMachine.ChangeState(player.idleState);
@@ -53,6 +57,10 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
         base.Exit();
         FrameCheck = 0;
         player.RecoverControl = true;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("EnemyBullet"), false);
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("EnemyBullet"), false);
+        player.platformEffector2D.useColliderMask = true;
+
     }
 }

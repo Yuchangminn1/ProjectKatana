@@ -102,6 +102,9 @@ public class WG_PlayerState
             if (player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>().rotationalOffset != 0f)
                 player.rayhit_WhatisGround_Up_other.GetComponent<PlatformEffector2D>().rotationalOffset = 0f;
         }
+
+        Debug.Log("플레이어 무적 : " + Physics2D.GetIgnoreLayerCollision(LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("EnemyBullet")));
     }
     public virtual void FixedUpdate()
     {
