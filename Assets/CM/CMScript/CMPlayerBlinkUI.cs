@@ -10,7 +10,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
 
     [Header("Timer")]
     [SerializeField] Slider timeSlider = null;
-    [SerializeField] float setTime = 10;
+    [SerializeField] float TimelimitSetTime = 10;
     [SerializeField] GameObject TimeOverImage = null;
 
     [Header("0~1,Timer")]
@@ -26,6 +26,10 @@ public class CMPlayerBlinkUI : MonoBehaviour
 
 
     [SerializeField] float darkSpeed = 2f;
+
+
+    //WG 추가
+    bool isDead = false;
     void Start()
     {
         if (timeSlider == null)
@@ -230,7 +234,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
     //타이머 바 줄어들기
     public void CMOnTimer()
     {
-        timeSlider.value -= Time.deltaTime / setTime;
+        timeSlider.value -= Time.deltaTime / TimelimitSetTime;
         if (timeSlider.value <= 0f)
         {
             CMTimeOverImage();
@@ -245,5 +249,12 @@ public class CMPlayerBlinkUI : MonoBehaviour
     public void CMTimeOverImage()
     {
         TimeOverImage.SetActive(true);
+
+        //WG 추가
+        if (!isDead)
+        {
+            isDead = true;
+            WG_PlayerManager.instance.player.stateMachine.ChangeState(WG_PlayerManager.instance.player.deadStartState);
+        }
     }
 }
