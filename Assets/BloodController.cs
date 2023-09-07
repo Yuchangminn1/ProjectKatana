@@ -11,7 +11,7 @@ public class BloodController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();   
         Destroy(gameObject, 0.5f);
-        rb.AddForce(Vector2.up * 200);   
+        rb.AddForce(Vector2.up * 600);   
 
     }
 
