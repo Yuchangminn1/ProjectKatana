@@ -40,8 +40,6 @@ public class CMPlayerBlinkUI : MonoBehaviour
         //WG 추가
         ABTime -= 1;
         ABtimeMax = ABTime;
-        startTimelimitSetTime = TimelimitSetTime;
-        TimelimitSetTime = startTimelimitSetTime;
 
         if (timeSlider == null)
         {
@@ -245,15 +243,24 @@ public class CMPlayerBlinkUI : MonoBehaviour
     //타이머 바 줄어들기
     public void CMOnTimer()
     {
-        //WG - unscaledDeltaTime로 변경함
-        timeSlider.value -= Time.unscaledDeltaTime / TimelimitSetTime;
-        if (timeSlider.value <= 0f)
+        if (WG_GameEventManager.instance.isGameStarted)
         {
-            CMTimeOverImage();
-            StartCoroutine(BlinkSprite(startTime[0], midleTime[0], 14));
-            timeSlider.transform.gameObject.SetActive(false);
+            //WG - unscaledDeltaTime로 변경하고 조건문 추가
+            if (WG_PlayerManager.instance.player.isBulletTime)
+                timeSlider.value -= Time.unscaledDeltaTime / TimelimitSetTime;
+            else
+                timeSlider.value -= Time.deltaTime / TimelimitSetTime;
 
 
+
+            if (timeSlider.value <= 0f)
+            {
+                CMTimeOverImage();
+                StartCoroutine(BlinkSprite(startTime[0], midleTime[0], 14));
+                timeSlider.transform.gameObject.SetActive(false);
+
+
+            }
         }
     }
 
