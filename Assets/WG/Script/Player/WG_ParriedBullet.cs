@@ -41,7 +41,6 @@ public class WG_ParriedBullet : WG_PlayerSlash
 
             //일단 임시
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }

@@ -67,11 +67,17 @@ public class Enemy_Gangster : Enemy_SH
             Destroy(gameObject);
         }
 
-
-        if (shootCooldownTimer > 0)
+        if(player.transform.position.y >= transform.position.y)
         {
-            shootCooldownTimer -= Time.deltaTime;
+            FacingPlayer();
+
+            if (shootCooldownTimer > 0)
+            {
+                shootCooldownTimer -= Time.deltaTime;
+            }
+
         }
+
 
         if (player != null)
         {
@@ -163,7 +169,7 @@ public class Enemy_Gangster : Enemy_SH
         {
 
             base.Update();
-            gangster.FacingPlayer();
+         
             if (gangster.pDistance >= 2)
             {
                 gangster.SetVelocity(gangster.moveSpeed * gangster.FacingDir, rb.velocity.y);
@@ -236,7 +242,7 @@ public class Enemy_Gangster : Enemy_SH
 
             gangster.rb.AddForce(nuckBackVector, ForceMode2D.Impulse);
 
-            stateTimer = 1.2f;
+            stateTimer = 1.5f;
         }
 
 
