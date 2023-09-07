@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet
   - attack
   - Stair
+  - Laser
   layers:
   - Default
   - TransparentFX

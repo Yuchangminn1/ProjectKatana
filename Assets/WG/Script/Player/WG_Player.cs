@@ -113,8 +113,13 @@ public class WG_Player : WG_Entity
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.CompareTag("EnemyBullet"))
             if (!isDead)
                 stateMachine.ChangeState(deadStartState);
+
+        //CM Ãß°¡
+        if (collision.gameObject.CompareTag("Laser") && !isDead)
+            stateMachine.ChangeState(deadStartState);
     }
 }
