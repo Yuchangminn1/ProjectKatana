@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationTrigger_SH : MonoBehaviour
@@ -14,7 +12,7 @@ public class AnimationTrigger_SH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FinishAttack()
@@ -26,6 +24,22 @@ public class AnimationTrigger_SH : MonoBehaviour
     void ThrowDagger()
     {
         snow.ThrowDagger();
+    }
+
+    void Dodge()
+    {
+        snow.SnowDodge();
+        snow.stateMachine.ChangeState(snow.idleState);
+    }
+
+    void AttackStart()
+    {
+        snow.MeleeAttackStart();
+    }
+
+    void AttackEnd()
+    {
+        snow.MeleeAttackFinished();
     }
 
 }

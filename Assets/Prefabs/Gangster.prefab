@@ -310,6 +310,7 @@ MonoBehaviour:
     m_Bits: 134217728
   stair_distance: 3
   playerHead: {fileID: 8449759544697535865}
+  playerLeftFoot: {fileID: 8449759544697535865}
   smalljumpReverseForce: 0
   IdleToGrabForce: 10
   GrabToWallOverAddSpeed: 12
