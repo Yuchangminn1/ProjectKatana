@@ -12,12 +12,13 @@ public class CMUIManager : MonoBehaviour
     public static CMUIManager Instance;
 
     [Header("FadeIn out ")]
-    public  Image fadeImage = null;
+    public Image fadeImage = null;
     [SerializeField] float fadeTime = 2f;
 
     [SerializeField] bool isFading = false;
 
-    
+    //WG코드추가
+    public CMPlayerBlinkUI cmPlayerBlinkUI;
 
 
 
@@ -33,7 +34,11 @@ public class CMUIManager : MonoBehaviour
         else
             Destroy(instance.gameObject);
     }
-    
+
+    private void Start()
+    {
+        cmPlayerBlinkUI = GetComponent<CMPlayerBlinkUI>();
+    }
     public void StartFadeIn()
     {
         if (!isFading)

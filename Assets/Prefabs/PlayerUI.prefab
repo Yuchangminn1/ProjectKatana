@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 2827671831878174902}
-  TimelimitSetTime: 10
+  TimelimitSetTime: 30
   TimeOverImage: {fileID: 2004151476949168498}
   UIGameObject:
   - {fileID: 6312775471724213345}
@@ -663,6 +663,17 @@ MonoBehaviour:
   midleTime: []
   ABTime: 10
   darkSpeed: 14
+  Batteries:
+  - {fileID: 418697691226016336}
+  - {fileID: 7007337111516835227}
+  - {fileID: 3701107210659419749}
+  - {fileID: 3937601284977928800}
+  - {fileID: 9129490316183891838}
+  - {fileID: 3750840391306448059}
+  - {fileID: 1910224657623573622}
+  - {fileID: 6486162921440705082}
+  - {fileID: 8347671546629091434}
+  - {fileID: 8638644511409380357}
 --- !u!1 &3127872654460426391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +2003,7 @@ GameObject:
   - component: {fileID: 5485821575879507787}
   - component: {fileID: 3781286536492734561}
   - component: {fileID: 1278512177323957672}
+  - component: {fileID: 1600075999723715664}
   m_Layer: 5
   m_Name: AbilityVar
   m_TagString: Untagged
@@ -2067,6 +2079,57 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1600075999723715664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184119953303988776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1278512177323957672}
+  m_FillRect: {fileID: 0}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7451240950914596549
 GameObject:
   m_ObjectHideFlags: 0

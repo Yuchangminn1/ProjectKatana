@@ -120,27 +120,41 @@ public class WG_Entity : MonoBehaviour
         var BulletTimeBlueLight = transform.Find("BulletTimeLight").GetComponent<Light2D>();
 
         //일단 BulletTime 만들어둠
-        if (Input.GetKey(KeyCode.LeftShift))
+
+        if (!CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
         {
-            isBulletTime = true;
-            if (lit.intensity <= 0.4f)
-                lit.intensity = 0.4f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                isBulletTime = true;
+                if (lit.intensity <= 0.4f)
+                    lit.intensity = 0.4f;
 
-            if (timeSclaeMirror <= 0.2f)
-                timeSclaeMirror = 0.2f;
+                if (timeSclaeMirror <= 0.2f)
+                    timeSclaeMirror = 0.2f;
 
-            lit.intensity -= 4 * Time.deltaTime;
-            timeSclaeMirror -= 4 * Time.deltaTime;
+                lit.intensity -= 4 * Time.deltaTime;
+                timeSclaeMirror -= 4 * Time.deltaTime;
 
-            Time.timeScale = timeSclaeMirror;
+                Time.timeScale = timeSclaeMirror;
 
-            transform.Find("BulletTimeLight").gameObject.SetActive(true);
-            BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
+                transform.Find("BulletTimeLight").gameObject.SetActive(true);
+                BulletTimeBlueLight.lightCookieSprite = spriteRenderer.sprite;
+            }
+
+
+
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                isBulletTime = false;
+                lit.intensity = 1f;
+                timeSclaeMirror = 1f;
+                Time.timeScale = timeSclaeMirror;
+
+                transform.Find("BulletTimeLight").gameObject.SetActive(false);
+            }
         }
 
-
-        //디버그용 일시정지
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
         {
             isBulletTime = false;
             lit.intensity = 1f;
@@ -148,8 +162,10 @@ public class WG_Entity : MonoBehaviour
             Time.timeScale = timeSclaeMirror;
 
             transform.Find("BulletTimeLight").gameObject.SetActive(false);
+
         }
 
+        //디버그용 일시정지
         if (!Pause && Input.GetKeyDown(KeyCode.Space))
         {
             Pause = true;

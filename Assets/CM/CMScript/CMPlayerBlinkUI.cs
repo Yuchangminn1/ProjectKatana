@@ -22,16 +22,24 @@ public class CMPlayerBlinkUI : MonoBehaviour
 
     [SerializeField] float[] startTime;
     [SerializeField] float[] midleTime;
-    [SerializeField] float ABTime = 10f;
+    [SerializeField] public float ABTime = 10f;
 
 
     [SerializeField] float darkSpeed = 2f;
 
 
-    //WG 추가
+    #region WG 추가
     bool isDead = false;
+    [SerializeField] public bool isBatteryOff = false;
+    [SerializeField] public GameObject[] Batteries;
+    float ABtimeMax;
+    #endregion
     void Start()
     {
+        //WG 추가
+        ABTime -= 1;
+        ABtimeMax = ABTime;
+
         if (timeSlider == null)
         {
             return;
@@ -73,7 +81,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
             return;
         }
         CMOnTimer();
-        ABTime -= Time.deltaTime;
+        WGBatteryTweak();
     }
 
     public void BlinckUI()
@@ -256,5 +264,31 @@ public class CMPlayerBlinkUI : MonoBehaviour
             isDead = true;
             WG_PlayerManager.instance.player.stateMachine.ChangeState(WG_PlayerManager.instance.player.deadStartState);
         }
+    }
+
+    //WG추가
+    public void WGBatteryTweak()
+    {
+        //ABTime은 설정값 - 1 인 상태
+        ABTime = Mathf.Clamp(ABTime, 0, ABtimeMax);
+        int BatteryCount = Mathf.CeilToInt(ABTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            ABTime -= 2 * Time.unscaledDeltaTime;
+            Batteries[BatteryCount].SetActive(false);
+        }
+
+        else
+        {
+            ABTime += 3 * Time.unscaledDeltaTime;
+            Batteries[BatteryCount].SetActive(true);
+        }
+
+        if (ABTime <= 0)
+            isBatteryOff = true;
+
+        else
+            isBatteryOff = false;
     }
 }
