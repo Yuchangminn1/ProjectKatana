@@ -22,14 +22,26 @@ public class CMDoor : MonoBehaviour
         }
 
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             isPlayer = true;
 
         }
-    }
 
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isPlayer = false;
+
+        }
+
+
+    }
+    
 }
