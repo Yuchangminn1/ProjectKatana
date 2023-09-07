@@ -34,6 +34,8 @@ public class WG_PlayerTumblingState : WG_PlayerState
 
         WG_SoundManager.instance.PlayEffectSound("Sound_Player_WallJump" + Random.Range(1, 4));
 
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("EnemyLazer"), true);
+        player.platformEffector2D.useColliderMask = false;
     }
     public override void Update()
     {
@@ -64,6 +66,9 @@ public class WG_PlayerTumblingState : WG_PlayerState
     {
         base.Exit();
         player.isNowTumbling = false;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("EnemyLazer"), false);
+        player.platformEffector2D.useColliderMask = true;
+
     }
 
 }
