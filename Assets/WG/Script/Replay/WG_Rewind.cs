@@ -119,6 +119,8 @@ public class WG_Rewind : MonoBehaviour
     public void StartRewind()
     {
         WG_FXManager.instance.screenEffect.RetroEffectON();
+        WG_SoundManager.instance.BGM_Player.pitch = WG_SoundManager.instance.BGM_Player_RewindPith;
+
         isRewinding = true;
     }
 

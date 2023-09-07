@@ -81,11 +81,14 @@ public class WG_Entity : MonoBehaviour
 
     [Header("Physics Materials2D Info")]
     public PhysicsMaterial2D[] PhysicsMaterias;
+
+    bool isSoundPlaying;
     #endregion
 
     protected virtual void Awake()
     {
         isDead = false;
+        isSoundPlaying = false;
     }
 
     protected virtual void Start()
@@ -125,6 +128,12 @@ public class WG_Entity : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
+                if (!isSoundPlaying)
+                {
+                    isSoundPlaying = true;
+                    WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowIn");
+                }
+
                 isBulletTime = true;
                 if (lit.intensity <= 0.4f)
                     lit.intensity = 0.4f;
@@ -145,6 +154,12 @@ public class WG_Entity : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
+                if (!isSoundPlaying)
+                {
+                    isSoundPlaying = true;
+                    WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowOut");
+                }
+
                 isBulletTime = false;
                 lit.intensity = 1f;
                 timeSclaeMirror = 1f;
@@ -156,6 +171,12 @@ public class WG_Entity : MonoBehaviour
 
         if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
         {
+            if (!isSoundPlaying)
+            {
+                isSoundPlaying = true;
+                WG_SoundManager.instance.PlayEffectSound("Sound_Player_SlowOut");
+            }
+
             isBulletTime = false;
             lit.intensity = 1f;
             timeSclaeMirror = 1f;

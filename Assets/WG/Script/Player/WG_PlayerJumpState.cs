@@ -20,6 +20,7 @@ public class WG_PlayerJumpState : WG_PlayerGroundState
             if (player.isStaired()) player.SetVelocityToZero();
             rb.AddForce(Vector2.up * player.jumpforce, ForceMode2D.Impulse);
             WG_FXManager.instance.jumpAndtumblingDustEffect.PlayJumpDust();
+            WG_SoundManager.instance.PlayEffectSound("Sound_Player_Jump");
         }
         StateTimer = 0.2f;
     }

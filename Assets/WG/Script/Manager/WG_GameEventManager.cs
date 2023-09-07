@@ -28,7 +28,14 @@ public class WG_GameEventManager : MonoBehaviour
     {
         isGameStarted = true;
         isGameFinished = false;
+        WG_SoundManager.instance.PlayBGM("BGM_Bunker");
     }
+
+
+    private void Update()
+    {
+    }
+
 
     public event Action onGoalReached;
     public void GoalReached()

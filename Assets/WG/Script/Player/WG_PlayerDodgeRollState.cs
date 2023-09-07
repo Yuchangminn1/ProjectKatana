@@ -25,6 +25,8 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
         player.SetVelocityToZero();
 
         rb.AddForce(Vector2.right * player.FacingDir * player.DodgeForce, ForceMode2D.Impulse);
+
+        WG_SoundManager.instance.PlayEffectSound("Sound_Player_Roll");
     }
     public override void Update()
     {
@@ -33,7 +35,7 @@ public class WG_PlayerDodgeRollState : WG_PlayerGroundState
 
         if (FrameCheck >= 6) player.RecoverControl = true;
 
-        if (isAnimationFinishTriggerCalled) 
+        if (isAnimationFinishTriggerCalled)
             stateMachine.ChangeState(player.idleState);
 
     }

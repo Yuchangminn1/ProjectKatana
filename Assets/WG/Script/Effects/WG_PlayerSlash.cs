@@ -33,6 +33,13 @@ public class WG_PlayerSlash : MonoBehaviour
     {
         isHit = false;
         isHitBullet = false;
+
+        if (!WG_RecordManager.instance.Player_rewind.isRewinding)
+            WG_SoundManager.instance.PlayEffectSound("Sound_Player_Slash" + Random.Range(1, 4));
+    }
+
+    private void Update()
+    {
     }
 
     private void FixedUpdate()
@@ -130,7 +137,7 @@ public class WG_PlayerSlash : MonoBehaviour
           WG_FXManager.instance.playerSlashEffect.ClosestEnemyInList.transform.position,
           Quaternion.identity, WG_FXManager.instance.transform);
 
-        Hit_Clone.transform.rotation = transform.rotation; 
+        Hit_Clone.transform.rotation = transform.rotation;
 
         WG_FXManager.instance.playerSlashEffect.alreadyHitEnemy.Clear();
     }
