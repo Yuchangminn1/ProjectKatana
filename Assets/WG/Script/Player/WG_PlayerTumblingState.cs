@@ -32,6 +32,8 @@ public class WG_PlayerTumblingState : WG_PlayerState
         else
             WG_FXManager.instance.jumpAndtumblingDustEffect.InstantiateTumblingDust();
 
+        WG_SoundManager.instance.PlayEffectSound("Sound_Player_WallJump" + Random.Range(1, 4));
+
     }
     public override void Update()
     {
