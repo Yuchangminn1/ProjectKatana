@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WG_FXManager : MonoBehaviour
+public class WG_FXManager : WG_Managers
 {
     public static WG_FXManager instance;
     public WG_Effects effects { get; private set; }
@@ -13,10 +13,15 @@ public class WG_FXManager : MonoBehaviour
     public WG_CameraEffect cameraEffect { get; private set; }
     public WG_ScreenEffect screenEffect { get; private set; }
     public WG_PlayerJumpAndTumblingDustEffect jumpAndtumblingDustEffect { get; private set; }
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance != null) Destroy(instance.gameObject);
-        else instance = this;
+        if (instance != null) 
+            Destroy(instance.gameObject);
+
+        else 
+            instance = this;
+
+        base.Awake();
     }
 
     private void Start()

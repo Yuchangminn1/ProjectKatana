@@ -251,10 +251,10 @@ public class WG_Entity : MonoBehaviour
         rayhit_WhatisGround_Down = Physics2D.Raycast(GroundCheck.position, Vector2.down, ground_distance, WhatIsGround);
         rayhit_WhatisGround_Up = Physics2D.Raycast(playerHead.position, Vector2.up, 100f, WhatIsGround);
 
-        if (rayhit_WhatisGround_Down.collider != null)
+        if (rayhit_WhatisGround_Down.collider != null && rayhit_WhatisGround_Down)
             rayhit_WhatisGround_Down_other = rayhit_WhatisGround_Down.collider;
 
-        if (rayhit_WhatisGround_Up.collider != null)
+        if (rayhit_WhatisGround_Up.collider != null && rayhit_WhatisGround_Up)
             rayhit_WhatisGround_Up_other = rayhit_WhatisGround_Up.collider;
         //
     }

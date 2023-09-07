@@ -243,7 +243,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
     //타이머 바 줄어들기
     public void CMOnTimer()
     {
-        if (WG_GameEventManager.instance.isGameStarted)
+        if (!WG_PlayerManager.instance.player.isDead)
         {
             //WG - unscaledDeltaTime로 변경하고 조건문 추가
             if (WG_PlayerManager.instance.player.isBulletTime)

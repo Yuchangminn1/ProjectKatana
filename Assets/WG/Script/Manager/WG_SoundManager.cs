@@ -10,7 +10,7 @@ public class Sound
     public AudioClip clip;
 }
 
-public class WG_SoundManager : MonoBehaviour
+public class WG_SoundManager : WG_Managers
 {
     public static WG_SoundManager instance;
 
@@ -23,13 +23,16 @@ public class WG_SoundManager : MonoBehaviour
     [SerializeField] Sound[] EffectSound;
     [SerializeField] AudioSource[] EffectSound_Player;
 
-    private void Awake()
+    protected override void Awake()
     {
+
         if (instance != null)
             Destroy(instance.gameObject);
 
         else
             instance = this;
+
+        base.Awake();
     }
 
     private void Start()
@@ -38,6 +41,7 @@ public class WG_SoundManager : MonoBehaviour
 
     public void PlayBGM(string bgmName, float pitch = 1.0f, bool isMute = false)
     {
+
         for (int i = 0; i < BGM.Length; i++)
         {
             if (bgmName == BGM[i].name)
