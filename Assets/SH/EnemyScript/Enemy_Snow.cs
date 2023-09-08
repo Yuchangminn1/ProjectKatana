@@ -317,13 +317,12 @@ public class Enemy_Snow : Enemy_SH
         public override void Enter()
         {
             base.Enter();
-
+            Destroy(snow.gameObject, 0.5f);
         }
 
         public override void Exit()
         {
             base.Exit();
-            Destroy(snow.gameObject);
         }
 
         public override void Update()
