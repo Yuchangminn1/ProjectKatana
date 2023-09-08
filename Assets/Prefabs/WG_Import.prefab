@@ -1265,6 +1265,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e8ba939d29216ab4b9673b7e3b1fb12b, type: 3}
   - name: Sound_Enemy_Fire
     clip: {fileID: 8300000, guid: 9d9d9eaac542f8b4a8340cd6185c3a6a, type: 3}
+  - name: Sound_Door
+    clip: {fileID: 8300000, guid: 9a8af68813fe48548bc185e29f8877c8, type: 3}
   EffectSound_Player:
   - {fileID: 3259741114326547107}
   - {fileID: 3896421737621576112}
@@ -1277,6 +1279,7 @@ MonoBehaviour:
   - {fileID: 8425863291447286967}
   - {fileID: 2208240588306487962}
   - {fileID: 361574992470965049}
+  LoopedEffectAudioSourceNumber: 0
 --- !u!1 &1680334155771226838
 GameObject:
   m_ObjectHideFlags: 0
