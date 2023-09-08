@@ -23,6 +23,8 @@ public class Enemy_Snow : Enemy_SH
 
     bool isBusy = false;
 
+    BoxCollider2D box;
+
     #region States
 
     public SnowIdleState idleState { get; private set; }
@@ -50,6 +52,7 @@ public class Enemy_Snow : Enemy_SH
         base.Awake();
 
         animator = GetComponent<Animator>();
+        box = GetComponentInChildren<BoxCollider2D>();
 
         idleState = new SnowIdleState(this, stateMachine, "Idle", this);
         walkState = new SnowWalkState(this, stateMachine, "Walk", this);
@@ -95,8 +98,9 @@ public class Enemy_Snow : Enemy_SH
         if (player != null)
         {
             pDistance = Vector2.Distance(transform.position, player.transform.position);
-            if (player.transform.position.y >= transform.position.y)
+            if (player.transform.position.y >= transform.position.y -1 )
             {
+                if(!anim.GetBool("Attack"))
                 FacingPlayer();
                 if (pDistance < attackDistance && !isBusy && attackCooldownTimer <= 0)
                     stateMachine.ChangeState(attackState);
@@ -141,7 +145,7 @@ public class Enemy_Snow : Enemy_SH
         {
             base.Update();
 
-            if (stateTimer < 0 && !snow.isBusy && snow.player.transform.position.y >= snow.transform.position.y)
+            if (stateTimer < 0 && !snow.isBusy && snow.player.transform.position.y >= snow.transform.position.y-1)
                 stateMachine.ChangeState(snow.dashState);
 
 
@@ -211,7 +215,7 @@ public class Enemy_Snow : Enemy_SH
 
             if (snow.pDistance > snow.throwDistance && snow.throwCooldownTimer <= 0)
             {
-                if(snow.player.transform.position.y -1 >= snow.transform.position.y)
+                if(snow.player.transform.position.y >= snow.transform.position.y - 1)
                 if (snow.pDistance < 10)
                     stateMachine.ChangeState(snow.throwState);
             }
@@ -404,14 +408,12 @@ public class Enemy_Snow : Enemy_SH
     }
 
     public void MeleeAttackStart()
-    {
-        Collider2D box = GetComponentInChildren<BoxCollider2D>();
+    { 
         box.enabled = true;
     }
 
     public void MeleeAttackFinished()
     {
-        Collider2D box = GetComponentInChildren<BoxCollider2D>();
         box.enabled = false;
     }
 

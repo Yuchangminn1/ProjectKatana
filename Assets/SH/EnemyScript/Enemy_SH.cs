@@ -74,7 +74,7 @@ public class Enemy_SH : WG_Entity
 
         if (player != null)
         {
-            if (player.transform.position.y >= transform.position.y)
+            if (player.transform.position.y >= transform.position.y -1 )
             {
 
                 if (transform.position.x > player.transform.position.x && FacingDir > 0)
