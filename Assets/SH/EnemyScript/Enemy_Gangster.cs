@@ -8,6 +8,7 @@ public class Enemy_Gangster : Enemy_SH
     [SerializeField] GameObject slashBlood;
     [SerializeField] GameObject putBlood;
     [SerializeField] Transform bloodPos;
+    [SerializeField] GameObject shootEffect;
     GameObject slash;
 
     WG_PlayerSlashHitEffect WG_PlayerSlashHitEffect { get; set; }
@@ -215,7 +216,7 @@ public class Enemy_Gangster : Enemy_SH
             {
                 gangster.Shoot();
                 gangster.shootCooldownTimer = gangster.shootCooldown;
-                gangster.shootDelay = 0.3f;
+                gangster.shootDelay = 0.2f;
             }
 
 
@@ -290,7 +291,8 @@ public class Enemy_Gangster : Enemy_SH
 
 
         GameObject Clone = Instantiate(BulletPrefap, Firepos.position, Quaternion.identity, transform);
-
+        Instantiate(shootEffect, Firepos.position, transform.rotation);
+       
 
 
         //WG 추가한 코드
