@@ -60,7 +60,8 @@ public class WG_SoundManager : WG_Managers
         BGM_Player.Stop();
     }
 
-    public void PlayEffectSound(string soundName, float Volume = 1.0f)
+    public int LoopedEffectAudioSourceNumber;
+    public void PlayEffectSound(string soundName, float Volume = 1.0f, bool isLoop = false)
     {
         for (int i = 0; i < EffectSound.Length; i++)
         {
@@ -72,10 +73,18 @@ public class WG_SoundManager : WG_Managers
                     {
                         EffectSound_Player[j].clip = EffectSound[i].clip;
                         EffectSound_Player[j].volume = Volume;
+                        // EffectSound_Player[j].loop = isLoop;
                         EffectSound_Player[j].Play();
+
+                        if (EffectSound_Player[j].loop)
+                            LoopedEffectAudioSourceNumber = j;
+
                         //EffectSound_Player[j].PlayOneShot(EffectSound[i].clip);
                         return;
                     }
+                    //if (EffectSound_Player[LoopedEffectAudioSourceNumber].is)
+                    //    LoopedEffectAudioSourceNumber = j;
+
                     EffectSound_Player[j].volume = 1f;
                 }
                 Debug.Log("모든 사운드가 재생중");

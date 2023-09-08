@@ -30,6 +30,10 @@ public class Bullet : MonoBehaviour
         start_Speed = speed;
     }
 
+    private void Start()
+    {
+        WG_SoundManager.instance.PlayEffectSound("Sound_Enemy_Fire");
+    }
 
     private void FixedUpdate()
     {
@@ -51,7 +55,7 @@ public class Bullet : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject, 5f);
-     
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +63,7 @@ public class Bullet : MonoBehaviour
         // 플레이어와 충돌하면
         if (collision.tag == "Player" || collision.tag == "Door")
         {
-       
+
             Destroy(gameObject);
         }
     }
