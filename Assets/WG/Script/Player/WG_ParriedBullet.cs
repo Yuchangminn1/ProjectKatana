@@ -8,13 +8,12 @@ public class WG_ParriedBullet : WG_PlayerSlash
     Vector2 parryDir;
     float parryAngle;
     bool isHit;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+
 
         isHit = false;
 

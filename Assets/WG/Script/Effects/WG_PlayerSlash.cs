@@ -11,13 +11,12 @@ public class WG_PlayerSlash : MonoBehaviour
 
     //인스펙터에서 이펙트 넣어줌
     protected GameObject slashHitEffect;
+    protected GameObject ParryEffect;
     //생성될 이펙트
     GameObject Hit_Clone;
 
 
-    bool isHit, isHitBullet, timerStop;
-    Vector2 parryDir;
-    float parryAngle;
+    bool isHit, isHitBullet;
 
     private void Awake()
     {
@@ -26,6 +25,7 @@ public class WG_PlayerSlash : MonoBehaviour
         //InputManager에서 각도값 Update에서 갱신되는거 사용
         transform.rotation = Quaternion.Euler(0, 0, WG_InputManager.instance.playerLookingCursorAngle);
         slashHitEffect = WG_FXManager.instance.playerSlashHitEffect.slashHitEffect;
+        ParryEffect = WG_FXManager.instance.playerSlashHitEffect.ParryEffect;
 
     }
 
@@ -87,6 +87,12 @@ public class WG_PlayerSlash : MonoBehaviour
             collision.gameObject.tag = "PlayerBullet";
 
             collision.gameObject.AddComponent<WG_ParriedBullet>();
+
+            if (ParryEffect != null)
+            {
+                ParryEffect.transform.position = collision.gameObject.transform.position;
+                ParryEffect.SetActive(true);
+            }
         }
     }
 
