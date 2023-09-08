@@ -5,6 +5,7 @@ using UnityEngine;
 public class CMDoor : MonoBehaviour
 {
     [SerializeField] bool isPlayer = false;
+    [SerializeField] BoxCollider2D box;
     Animator anima;
 
     private void Start()
@@ -22,7 +23,9 @@ public class CMDoor : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                GetComponent<BoxCollider2D>().enabled = false;
+                box.GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<EdgeCollider2D>().enabled = false;
+
                 anima.SetBool("Open", true);
             }
         }

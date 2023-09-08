@@ -561,6 +561,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 1
 --- !u!95 &143225060
 Animator:
   serializedVersion: 5
@@ -13274,9 +13275,10 @@ GameObject:
   - component: {fileID: 1944366846}
   - component: {fileID: 1944366845}
   - component: {fileID: 1944366844}
-  m_Layer: 0
+  - component: {fileID: 1944366847}
+  m_Layer: 25
   m_Name: spr_fanblade_0
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13381,6 +13383,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1944366847
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944366842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.3330737, y: 0.623331}
+    oldSize: {x: 0.34, y: 0.76}
+    newSize: {x: 0.34, y: 0.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.113245055, y: 0.2862684}
+      - {x: -0.113245055, y: 0.07626842}
+      - {x: -0.033245057, y: -0.08373158}
+      - {x: 0.016754942, y: -0.47373158}
+      - {x: 0.09675494, y: -0.47373158}
+      - {x: 0.16675495, y: -0.033731576}
+      - {x: 0.22675495, y: 0.14626843}
+      - {x: 0.22675495, y: 0.2862684}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1983502384
 GameObject:
   m_ObjectHideFlags: 0
@@ -13481,6 +13536,14 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: laserMoveSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -13531,6 +13594,14 @@ PrefabInstance:
     - target: {fileID: 6233251787930309500, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764698191402273296, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1636717
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764698191402273296, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.0268358
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

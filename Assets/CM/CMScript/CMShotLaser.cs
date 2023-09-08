@@ -24,6 +24,7 @@ public class CMShotLaser : MonoBehaviour
     [SerializeField] GameObject hitLaser;
     [SerializeField] float hitLaserPosY = 1f;
     [SerializeField] float DisSpeed = 0.05f;
+    [SerializeField] float hitLaserScaley = 0f;
 
 
     private void Start()
@@ -48,8 +49,6 @@ public class CMShotLaser : MonoBehaviour
 
     IEnumerator ShotNReturn(GameObject _gameObject, float _startTime,int _i)
     {
-        
-
 
         float yPos = _gameObject.transform.position.y;
         while (true)
@@ -88,6 +87,7 @@ public class CMShotLaser : MonoBehaviour
             
             cmy *= -1f;
             StartCoroutine(ShotNReturn(cmLaserList[i], 0.2f * i, i));
+
             ++i;
             //Debug.Log($"W {i}");
             yield return new WaitForFixedUpdate();
@@ -114,6 +114,11 @@ public class CMShotLaser : MonoBehaviour
 
             isLaserStop = true;
             GameObject _hitLaser = Instantiate(hitLaser, new Vector2(transform.position.x, transform.position.y + hitLaserPosY), Quaternion.identity);
+            _hitLaser.transform.localScale = new Vector2(_hitLaser.transform.localScale.x, _hitLaser.transform.localScale.y + hitLaserScaley);
+            
+
+
+
             StartCoroutine(HitLaserDis(_hitLaser));
 
 
