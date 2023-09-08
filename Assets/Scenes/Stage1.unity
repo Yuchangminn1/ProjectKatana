@@ -2532,6 +2532,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 9136317833757318743}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: shootCooldown
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14103,8 +14107,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.47405, y: -0.8142, z: 0}
-    m_Extent: {x: 5.9546504, y: 2.0659, z: 0}
+    m_Center: {x: 2.469, y: -0.8194001, z: 0}
+    m_Extent: {x: 5.9490004, y: 2.0699, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
