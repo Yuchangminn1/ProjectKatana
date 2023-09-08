@@ -27,11 +27,13 @@ public class CMDoor : MonoBehaviour
                 GetComponent<EdgeCollider2D>().enabled = false;
 
                 anima.SetBool("Open", true);
+
+                WG_SoundManager.instance.PlayEffectSound("Sound_Door");
             }
         }
 
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -52,5 +54,5 @@ public class CMDoor : MonoBehaviour
 
 
     }
-    
+
 }
