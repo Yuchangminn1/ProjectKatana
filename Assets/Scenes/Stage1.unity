@@ -552,6 +552,11 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!61 &249792242 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6673859297654986687, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
+  m_PrefabInstance: {fileID: 1178728695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291386340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1556386511}
     m_Modifications:
+    - target: {fileID: 3882481965638305074, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 249792242}
     - target: {fileID: 4237735578713432883, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
       propertyPath: m_Name
       value: Door
@@ -2304,14 +2313,6 @@ PrefabInstance:
     - target: {fileID: 6653625742863253942, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653625742863253942, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653625742863253942, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6653625742863253942, guid: 7c115d0741d2136459cc54513f64c7ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14103,8 +14104,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.4672503, y: -0.81445, z: 0}
-    m_Extent: {x: 5.94525, y: 2.07045, z: 0}
+    m_Center: {x: 2.475, y: -0.8141499, z: 0}
+    m_Extent: {x: 5.9532, y: 2.06375, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
