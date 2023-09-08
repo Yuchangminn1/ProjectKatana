@@ -177,8 +177,6 @@ public class Enemy_Gangster : Enemy_SH
             {
                 gangster.SetVelocity(gangster.moveSpeed * gangster.FacingDir, rb.velocity.y);
             }
-            else
-                stateMachine.ChangeState(gangster.idleState);
 
 
         }
