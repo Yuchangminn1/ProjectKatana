@@ -111,7 +111,7 @@ Transform:
   - {fileID: 3534861435287598915}
   - {fileID: 706791515146508342}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3041576660527087931
 MonoBehaviour:
@@ -128,7 +128,7 @@ MonoBehaviour:
   basic_movespeed: 3
   jumpforce: 10
   isFacingRight: 0
-  FacingDir: 1
+  FacingDir: -1
   DodgeForce: 7
   Dodge_NoHitLayer:
     serializedVersion: 2
@@ -178,7 +178,7 @@ MonoBehaviour:
   stunDuration: 0
   stunDirection: {x: 0, y: 0}
   counterImage: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 4
   idleTime: 2
   battleTime: 0
   attackDistance: 3
@@ -187,7 +187,7 @@ MonoBehaviour:
   daggerPrefab: {fileID: 4220402599199791937, guid: 41ba70ea6bf61f748b5dc58d834e5aa6, type: 3}
   daggerCount: 1
   daggerFirepos: {fileID: 706791515146508342}
-  throwCooldown: 5
+  throwCooldown: 3
   p1Cooldown: 5
   dodgeCooldown: 5
   dashDistance: 3
