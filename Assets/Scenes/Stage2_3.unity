@@ -1947,12 +1947,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5837415726812624916, guid: c13302fffa9c40842893bc855a22e595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6811771100067780966, guid: c13302fffa9c40842893bc855a22e595, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6811771100067780966, guid: c13302fffa9c40842893bc855a22e595, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271679492354199174, guid: c13302fffa9c40842893bc855a22e595, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3941,6 +3949,7 @@ MonoBehaviour:
   timeSlider: {fileID: 1118973140}
   TimelimitSetTime: 10
   TimeOverImage: {fileID: 1320511751}
+  DeadImage: {fileID: 0}
   UIGameObject:
   - {fileID: 1931064281}
   - {fileID: 1547364266}
@@ -4965,8 +4974,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.0985508, y: -8.228399, z: 0}
-    m_Extent: {x: 36.03755, y: 15.4659, z: 0}
+    m_Center: {x: 1.0984993, y: -8.2337, z: 0}
+    m_Extent: {x: 36.0444, y: 15.4648, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

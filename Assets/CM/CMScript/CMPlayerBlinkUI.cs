@@ -12,6 +12,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
     [SerializeField] Slider timeSlider = null;
     [SerializeField] float TimelimitSetTime = 10;
     [SerializeField] GameObject TimeOverImage = null;
+    [SerializeField] GameObject DeadImage = null;
 
     [Header("0~1,Timer")]
     [Header("2.Item")]
@@ -81,6 +82,7 @@ public class CMPlayerBlinkUI : MonoBehaviour
         {
             return;
         }
+        CMDeadImage();
         CMOnTimer();
         WGBatteryTweak();
     }
@@ -276,7 +278,12 @@ public class CMPlayerBlinkUI : MonoBehaviour
             WG_PlayerManager.instance.player.stateMachine.ChangeState(WG_PlayerManager.instance.player.deadStartState);
         }
     }
+    public void CMDeadImage()
+    {
+        if(WG_PlayerManager.instance.player.isDead)
+            DeadImage.SetActive(true);
 
+    }
     //WGÃß°¡
     public void WGBatteryTweak()
     {
