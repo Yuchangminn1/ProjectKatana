@@ -289,7 +289,7 @@ public class Enemy_Gangster : Enemy_SH
 
         GameObject Clone = Instantiate(BulletPrefap, Firepos.position, Quaternion.identity, transform);
         Instantiate(shootEffect, Firepos.position, transform.rotation);
-       
+
 
 
         //WG 추가한 코드

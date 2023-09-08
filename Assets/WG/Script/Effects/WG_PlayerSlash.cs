@@ -77,8 +77,8 @@ public class WG_PlayerSlash : MonoBehaviour
             {
 
                 OntriggerExcute();
-
                 CameraShakeEffect();
+
             }
         }
 
