@@ -360,5 +360,5 @@ MonoBehaviour:
   pAttack:
     serializedVersion: 2
     m_Bits: 268435456
-  shootCooldown: 1
+  shootCooldown: 2
   throwDistance: 7
