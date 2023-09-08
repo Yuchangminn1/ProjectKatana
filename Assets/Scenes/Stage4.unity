@@ -259,6 +259,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &65655461
 Animator:
   serializedVersion: 5
@@ -393,6 +394,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &76109842
 Animator:
   serializedVersion: 5
@@ -527,6 +529,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &78729775
 Animator:
   serializedVersion: 5
@@ -829,6 +832,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &171099381
 Animator:
   serializedVersion: 5
@@ -913,6 +917,14 @@ PrefabInstance:
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: yReturn
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
@@ -1781,6 +1793,14 @@ PrefabInstance:
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: yReturn
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
@@ -3542,6 +3562,14 @@ PrefabInstance:
       propertyPath: yReturn
       value: 8.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (3)
@@ -4389,6 +4417,14 @@ PrefabInstance:
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: yReturn
       value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
@@ -5583,6 +5619,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &1263220341
 Animator:
   serializedVersion: 5
@@ -22724,6 +22761,7 @@ MonoBehaviour:
   hitLaser: {fileID: 0}
   hitLaserPosY: 1
   DisSpeed: 0.05
+  hitLaserScaley: 0
 --- !u!95 &1815095210
 Animator:
   serializedVersion: 5
@@ -23184,6 +23222,14 @@ PrefabInstance:
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: yReturn
       value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
@@ -23652,6 +23698,14 @@ PrefabInstance:
     - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: yReturn
       value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name

@@ -57,6 +57,11 @@ public class CMUIManager : MonoBehaviour
     {
         if (isNextIconOn)
         {
+            if (WG_PlayerManager.instance.player.isDead)
+            {
+                NextStageIcon(false);
+
+            }
             return;
         }
         else if (WG_StageManager.instance.EnemyAllDead())
@@ -109,5 +114,8 @@ public class CMUIManager : MonoBehaviour
         nextIcon.SetActive(true);
         isNextIconOn = true;
     }
-
+    private void NextStageIcon(bool _isOn)
+    {
+        nextIcon.SetActive(_isOn);
+    }
 }

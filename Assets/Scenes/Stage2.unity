@@ -316,6 +316,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (5)
@@ -1303,6 +1311,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (4)
@@ -2645,6 +2661,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (3)
@@ -2916,6 +2940,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (6)
@@ -4187,6 +4219,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (1)
@@ -4252,6 +4292,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (7)
@@ -5289,6 +5337,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (8)
@@ -14371,6 +14427,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser (2)
@@ -14660,6 +14724,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556240283}
     m_Modifications:
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserPosY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114595275363181264, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
+      propertyPath: hitLaserScaley
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3975155542412645409, guid: 13a1c6e1c21f0a14ca93127583abaa05, type: 3}
       propertyPath: m_Name
       value: CMLaser
