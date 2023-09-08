@@ -22266,6 +22266,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1727201312}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+      propertyPath: FacingDir
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+      propertyPath: isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041576660527087931, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
+      propertyPath: throwCooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5337428310326865383, guid: a4ca2a1e55cf8064fa023353d50a4843, type: 3}
       propertyPath: m_Name
       value: Snow
