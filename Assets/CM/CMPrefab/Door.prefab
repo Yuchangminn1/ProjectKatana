@@ -107,7 +107,7 @@ Transform:
   m_Children:
   - {fileID: 5786268773882977263}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7844619857556768626
 GameObject:
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  box: {fileID: 6673859297654986687}
 --- !u!68 &1482941309559328035
 EdgeCollider2D:
   m_ObjectHideFlags: 0
