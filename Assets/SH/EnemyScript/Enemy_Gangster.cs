@@ -41,7 +41,6 @@ public class Enemy_Gangster : Enemy_SH
     {
         base.Awake();
 
-        shootCooldownTimer = 2f;
 
         animator = GetComponent<Animator>();
 
@@ -90,7 +89,7 @@ public class Enemy_Gangster : Enemy_SH
         {
             if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
             {
-                if (pDistance < 15)
+                if (pDistance < 20)
                     stateMachine.ChangeState(shootState);
             }
         }
@@ -214,7 +213,7 @@ public class Enemy_Gangster : Enemy_SH
             {
                 gangster.Shoot();
                 gangster.shootCooldownTimer = gangster.shootCooldown;
-                gangster.shootDelay = 0.2f;
+                gangster.shootDelay = 0.1f;
             }
 
 
