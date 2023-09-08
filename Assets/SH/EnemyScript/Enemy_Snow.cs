@@ -23,6 +23,8 @@ public class Enemy_Snow : Enemy_SH
 
     bool isBusy = false;
 
+    BoxCollider2D box;
+
     #region States
 
     public SnowIdleState idleState { get; private set; }
@@ -50,6 +52,7 @@ public class Enemy_Snow : Enemy_SH
         base.Awake();
 
         animator = GetComponent<Animator>();
+        box = GetComponentInChildren<BoxCollider2D>();
 
         idleState = new SnowIdleState(this, stateMachine, "Idle", this);
         walkState = new SnowWalkState(this, stateMachine, "Walk", this);
@@ -404,14 +407,12 @@ public class Enemy_Snow : Enemy_SH
     }
 
     public void MeleeAttackStart()
-    {
-        Collider2D box = GetComponentInChildren<BoxCollider2D>();
+    { 
         box.enabled = true;
     }
 
     public void MeleeAttackFinished()
     {
-        Collider2D box = GetComponentInChildren<BoxCollider2D>();
         box.enabled = false;
     }
 
