@@ -89,7 +89,7 @@ public class Enemy_Gangster : Enemy_SH
         {
             if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
             {
-                if (pDistance < 20)
+                if (pDistance < 17)
                     stateMachine.ChangeState(shootState);
             }
         }
@@ -213,7 +213,7 @@ public class Enemy_Gangster : Enemy_SH
             {
                 gangster.Shoot();
                 gangster.shootCooldownTimer = gangster.shootCooldown;
-                gangster.shootDelay = 0.1f;
+                gangster.shootDelay = 0.2f;
             }
 
 
