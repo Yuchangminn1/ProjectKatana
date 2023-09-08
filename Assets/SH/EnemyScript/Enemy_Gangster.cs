@@ -89,7 +89,7 @@ public class Enemy_Gangster : Enemy_SH
         {
             if (shootCooldownTimer <= 0 && !anim.GetBool("Hit"))
             {
-                if (pDistance < 10)
+                if (pDistance < 15)
                     stateMachine.ChangeState(shootState);
             }
         }

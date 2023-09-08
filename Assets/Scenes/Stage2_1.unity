@@ -653,6 +653,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 9136317833757318743}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: FacingDir
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2363,6 +2371,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 9136317833757318743}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: FacingDir
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
+      propertyPath: isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2539,11 +2555,11 @@ PrefabInstance:
       objectReference: {fileID: 9136317833757318743}
     - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: FacingDir
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4216944306200876367, guid: 4eee58a636b060340b808067625e57b3, type: 3}
       propertyPath: isFacingRight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
