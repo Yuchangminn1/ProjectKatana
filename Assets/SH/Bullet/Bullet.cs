@@ -50,7 +50,8 @@ public class Bullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 5f);
+     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
