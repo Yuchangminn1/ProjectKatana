@@ -216,7 +216,7 @@ Transform:
   - {fileID: 8126364435895396922}
   - {fileID: 8449759544697535865}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1226850039972423413
 Rigidbody2D:
@@ -297,6 +297,9 @@ MonoBehaviour:
   isFacingRight: 1
   FacingDir: 1
   DodgeForce: 7
+  Dodge_NoHitLayer:
+    serializedVersion: 2
+    m_Bits: 0
   RecoverControl: 1
   GroundCheck: {fileID: 1063824466453500611}
   WhatIsGround:
@@ -353,8 +356,9 @@ MonoBehaviour:
   slashBlood: {fileID: 1269032551825267496, guid: 588516bbe998bdb498cf14a59fa1207a, type: 3}
   putBlood: {fileID: 2536434833845750669, guid: 63b4110a227b53c4a8385b5c79beff68, type: 3}
   bloodPos: {fileID: 8449759544697535865}
+  shootEffect: {fileID: 8894494457924080117, guid: d03c5d7e358b1134191f1138c0ccf136, type: 3}
   pAttack:
     serializedVersion: 2
     m_Bits: 268435456
-  shootCooldown: 3
+  shootCooldown: 2
   throwDistance: 7
