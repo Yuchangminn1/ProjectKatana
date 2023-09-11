@@ -109,15 +109,8 @@ public class WG_Entity : MonoBehaviour
         RayOtherCollider();
     }
 
-    protected virtual void FixedUpdate()
-    {
-
-    }
-
-    protected virtual void LateUpdate()
-    {
-
-    }
+    protected virtual void FixedUpdate() { }
+    protected virtual void LateUpdate() { }
     float timeSclaeMirror;
     Light2D lit;
     Light2D BulletTimeBlueLight;
@@ -132,25 +125,17 @@ public class WG_Entity : MonoBehaviour
         if (!CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
         {
             if (Input.GetKey(KeyCode.LeftShift))
-            {
-
                 IntoBulletTime();
-            }
-
-
-
+            
             if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
                 EscapeBulletTime();
-            }
+            
         }
 
         if (CMUIManager.Instance.cmPlayerBlinkUI.isBatteryOff)
-        {
             EscapeBulletTime();
-        }
-
-        ////디버그용 일시정지
+        
+        #region 디버그용 일시정지
         //if (!Pause && Input.GetKeyDown(KeyCode.Space))
         //{
         //    Pause = true;
@@ -162,6 +147,7 @@ public class WG_Entity : MonoBehaviour
         //{
         //    Pause = false;
         //}
+        #endregion
     }
     public void IntoBulletTime()
     {
@@ -204,10 +190,8 @@ public class WG_Entity : MonoBehaviour
 
 
     public void SetVelocityToZero() => rb.velocity = Vector2.zero;
-    public void SetVelocity(float X_Velocity, float Y_Velocity)
-    {
+    public void SetVelocity(float X_Velocity, float Y_Velocity) =>
         rb.velocity = new Vector2(X_Velocity, Y_Velocity);
-    }
 
     public void ResetRigidBody()
     {

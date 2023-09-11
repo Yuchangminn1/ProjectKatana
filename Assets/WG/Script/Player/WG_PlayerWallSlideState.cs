@@ -29,6 +29,4 @@ public class WG_PlayerWallSlideState : WG_PlayerStickToWallState
     {
         base.Exit();
     }
-
-
 }
