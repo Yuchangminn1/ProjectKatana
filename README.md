@@ -15,11 +15,17 @@
 - **게임 역설계**: KatanaZero의 모든 방식을 구현하려 노력하였습니다
 
 ## 주요 기능
-- **공격 튕기기 & 슬로우 모션** 
+- **공격 튕기기 & 슬로우 모션**
+
 ![Katana_Counter](https://github.com/Yuchangminn1/ProjectKatana/assets/68059564/00de5e53-f8c5-480a-977f-30dfa9b51a78)
 - **되감기**
+
 ![Katana_Rewind](https://github.com/Yuchangminn1/ProjectKatana/assets/68059564/541f2d8d-e738-4044-a8a9-e293c0cc1d62)
-- **UI배치 및 효과** 
+- **UI배치 및 효과**
+
 ![KatanaLobby](https://github.com/Yuchangminn1/ProjectKatana/assets/68059564/bb12396b-fe79-48f9-a918-b31592dd3361)
 
 
+## 영상 
+
+https://www.youtube.com/watch?v=q32pnRAMYmU
