@@ -28,4 +28,4 @@
 
 ## 영상 
 
-https://www.youtube.com/watch?v=q32pnRAMYmU
+[![게임플레이영상](https://img.youtube.com/vi/q32pnRAMYmU/0.jpg)](https://www.youtube.com/watch?v=q32pnRAMYmU)
